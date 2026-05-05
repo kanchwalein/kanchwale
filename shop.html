@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.8.4.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Shop — Kanchwale | Luxury Glass &amp; Mirrors&lt;/title&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Shop luxury mirrors and glass by Kanchwale. Custom sizes, AR try-on, pan-India delivery.&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{--black:#080808;--deep:#0f0f0f;--gold:#c8a96e;--gold-light:#e8cfa0;--white:#f5f0ea;--glass:rgba(255,255,255,0.04);--gb:rgba(255,255,255,0.08);--red:#e05555;--green:#4caf7d;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;cursor:pointer;}
+button{cursor:pointer;font-family:'DM Sans',sans-serif;}
+input,textarea,select{font-family:'DM Sans',sans-serif;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;right:28px;background:var(–deep);border:1px solid var(–gold);color:var(–white);padding:13px 22px;font-size:13px;z-index:9000;transform:translateY(80px);opacity:0;transition:all .4s;pointer-events:none;max-width:280px;}
+.toast.on{transform:translateY(0);opacity:1;}
+.toast.err{border-color:var(–red);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(–gb);}
+.nav-logo{font-family:‘Cormorant Garamond’,serif;font-size:24px;font-weight:300;letter-spacing:.12em;cursor:pointer;}
+.nav-logo span{color:var(–gold);}
+.nav-links{display:flex;gap:26px;list-style:none;}
+.nav-links a{color:rgba(245,240,234,.55);font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;cursor:pointer;}
+.nav-links a:hover,.nav-links a.active{color:var(–gold);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-icon{background:none;border:none;color:rgba(245,240,234,.55);font-size:18px;padding:6px;position:relative;transition:color .3s;}
+.nav-icon:hover{color:var(–gold);}
+.cart-badge{position:absolute;top:0;right:0;background:var(–gold);color:var(–black);width:15px;height:15px;border-radius:50%;font-size:8px;font-weight:500;display:flex;align-items:center;justify-content:center;}
+.nav-login{background:transparent;border:1px solid var(–gold);color:var(–gold);padding:8px 18px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;}
+.nav-login:hover,.nav-login.in{background:var(–gold);color:var(–black);}
+.hamburger{display:none;background:none;border:none;color:var(–white);font-size:22px;}
+@media(max-width:768px){nav{padding:14px 20px;}.nav-links{display:none;position:fixed;top:57px;left:0;right:0;background:rgba(8,8,8,.98);flex-direction:column;padding:18px;gap:14px;border-bottom:1px solid var(–gb);z-index:499;}.nav-links.open{display:flex;}.hamburger{display:block;}.nav-login{display:none;}}
+
+/* VIEWS */
+.view{display:none;}.view.active{display:block;}
+
+/* BUTTONS */
+.btn-g{background:var(–gold);color:var(–black);padding:13px 30px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:none;transition:all .3s;cursor:pointer;}
+.btn-g:hover{background:var(–gold-light);}
+.btn-o{background:transparent;border:1px solid var(–gold);color:var(–gold);padding:13px 30px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s;cursor:pointer;}
+.btn-o:hover{background:var(–gold);color:var(–black);}
+.btn-ghost{color:rgba(245,240,234,.45);font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:none;border:none;cursor:pointer;transition:color .3s;}
+.btn-ghost:hover{color:var(–gold);}
+.btn-wa{background:#25D366;color:#fff;padding:13px 30px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;}
+.btn-wa:hover{background:#1db954;}
+.btn-full{width:100%;}
+
+/* FORM */
+.form-group{margin-bottom:18px;}
+.form-label{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,234,.4);margin-bottom:7px;}
+.form-input{width:100%;background:var(–glass);border:1px solid var(–gb);color:var(–white);padding:11px 14px;font-size:13px;outline:none;transition:border-color .3s;}
+.form-input:focus{border-color:var(–gold);}
+.form-select{width:100%;background:var(–deep);border:1px solid var(–gb);color:var(–white);padding:11px 14px;font-size:13px;outline:none;}
+.form-textarea{width:100%;background:var(–glass);border:1px solid var(–gb);color:var(–white);padding:11px 14px;font-size:13px;resize:vertical;outline:none;min-height:90px;}
+.form-textarea:focus{border-color:var(–gold);}
+.form-err{font-size:12px;color:var(–red);margin-top:5px;}
+.form-ok{font-size:12px;color:var(–green);margin-top:5px;}
+
+/* PAGE WRAPPER */
+.page{padding:100px 60px 80px;}
+@media(max-width:768px){.page{padding:80px 24px 60px;}}
+.page-narrow{max-width:820px;margin:0 auto;padding:100px 60px 80px;}
+@media(max-width:768px){.page-narrow{padding:80px 24px 60px;}}
+
+/* SEC */
+.sec-tag{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(–gold);margin-bottom:12px;display:flex;align-items:center;gap:12px;}
+.sec-tag::before{content:’’;width:24px;height:1px;background:var(–gold);}
+.sec-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(28px,4vw,48px);font-weight:300;line-height:1.1;margin-bottom:10px;}
+.sec-title em{font-style:italic;color:var(–gold);}
+.back-btn{display:flex;align-items:center;gap:8px;color:rgba(245,240,234,.4);font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:none;border:none;margin-bottom:28px;}
+.back-btn:hover{color:var(–gold);}
+
+/* PRODUCTS */
+.cat-nav{display:flex;gap:7px;margin-bottom:32px;flex-wrap:wrap;}
+.cat-btn{background:transparent;border:1px solid var(–gb);color:rgba(245,240,234,.38);padding:7px 16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;}
+.cat-btn.active,.cat-btn:hover{border-color:var(–gold);color:var(–gold);background:rgba(200,169,110,.05);}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:1024px){.pgrid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){.pgrid{grid-template-columns:1fr 1fr;gap:10px;}}
+.pcard{border:1px solid var(–gb);background:var(–deep);transition:border-color .3s,transform .3s;cursor:pointer;position:relative;}
+.pcard:hover{border-color:rgba(200,169,110,.4);transform:translateY(-3px);}
+.pcard-img{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;overflow:hidden;}
+.pcard-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.pbadge{position:absolute;top:10px;left:10px;background:var(–gold);color:var(–black);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;}
+.pbadge.sale{background:var(–red);left:auto;right:10px;}
+.pcard-info{padding:12px;}
+.pcard-name{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-weight:300;margin-bottom:3px;}
+.pcard-coll{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,234,.3);margin-bottom:7px;}
+.pcard-pr{display:flex;align-items:center;gap:7px;}
+.pcard-price{font-size:14px;color:var(–gold);}
+.pcard-old{font-size:11px;color:rgba(245,240,234,.2);text-decoration:line-through;}
+.pcard-btns{display:flex;gap:6px;margin-top:9px;}
+.btn-addcart{flex:1;background:var(–gold);color:var(–black);border:none;padding:8px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;}
+.btn-addcart:hover{background:var(–gold-light);}
+.btn-ar{background:transparent;border:1px solid rgba(200,169,110,.33);color:var(–gold);padding:8px 10px;font-size:10px;transition:all .3s;white-space:nowrap;}
+.btn-ar:hover{border-color:var(–gold);}
+
+/* PRODUCT DETAIL */
+.pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start;}
+@media(max-width:768px){.pd-grid{grid-template-columns:1fr;}}
+.pd-gallery{position:sticky;top:90px;}
+.pd-main-img{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:110px;border:1px solid var(–gb);overflow:hidden;}
+.pd-main-img img{width:100%;height:100%;object-fit:cover;}
+.pd-thumbs{display:flex;gap:8px;margin-top:8px;}
+.pd-thumb{width:68px;height:88px;background:var(–glass);border:1px solid var(–gb);display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;transition:border-color .3s;overflow:hidden;}
+.pd-thumb:hover,.pd-thumb.active{border-color:var(–gold);}
+.pd-thumb img{width:100%;height:100%;object-fit:cover;}
+.pd-coll{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(–gold);margin-bottom:7px;}
+.pd-name{font-family:‘Cormorant Garamond’,serif;font-size:clamp(26px,3.5vw,42px);font-weight:300;line-height:1.1;margin-bottom:7px;}
+.pd-price{font-family:‘Cormorant Garamond’,serif;font-size:30px;color:var(–gold);line-height:1;}
+.pd-old{font-size:15px;color:rgba(245,240,234,.28);text-decoration:line-through;margin-bottom:20px;}
+.pd-desc{font-size:13px;color:rgba(245,240,234,.5);line-height:1.9;margin-bottom:24px;}
+.pd-stitle{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,234,.33);margin-bottom:9px;}
+.color-opts{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px;}
+.color-opt{width:28px;height:28px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all .2s;}
+.color-opt:hover,.color-opt.sel{border-color:var(–gold);transform:scale(1.15);}
+.size-unit-row{display:flex;gap:7px;margin-bottom:10px;}
+.unit-btn{background:transparent;border:1px solid var(–gb);color:rgba(245,240,234,.4);padding:6px 14px;font-size:11px;transition:all .3s;}
+.unit-btn.active{border-color:var(–gold);color:var(–gold);}
+.size-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.pd-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+.dispatch-note{margin-top:16px;padding:13px;background:var(–glass);border:1px solid var(–gb);font-size:12px;color:rgba(245,240,234,.38);}
+
+/* AR PREVIEW MODAL */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:800;display:none;align-items:center;justify-content:center;padding:20px;}
+.overlay.open{display:flex;}
+.modal{background:var(–deep);border:1px solid var(–gb);width:100%;max-width:460px;max-height:92vh;overflow-y:auto;}
+.modal-hdr{padding:24px 24px 0;display:flex;justify-content:space-between;align-items:center;}
+.modal-hdr h3{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:300;}
+.modal-x{background:none;border:none;color:var(–white);font-size:22px;}
+.modal-body{padding:24px;}
+.ar-box{background:var(–glass);border:1px solid var(–gb);padding:26px;text-align:center;margin:16px 0;}
+.ar-mirror-prev{width:68px;height:108px;border:2px solid var(–gold);margin:0 auto 12px;background:linear-gradient(135deg,rgba(200,169,110,.15),rgba(255,255,255,.05));transition:background .3s,border-color .3s;}
+.ar-coming{font-size:12px;color:rgba(245,240,234,.38);line-height:1.7;}
+.modal-tabs{display:flex;border-bottom:1px solid var(–gb);margin-bottom:20px;}
+.modal-tab{flex:1;padding:12px;background:none;border:none;color:rgba(245,240,234,.33);font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;border-bottom:2px solid transparent;}
+.modal-tab.active{color:var(–gold);border-bottom-color:var(–gold);}
+
+/* CART SIDEBAR */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:700;display:none;}
+.cart-overlay.open{display:block;}
+.cart-side{position:fixed;top:0;right:-420px;width:420px;height:100vh;background:var(–deep);border-left:1px solid var(–gb);z-index:701;transition:right .4s ease;display:flex;flex-direction:column;}
+.cart-side.open{right:0;}
+@media(max-width:480px){.cart-side{width:100%;right:-100%;}}
+.cart-hdr{padding:20px;border-bottom:1px solid var(–gb);display:flex;justify-content:space-between;align-items:center;}
+.cart-hdr h3{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:300;}
+.cart-x{background:none;border:none;color:var(–white);font-size:22px;}
+.cart-items{flex:1;overflow-y:auto;padding:20px;}
+.cart-empty{text-align:center;padding:55px 20px;color:rgba(245,240,234,.28);font-size:13px;}
+.cart-empty-icon{font-size:44px;margin-bottom:14px;}
+.ci{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(–gb);}
+.ci-img{width:62px;height:82px;background:var(–glass);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;overflow:hidden;}
+.ci-img img{width:100%;height:100%;object-fit:cover;}
+.ci-info{flex:1;}
+.ci-name{font-family:‘Cormorant Garamond’,serif;font-size:15px;margin-bottom:3px;}
+.ci-detail{font-size:11px;color:rgba(245,240,234,.32);margin-bottom:6px;}
+.ci-price{font-size:14px;color:var(–gold);}
+.ci-rm{background:none;border:none;color:rgba(245,240,234,.28);font-size:16px;transition:color .3s;}
+.ci-rm:hover{color:var(–red);}
+.cart-ftr{padding:20px;border-top:1px solid var(–gb);}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.cart-total-lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,234,.38);}
+.cart-total-val{font-family:‘Cormorant Garamond’,serif;font-size:24px;color:var(–gold);}
+.btn-checkout{width:100%;background:var(–gold);color:var(–black);border:none;padding:15px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s;}
+.btn-checkout:hover{background:var(–gold-light);}
+.cart-note{font-size:11px;color:rgba(245,240,234,.25);text-align:center;margin-top:10px;}
+
+/* AUTH */
+.auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(–black);padding:20px;}
+.auth-box{background:var(–deep);border:1px solid var(–gb);padding:42px;width:100%;max-width:420px;}
+.auth-box h2{font-family:‘Cormorant Garamond’,serif;font-size:28px;font-weight:300;margin-bottom:6px;}
+.auth-box p{font-size:12px;color:rgba(245,240,234,.35);margin-bottom:28px;}
+.auth-tabs{display:flex;border-bottom:1px solid var(–gb);margin-bottom:24px;}
+.auth-tab{flex:1;padding:12px;background:none;border:none;color:rgba(245,240,234,.33);font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;border-bottom:2px solid transparent;}
+.auth-tab.active{color:var(–gold);border-bottom-color:var(–gold);}
+.auth-switch{text-align:center;margin-top:18px;font-size:12px;color:rgba(245,240,234,.33);}
+.auth-switch a{color:var(–gold);cursor:pointer;}
+.forgot-link{font-size:11px;color:var(–gold);cursor:pointer;display:block;text-align:right;margin-top:5px;}
+
+/* ACCOUNT */
+.acc-grid{display:grid;grid-template-columns:220px 1fr;gap:34px;}
+@media(max-width:768px){.acc-grid{grid-template-columns:1fr;}}
+.acc-sidebar{border:1px solid var(–gb);padding:22px;height:fit-content;position:sticky;top:90px;}
+.acc-name{font-family:‘Cormorant Garamond’,serif;font-size:20px;margin-bottom:3px;}
+.acc-email{font-size:11px;color:rgba(245,240,234,.33);margin-bottom:18px;word-break:break-all;}
+.acc-nav-btn{width:100%;background:none;border:none;color:rgba(245,240,234,.42);text-align:left;padding:9px 10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;display:block;}
+.acc-nav-btn:hover,.acc-nav-btn.active{color:var(–gold);background:rgba(200,169,110,.05);}
+.acc-section{display:none;}
+.acc-section.active{display:block;}
+.acc-section h3{font-family:‘Cormorant Garamond’,serif;font-size:24px;font-weight:300;margin-bottom:20px;}
+.orders-table{width:100%;border-collapse:collapse;}
+.orders-table th,.orders-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(–gb);font-size:12px;}
+.orders-table th{color:rgba(245,240,234,.33);letter-spacing:.1em;text-transform:uppercase;}
+.obadge{display:inline-block;padding:3px 10px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;}
+.o-proc{background:rgba(200,169,110,.12);color:var(–gold);}
+.o-disp{background:rgba(100,150,250,.12);color:#7ab;}
+.o-done{background:rgba(76,175,125,.12);color:var(–green);}
+
+/* BLOG */
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:768px){.bgrid{grid-template-columns:1fr;}}
+.bcard{border:1px solid var(–gb);cursor:pointer;transition:border-color .3s;}
+.bcard:hover{border-color:rgba(200,169,110,.3);}
+.bcard-img{width:100%;height:170px;background:linear-gradient(135deg,#111,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:38px;overflow:hidden;}
+.bcard-img img{width:100%;height:100%;object-fit:cover;}
+.bcard-body{padding:20px;}
+.bdate{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(–gold);margin-bottom:7px;}
+.btitle{font-family:‘Cormorant Garamond’,serif;font-size:17px;font-weight:300;margin-bottom:7px;line-height:1.3;}
+.bexcerpt{font-size:12px;color:rgba(245,240,234,.36);line-height:1.7;}
+
+/* CONTENT PAGES */
+.content-page{max-width:780px;margin:0 auto;padding:100px 60px 80px;}
+@media(max-width:768px){.content-page{padding:80px 24px 60px;}}
+.content-page h1{font-family:‘Cormorant Garamond’,serif;font-size:44px;font-weight:300;margin-bottom:9px;}
+.content-page .cp-sub{font-size:13px;color:rgba(245,240,234,.32);margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(–gb);}
+.content-page h2{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:300;color:var(–gold);margin:30px 0 11px;}
+.content-page p{font-size:13px;color:rgba(245,240,234,.52);line-height:1.9;margin-bottom:13px;}
+.content-page ul{margin:10px 0 16px 22px;}
+.content-page ul li{font-size:13px;color:rgba(245,240,234,.52);line-height:1.8;margin-bottom:6px;}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(–gb);}
+.faq-q{width:100%;background:none;border:none;color:var(–white);text-align:left;padding:17px 0;font-size:14px;font-family:‘Cormorant Garamond’,serif;font-weight:400;display:flex;justify-content:space-between;gap:18px;}
+.faq-q:hover{color:var(–gold);}
+.faq-icon{font-size:18px;transition:transform .3s;flex-shrink:0;}
+.faq-icon.open{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:13px;color:rgba(245,240,234,.42);line-height:1.8;}
+.faq-a.open{max-height:220px;padding-bottom:14px;}
+
+/* FOOTER */
+footer{background:var(–deep);border-top:1px solid var(–gb);padding:60px 60px 30px;}
+@media(max-width:768px){footer{padding:44px 24px 24px;}}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
+@media(max-width:768px){.ftop{grid-template-columns:1fr 1fr;gap:26px;}}
+.fbrand{font-family:‘Cormorant Garamond’,serif;font-size:24px;font-weight:300;letter-spacing:.1em;margin-bottom:10px;}
+.fbrand span{color:var(–gold);}
+.ftagline{font-size:12px;color:rgba(245,240,234,.26);line-height:1.8;max-width:240px;margin-bottom:18px;}
+.fsoc{display:flex;gap:8px;}
+.fsoc a{width:30px;height:30px;border:1px solid var(–gb);display:flex;align-items:center;justify-content:center;color:rgba(245,240,234,.3);font-size:11px;transition:all .3s;}
+.fsoc a:hover{border-color:var(–gold);color:var(–gold);}
+.fcol h4{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(–gold);margin-bottom:14px;}
+.flinks{list-style:none;}
+.flinks li{margin-bottom:8px;}
+.flinks a{font-size:12px;color:rgba(245,240,234,.3);transition:color .3s;cursor:pointer;}
+.flinks a:hover{color:var(–white);}
+.fbot{border-top:1px solid var(–gb);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.fcopy{font-size:11px;color:rgba(245,240,234,.16);}
+&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
+
+&lt;nav&gt;
+  &lt;div class=&quot;nav-logo&quot; onclick=&quot;location.href='index.html'&quot;&gt;Kanch&lt;span&gt;wale&lt;/span&gt;&lt;/div&gt;
+  &lt;ul class=&quot;nav-links&quot; id=&quot;navlinks&quot;&gt;
+    &lt;li&gt;&lt;a onclick=&quot;showView('shop')&quot;&gt;Shop&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;showView('blog-list')&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;showView('about')&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;showView('faq')&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;location.href='index.html'&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;nav-right&quot;&gt;
+    &lt;button class=&quot;nav-icon&quot; onclick=&quot;openCart()&quot;&gt;🛒&lt;span class=&quot;cart-badge&quot; id=&quot;cart-badge&quot;&gt;0&lt;/span&gt;&lt;/button&gt;
+    &lt;button class=&quot;nav-login&quot; id=&quot;nav-auth&quot; onclick=&quot;handleAuthBtn()&quot;&gt;Login&lt;/button&gt;
+    &lt;button class=&quot;hamburger&quot; onclick=&quot;document.getElementById('navlinks').classList.toggle('open')&quot;&gt;☰&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- VIEWS --&gt;
+
+&lt;!-- SHOP VIEW --&gt;
+
+&lt;div class=&quot;view active&quot; id=&quot;view-shop&quot;&gt;
+  &lt;div class=&quot;page&quot;&gt;
+    &lt;div class=&quot;sec-tag&quot;&gt;All Products&lt;/div&gt;
+    &lt;h2 class=&quot;sec-title&quot; style=&quot;margin-bottom:28px;&quot;&gt;Our &lt;em&gt;Collection&lt;/em&gt;&lt;/h2&gt;
+    &lt;div class=&quot;cat-nav&quot; id=&quot;cat-nav&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;pgrid&quot; id=&quot;all-grid&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;shop-footer&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- PRODUCT DETAIL --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-product&quot;&gt;
+  &lt;div class=&quot;page&quot; id=&quot;pd-content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- BLOG LIST --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-blog-list&quot;&gt;
+  &lt;div class=&quot;page&quot;&gt;
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('shop')&quot;&gt;← Back&lt;/button&gt;
+    &lt;div class=&quot;sec-tag&quot;&gt;Journal&lt;/div&gt;
+    &lt;h2 class=&quot;sec-title&quot; style=&quot;margin-bottom:44px;&quot;&gt;Our &lt;em&gt;Blog&lt;/em&gt;&lt;/h2&gt;
+    &lt;div class=&quot;bgrid&quot; id=&quot;full-blog-grid&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;blog-footer&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- BLOG POST --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-blog-post&quot;&gt;
+  &lt;div class=&quot;page-narrow&quot; id=&quot;blog-post-content&quot;&gt;
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('blog-list')&quot;&gt;← Back to Blog&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ABOUT --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-about&quot;&gt;
+  &lt;div class=&quot;content-page&quot;&gt;
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('shop')&quot;&gt;← Back&lt;/button&gt;
+    &lt;h1&gt;About &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Kanchwale&lt;/em&gt;&lt;/h1&gt;
+    &lt;p class=&quot;cp-sub&quot;&gt;Mumbai's finest glass and mirror manufacturer&lt;/p&gt;
+    &lt;div id=&quot;about-content&quot;&gt;
+      &lt;h2&gt;Our Story&lt;/h2&gt;
+      &lt;p&gt;Kanchwale is Mumbai's finest glass and mirror manufacturer. Founded with a passion for precision and design, we craft every piece in our own facility — no middlemen, no compromises. What started as a small glass workshop in Mumbai has grown into a brand that redefines what Indian glass manufacturing can be.&lt;/p&gt;
+      &lt;h2&gt;Our Promise&lt;/h2&gt;
+      &lt;p&gt;When you order from Kanchwale, you're ordering directly from the manufacturer. Better quality control, faster customisation, and prices that reflect real value — not retailer markups.&lt;/p&gt;
+      &lt;h2&gt;Why Kanchwale?&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Own manufacturing facility in Mumbai&lt;/li&gt;
+        &lt;li&gt;Zero middlemen — factory directly to your home&lt;/li&gt;
+        &lt;li&gt;Full customisation at factory level&lt;/li&gt;
+        &lt;li&gt;Pan-India delivery with zero-damage packaging&lt;/li&gt;
+        &lt;li&gt;Coming soon: AR try-on technology&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Contact Us&lt;/h2&gt;
+      &lt;p&gt;📧 kanchwale.in@gmail.com&lt;br&gt;📱 &lt;a href=&quot;https://wa.me/919879282863&quot; style=&quot;color:var(--gold);&quot;&gt;+91 98792 82863 (WhatsApp)&lt;/a&gt;&lt;br&gt;📍 Mumbai, Maharashtra, India&lt;br&gt;🌐 www.kanchwale.com&lt;br&gt;📸 @kanchwale.official&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;about-footer&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- FAQ --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-faq&quot;&gt;
+  &lt;div class=&quot;content-page&quot;&gt;
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('shop')&quot;&gt;← Back&lt;/button&gt;
+    &lt;h1&gt;Frequently Asked &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Questions&lt;/em&gt;&lt;/h1&gt;
+    &lt;p class=&quot;cp-sub&quot;&gt;Everything you need to know about ordering from Kanchwale.&lt;/p&gt;
+    &lt;div id=&quot;faq-list&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;faq-footer&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- TERMS --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-terms&quot;&gt;
+  &lt;div class=&quot;content-page&quot;&gt;
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('shop')&quot;&gt;← Back&lt;/button&gt;
+    &lt;h1&gt;Terms &amp; &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Conditions&lt;/em&gt;&lt;/h1&gt;
+    &lt;p class=&quot;cp-sub&quot; id=&quot;terms-sub&quot;&gt;Last updated: 2025&lt;/p&gt;
+    &lt;div id=&quot;terms-content&quot;&gt;
+      &lt;h2&gt;Acceptance of Terms&lt;/h2&gt;&lt;p&gt;By using Kanchwale's website and services, you agree to these terms and conditions.&lt;/p&gt;
+      &lt;h2&gt;Products &amp; Customisation&lt;/h2&gt;&lt;p&gt;All products are manufactured in Mumbai. Custom orders require 50% advance payment. Final dimensions may vary by ±5mm.&lt;/p&gt;
+      &lt;h2&gt;Intellectual Property&lt;/h2&gt;&lt;p&gt;All designs, photographs, and content are the exclusive property of Kanchwale. Unauthorised use is prohibited.&lt;/p&gt;
+      &lt;h2&gt;Liability&lt;/h2&gt;&lt;p&gt;Kanchwale's liability is limited to the value of the product purchased.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- SHIPPING --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-shipping&quot;&gt;
+  &lt;div class=&quot;content-page&quot;&gt;
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('shop')&quot;&gt;← Back&lt;/button&gt;
+    &lt;h1&gt;Shipping &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Policy&lt;/em&gt;&lt;/h1&gt;
+    &lt;p class=&quot;cp-sub&quot;&gt;We deliver pan-India with care.&lt;/p&gt;
+    &lt;div id=&quot;shipping-content&quot;&gt;
+      &lt;h2&gt;Delivery Timeframes&lt;/h2&gt;&lt;p&gt;Standard products: 5–7 business days. Custom products: 10–15 business days after order confirmation.&lt;/p&gt;
+      &lt;h2&gt;Packaging&lt;/h2&gt;&lt;p&gt;All items are packed in honeycomb padding within wooden crates. Zero-damage delivery guaranteed.&lt;/p&gt;
+      &lt;h2&gt;Shipping Charges&lt;/h2&gt;&lt;p&gt;Free shipping on orders above ₹5,000. Charges apply for remote locations — calculated at checkout.&lt;/p&gt;
+      &lt;h2&gt;Tracking&lt;/h2&gt;&lt;p&gt;Tracking details shared via WhatsApp and email once dispatched.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- RETURNS --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-returns&quot;&gt;
+  &lt;div class=&quot;content-page&quot;&gt;
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('shop')&quot;&gt;← Back&lt;/button&gt;
+    &lt;h1&gt;Return &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Policy&lt;/em&gt;&lt;/h1&gt;
+    &lt;p class=&quot;cp-sub&quot;&gt;Your satisfaction is our priority.&lt;/p&gt;
+    &lt;div id=&quot;returns-content&quot;&gt;
+      &lt;h2&gt;Returns&lt;/h2&gt;&lt;p&gt;We accept returns within 7 days of delivery for standard products, unused and in original packaging.&lt;/p&gt;
+      &lt;h2&gt;Custom Orders&lt;/h2&gt;&lt;p&gt;Custom-made products cannot be returned unless they arrive damaged or defective.&lt;/p&gt;
+      &lt;h2&gt;Damaged Items&lt;/h2&gt;&lt;p&gt;Photograph immediately and WhatsApp us within 24 hours. We replace free of charge.&lt;/p&gt;
+      &lt;h2&gt;Refunds&lt;/h2&gt;&lt;p&gt;Processed within 7–10 business days to your original payment method.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CUSTOMISATION --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-customisation&quot;&gt;
+  &lt;div class=&quot;content-page&quot;&gt;
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('shop')&quot;&gt;← Back&lt;/button&gt;
+    &lt;h1&gt;Customisation &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Guide&lt;/em&gt;&lt;/h1&gt;
+    &lt;p class=&quot;cp-sub&quot;&gt;Everything you can personalise at factory level.&lt;/p&gt;
+    &lt;div id=&quot;custom-content&quot;&gt;
+      &lt;h2&gt;What Can Be Customised?&lt;/h2&gt;
+      &lt;ul&gt;&lt;li&gt;Frame colour — 8 standard + custom PVD finishes&lt;/li&gt;&lt;li&gt;Mirror size — any W×L in inches or millimetres&lt;/li&gt;&lt;li&gt;Glass type — clear, tinted, smoked, coloured&lt;/li&gt;&lt;li&gt;Frame material — SS, wooden, brass inlay&lt;/li&gt;&lt;li&gt;Shape — rectangle, circle, arch, or fully custom&lt;/li&gt;&lt;/ul&gt;
+      &lt;h2&gt;How to Order Custom&lt;/h2&gt;&lt;p&gt;WhatsApp us at +91 98792 82863 with your requirements. We'll send a quote within 2 hours.&lt;/p&gt;
+      &lt;h2&gt;Lead Time&lt;/h2&gt;&lt;p&gt;Custom orders take 10–15 business days after 50% advance payment.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- LOGIN --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-login&quot;&gt;
+  &lt;div class=&quot;auth-wrap&quot;&gt;
+    &lt;div class=&quot;auth-box&quot;&gt;
+      &lt;h2&gt;Welcome to &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Kanchwale&lt;/em&gt;&lt;/h2&gt;
+      &lt;p&gt;Login or create an account to track orders and save your preferences.&lt;/p&gt;
+      &lt;div class=&quot;auth-tabs&quot;&gt;
+        &lt;button class=&quot;auth-tab active&quot; id=&quot;tab-login&quot; onclick=&quot;switchAuthTab('login')&quot;&gt;Login&lt;/button&gt;
+        &lt;button class=&quot;auth-tab&quot; id=&quot;tab-signup&quot; onclick=&quot;switchAuthTab('signup')&quot;&gt;Sign Up&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;!-- LOGIN FORM --&gt;
+      &lt;div id=&quot;login-form&quot;&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Email&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;l-email&quot; type=&quot;email&quot; placeholder=&quot;your@email.com&quot; onkeydown=&quot;if(event.key==='Enter')doLogin()&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Password&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;l-pass&quot; type=&quot;password&quot; placeholder=&quot;••••••••&quot; onkeydown=&quot;if(event.key==='Enter')doLogin()&quot;&gt;&lt;a class=&quot;forgot-link&quot; onclick=&quot;switchAuthTab('forgot')&quot;&gt;Forgot password?&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-err&quot; id=&quot;l-err&quot; style=&quot;display:none;&quot;&gt;&lt;/div&gt;
+        &lt;button class=&quot;btn-g btn-full&quot; onclick=&quot;doLogin()&quot; style=&quot;margin-top:8px;&quot;&gt;Login&lt;/button&gt;
+        &lt;div class=&quot;auth-switch&quot;&gt;New here? &lt;a onclick=&quot;switchAuthTab('signup')&quot;&gt;Create account&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- SIGNUP FORM --&gt;
+      &lt;div id=&quot;signup-form&quot; style=&quot;display:none;&quot;&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Full Name&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;s-name&quot; type=&quot;text&quot; placeholder=&quot;Your full name&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Email&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;s-email&quot; type=&quot;email&quot; placeholder=&quot;your@email.com&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Phone&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;s-phone&quot; type=&quot;tel&quot; placeholder=&quot;+91 XXXXX XXXXX&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Password (min 6 chars)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;s-pass&quot; type=&quot;password&quot; placeholder=&quot;••••••••&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-err&quot; id=&quot;s-err&quot; style=&quot;display:none;&quot;&gt;&lt;/div&gt;
+        &lt;button class=&quot;btn-g btn-full&quot; onclick=&quot;doSignup()&quot; style=&quot;margin-top:8px;&quot;&gt;Create Account&lt;/button&gt;
+        &lt;div class=&quot;auth-switch&quot;&gt;Already registered? &lt;a onclick=&quot;switchAuthTab('login')&quot;&gt;Login&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- FORGOT FORM --&gt;
+      &lt;div id=&quot;forgot-form&quot; style=&quot;display:none;&quot;&gt;
+        &lt;p style=&quot;font-size:13px;color:rgba(245,240,234,.4);margin-bottom:18px;&quot;&gt;Enter your email and we'll send a reset link to your inbox.&lt;/p&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Email&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;f-email&quot; type=&quot;email&quot; placeholder=&quot;your@email.com&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-ok&quot; id=&quot;f-ok&quot; style=&quot;display:none;&quot;&gt;Reset link sent! Check your inbox.&lt;/div&gt;
+        &lt;button class=&quot;btn-g btn-full&quot; onclick=&quot;doForgot()&quot; style=&quot;margin-top:8px;&quot;&gt;Send Reset Link&lt;/button&gt;
+        &lt;div class=&quot;auth-switch&quot;&gt;&lt;a onclick=&quot;switchAuthTab('login')&quot;&gt;← Back to Login&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ACCOUNT --&gt;
+
+&lt;div class=&quot;view&quot; id=&quot;view-account&quot;&gt;
+  &lt;div class=&quot;page&quot;&gt;
+    &lt;h2 style=&quot;font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;margin-bottom:28px;&quot;&gt;My &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Account&lt;/em&gt;&lt;/h2&gt;
+    &lt;div class=&quot;acc-grid&quot;&gt;
+      &lt;div class=&quot;acc-sidebar&quot;&gt;
+        &lt;div class=&quot;acc-name&quot; id=&quot;acc-name&quot;&gt;Welcome&lt;/div&gt;
+        &lt;div class=&quot;acc-email&quot; id=&quot;acc-email&quot;&gt;&lt;/div&gt;
+        &lt;button class=&quot;acc-nav-btn active&quot; onclick=&quot;switchAccTab('orders',this)&quot;&gt;📦 My Orders&lt;/button&gt;
+        &lt;button class=&quot;acc-nav-btn&quot; onclick=&quot;switchAccTab('profile',this)&quot;&gt;👤 Profile&lt;/button&gt;
+        &lt;button class=&quot;acc-nav-btn&quot; onclick=&quot;doLogout()&quot; style=&quot;color:var(--red);margin-top:12px;&quot;&gt;🚪 Logout&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;div class=&quot;acc-section active&quot; id=&quot;acc-orders&quot;&gt;
+          &lt;h3&gt;Order History&lt;/h3&gt;
+          &lt;div id=&quot;orders-list&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;acc-section&quot; id=&quot;acc-profile&quot;&gt;
+          &lt;h3&gt;My Profile&lt;/h3&gt;
+          &lt;div style=&quot;max-width:380px;&quot;&gt;
+            &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Full Name&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;p-name&quot; type=&quot;text&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Email&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;p-email&quot; type=&quot;email&quot; readonly style=&quot;opacity:.5;&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Phone&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;p-phone&quot; type=&quot;tel&quot;&gt;&lt;/div&gt;
+            &lt;button class=&quot;btn-g&quot; onclick=&quot;saveProfile()&quot;&gt;Save Changes&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;acc-footer&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- AR MODAL --&gt;
+
+&lt;div class=&quot;overlay&quot; id=&quot;ar-overlay&quot;&gt;
+  &lt;div class=&quot;modal&quot; style=&quot;max-width:500px;&quot;&gt;
+    &lt;div class=&quot;modal-hdr&quot;&gt;
+      &lt;h3 id=&quot;ar-modal-title&quot;&gt;Try in Your Room&lt;/h3&gt;
+      &lt;button class=&quot;modal-x&quot; onclick=&quot;closeArModal()&quot;&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+      &lt;div class=&quot;ar-box&quot;&gt;
+        &lt;div class=&quot;ar-mirror-prev&quot; id=&quot;ar-prev-mirror&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;ar-coming&quot;&gt;📱 Full AR wall placement coming soon&lt;br&gt;Currently in development for iOS &amp; Android&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;ar-color-wrap&quot;&gt;
+        &lt;div class=&quot;form-label&quot;&gt;Frame Colour&lt;/div&gt;
+        &lt;div class=&quot;color-opts&quot; id=&quot;ar-colors&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;ar-size-wrap&quot; style=&quot;margin-top:18px;display:none;&quot;&gt;
+        &lt;div class=&quot;form-label&quot;&gt;Custom Size&lt;/div&gt;
+        &lt;div class=&quot;size-unit-row&quot;&gt;
+          &lt;button class=&quot;unit-btn active&quot; onclick=&quot;setUnit('inch',this)&quot;&gt;Inch&lt;/button&gt;
+          &lt;button class=&quot;unit-btn&quot; onclick=&quot;setUnit('mm',this)&quot;&gt;mm&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;size-grid&quot;&gt;
+          &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Width (W)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;ar-w&quot; type=&quot;number&quot; placeholder=&quot;24&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Height (L)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;ar-l&quot; type=&quot;number&quot; placeholder=&quot;36&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;unit-hint&quot; style=&quot;font-size:11px;color:rgba(245,240,234,.28);margin-top:-8px;&quot;&gt;Size in inches&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div style=&quot;display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;&quot;&gt;
+        &lt;button class=&quot;btn-g&quot; onclick=&quot;addFromArModal()&quot; style=&quot;flex:1;&quot;&gt;Add to Cart&lt;/button&gt;
+        &lt;a class=&quot;btn-o&quot; href=&quot;https://wa.me/919879282863?text=Hi!%20I%20want%20a%20custom%20mirror.&quot; target=&quot;_blank&quot; style=&quot;flex:1;text-align:center;padding:13px;&quot;&gt;💬 WhatsApp Custom&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CART SIDEBAR --&gt;
+
+&lt;div class=&quot;cart-overlay&quot; id=&quot;cart-overlay&quot; onclick=&quot;closeCart()&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cart-side&quot; id=&quot;cart-side&quot;&gt;
+  &lt;div class=&quot;cart-hdr&quot;&gt;
+    &lt;h3&gt;Your Cart&lt;/h3&gt;
+    &lt;button class=&quot;cart-x&quot; onclick=&quot;closeCart()&quot;&gt;✕&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;cart-items&quot; id=&quot;cart-items-list&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;cart-ftr&quot;&gt;
+    &lt;div class=&quot;cart-total-row&quot;&gt;
+      &lt;span class=&quot;cart-total-lbl&quot;&gt;Total&lt;/span&gt;
+      &lt;span class=&quot;cart-total-val&quot; id=&quot;cart-total&quot;&gt;₹0&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;btn-checkout&quot; onclick=&quot;doCheckout()&quot;&gt;Place Order via WhatsApp&lt;/button&gt;
+    &lt;div class=&quot;cart-note&quot;&gt;We'll confirm your order on WhatsApp&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+// ── DB ───────────────────────────────────────────────────
+function db(){return JSON.parse(localStorage.getItem('kwDB')||'{}');}
+function sdb(d){localStorage.setItem('kwDB',JSON.stringify(d));}
+
+function defaultProducts(){
+  return [
+    {id:1,name:'Orbit Statement Mirror',collection:'Orbit',price:18000,discount:15000,emoji:'🪞',desc:'Asymmetric floating-frame mirror with hairline stainless steel. A futuristic centrepiece for any room.',isNew:true,customisable:true,dispatch:10,colors:[{name:'Gold',hex:'#c8a96e'},{name:'Matte Black',hex:'#1a1a1a'},{name:'Chrome',hex:'#c0c0c0'}],colorsOn:true},
+    {id:2,name:'Haveli Arch Mirror',collection:'Haveli',price:12000,discount:null,emoji:'🪟',desc:'Jali-inspired arched frame with brass inlay. Modern Indian luxury that commands attention.',isNew:true,customisable:true,dispatch:12,colors:[{name:'Brass',hex:'#b5943a'},{name:'Bronze',hex:'#8b6914'}],colorsOn:true},
+    {id:3,name:'Void Circle Mirror',collection:'Void',price:8500,discount:7500,emoji:'⭕',desc:'Frameless circular mirror. Pure, minimal, and absolutely perfect.',isNew:false,customisable:true,dispatch:7,colors:[],colorsOn:false},
+    {id:4,name:'Nova LED Smart Mirror',collection:'Nova',price:22000,discount:null,emoji:'💡',desc:'Touch-sensor LED with warm/cool toggle, anti-fog coating, and USB charging port.',isNew:true,customisable:true,dispatch:14,colors:[{name:'Gold Frame',hex:'#c8a96e'},{name:'Black Frame',hex:'#1a1a1a'}],colorsOn:true},
+    {id:5,name:'Prism Tinted Mirror',collection:'Prism',price:9500,discount:8000,emoji:'🔮',desc:'Sage green tinted glass. Bold, Instagram-native design for fearless spaces.',isNew:false,customisable:true,dispatch:10,colors:[{name:'Sage Green',hex:'#7d9c7d'},{name:'Blush Pink',hex:'#d4a0a0'},{name:'Smoked',hex:'#555'}],colorsOn:true},
+    {id:6,name:'Shard Wall Installation',collection:'Shard',price:35000,discount:null,emoji:'🔱',desc:'Multi-panel geometric mirror wall installation. More art than mirror.',isNew:false,customisable:true,dispatch:15,colors:[{name:'Silver',hex:'#c0c0c0'},{name:'Gold',hex:'#c8a96e'}],colorsOn:true}
+  ];
+}
+
+function getProducts(){
+  const d=db();
+  return d.products&amp;&amp;d.products.length?d.products:defaultProducts();
+}
+
+// ── INIT ─────────────────────────────────────────────────
+window.onload=()=&gt;{
+  checkUrlParams();
+  updateCartBadge();
+  updateNavAuth();
+};
+
+function checkUrlParams(){
+  const p=new URLSearchParams(location.search);
+  const hash=location.hash.replace('#','');
+  if(p.get('product')){openProduct(parseInt(p.get('product')),p.get('ar')==='1');return;}
+  if(p.get('cat')){showView('shop');renderShop(p.get('cat'));return;}
+  if(p.get('blog')){openBlogPost(parseInt(p.get('blog')));return;}
+  const views=['about','faq','terms','shipping','returns','customisation','login','account','blog'];
+  if(views.includes(hash)){
+    if(hash==='blog'){showView('blog-list');renderBlogList();return;}
+    showView(hash);
+    if(hash==='account')initAccount();
+    if(hash==='faq')renderFaq();
+    if(hash==='login')switchAuthTab('login');
+    return;
+  }
+  showView('shop');
+  renderShop('all');
+  if(hash==='cart')openCart();
+}
+
+// ── VIEWS ────────────────────────────────────────────────
+function showView(name){
+  document.querySelectorAll('.view').forEach(v=&gt;v.classList.remove('active'));
+  const v=document.getElementById('view-'+name);
+  if(v){v.classList.add('active');window.scrollTo(0,0);}
+  insertFooter(name);
+}
+
+function insertFooter(viewName){
+  const noFooter=['login'];
+  if(noFooter.includes(viewName))return;
+  const footerHTML=`&lt;footer&gt;&lt;div class=&quot;ftop&quot;&gt;&lt;div&gt;&lt;div class=&quot;fbrand&quot;&gt;Kanch&lt;span&gt;wale&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;ftagline&quot;&gt;India's finest glass manufacturer. Made in Mumbai with precision.&lt;/p&gt;&lt;div class=&quot;fsoc&quot;&gt;&lt;a href=&quot;https://instagram.com/kanchwale.official&quot; target=&quot;_blank&quot;&gt;IG&lt;/a&gt;&lt;a href=&quot;https://wa.me/919879282863&quot; target=&quot;_blank&quot;&gt;WA&lt;/a&gt;&lt;a href=&quot;mailto:kanchwale.in@gmail.com&quot;&gt;✉&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;fcol&quot;&gt;&lt;h4&gt;Collections&lt;/h4&gt;&lt;ul class=&quot;flinks&quot;&gt;&lt;li&gt;&lt;a onclick=&quot;location.href='shop.html?cat=Orbit'&quot;&gt;Orbit&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;location.href='shop.html?cat=Haveli'&quot;&gt;Haveli&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;location.href='shop.html?cat=Void'&quot;&gt;Void&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;location.href='shop.html?cat=Prism'&quot;&gt;Prism&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;location.href='shop.html?cat=Nova'&quot;&gt;Nova&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class=&quot;fcol&quot;&gt;&lt;h4&gt;Info&lt;/h4&gt;&lt;ul class=&quot;flinks&quot;&gt;&lt;li&gt;&lt;a onclick=&quot;showView('about')&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;showView('faq')&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;showView('terms')&quot;&gt;Terms&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class=&quot;fcol&quot;&gt;&lt;h4&gt;Support&lt;/h4&gt;&lt;ul class=&quot;flinks&quot;&gt;&lt;li&gt;&lt;a onclick=&quot;showView('shipping')&quot;&gt;Shipping&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;showView('returns')&quot;&gt;Returns&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;showView('customisation')&quot;&gt;Customisation&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://wa.me/919879282863&quot; target=&quot;_blank&quot;&gt;WhatsApp Us&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;fbot&quot;&gt;&lt;div class=&quot;fcopy&quot;&gt;© 2025 Kanchwale. All rights reserved.&lt;/div&gt;&lt;div style=&quot;font-size:11px;color:rgba(245,240,234,.16);&quot;&gt;Made in Mumbai&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;`;
+  const targets=['shop-footer','blog-footer','about-footer','faq-footer','acc-footer'];
+  targets.forEach(id=&gt;{const el=document.getElementById(id);if(el&amp;&amp;!el.innerHTML)el.innerHTML=footerHTML;});
+}
+
+// ── SHOP ─────────────────────────────────────────────────
+function renderShop(filter){
+  filter=filter||'all';
+  const prods=getProducts();
+  const cats=['All',...new Set(prods.map(p=&gt;p.collection))];
+  const nav=document.getElementById('cat-nav');
+  if(nav)nav.innerHTML=cats.map(c=&gt;`&lt;button class=&quot;cat-btn ${(filter==='all'&amp;&amp;c==='All')||(filter===c)?'active':''}&quot; onclick=&quot;renderShop('${c}')&quot;&gt;${c}&lt;/button&gt;`).join('');
+  const grid=document.getElementById('all-grid');
+  const filtered=filter==='all'||filter==='All'?prods:prods.filter(p=&gt;p.collection===filter);
+  grid.innerHTML=filtered.map(pCardHTML).join('');
+}
+
+function pCardHTML(p){
+  const pr=p.discount?`&lt;span class=&quot;pcard-price&quot;&gt;₹${p.discount.toLocaleString()}&lt;/span&gt;&lt;span class=&quot;pcard-old&quot;&gt;₹${p.price.toLocaleString()}&lt;/span&gt;`:`&lt;span class=&quot;pcard-price&quot;&gt;₹${p.price.toLocaleString()}&lt;/span&gt;`;
+  return `&lt;div class=&quot;pcard&quot; onclick=&quot;openProduct(${p.id})&quot;&gt;
+    ${p.isNew?'&lt;div class=&quot;pbadge&quot;&gt;New&lt;/div&gt;':''}
+    ${p.discount?'&lt;div class=&quot;pbadge sale&quot;&gt;Sale&lt;/div&gt;':''}
+    &lt;div class=&quot;pcard-img&quot;&gt;${p.emoji||'🪞'}&lt;/div&gt;
+    &lt;div class=&quot;pcard-info&quot;&gt;
+      &lt;div class=&quot;pcard-name&quot;&gt;${p.name}&lt;/div&gt;
+      &lt;div class=&quot;pcard-coll&quot;&gt;${p.collection} Collection&lt;/div&gt;
+      &lt;div class=&quot;pcard-pr&quot;&gt;${pr}&lt;/div&gt;
+      &lt;div class=&quot;pcard-btns&quot;&gt;
+        &lt;button class=&quot;btn-ar&quot; onclick=&quot;event.stopPropagation();openArModal(${p.id})&quot;&gt;📱 Try AR&lt;/button&gt;
+        &lt;button class=&quot;btn-addcart&quot; onclick=&quot;event.stopPropagation();addToCart(${p.id})&quot;&gt;Add to Cart&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;`;
+}
+
+// ── PRODUCT DETAIL ────────────────────────────────────────
+let selColor=null, selUnit='inch', currentProdId=null;
+
+function openProduct(id, openAr=false){
+  const p=getProducts().find(x=&gt;x.id===id);
+  if(!p)return;
+  currentProdId=id;
+  selColor=null;
+  const pr=p.discount?`&lt;div class=&quot;pd-price&quot;&gt;₹${p.discount.toLocaleString()}&lt;/div&gt;&lt;div class=&quot;pd-old&quot;&gt;₹${p.price.toLocaleString()}&lt;/div&gt;`:`&lt;div class=&quot;pd-price&quot;&gt;₹${p.price.toLocaleString()}&lt;/div&gt;`;
+  const colorHTML=p.colorsOn&amp;&amp;p.colors.length?`
+    &lt;div class=&quot;pd-stitle&quot; style=&quot;margin-top:18px;&quot;&gt;Frame Colour&lt;/div&gt;
+    &lt;div class=&quot;color-opts&quot; id=&quot;pd-colors&quot;&gt;
+      ${p.colors.map(c=&gt;`&lt;div class=&quot;color-opt&quot; title=&quot;${c.name}&quot; style=&quot;background:${c.hex};&quot; onclick=&quot;selectPdColor(this,'${c.name}','${c.hex}')&quot;&gt;&lt;/div&gt;`).join('')}
+    &lt;/div&gt;`:'';
+  const sizeHTML=p.customisable?`
+    &lt;div class=&quot;pd-stitle&quot; style=&quot;margin-top:18px;&quot;&gt;Custom Size (optional)&lt;/div&gt;
+    &lt;div class=&quot;size-unit-row&quot;&gt;
+      &lt;button class=&quot;unit-btn active&quot; onclick=&quot;setUnit('inch',this)&quot;&gt;Inch&lt;/button&gt;
+      &lt;button class=&quot;unit-btn&quot; onclick=&quot;setUnit('mm',this)&quot;&gt;mm&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;size-grid&quot;&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Width (W)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;pd-w&quot; type=&quot;number&quot; placeholder=&quot;24&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Height (L)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;pd-l&quot; type=&quot;number&quot; placeholder=&quot;36&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;pd-unit-hint&quot; style=&quot;font-size:11px;color:rgba(245,240,234,.26);margin-top:-12px;margin-bottom:16px;&quot;&gt;Size in inches — leave blank for standard size&lt;/div&gt;`:'';
+
+  document.getElementById('pd-content').innerHTML=`
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('shop');renderShop('all')&quot;&gt;← Back to Shop&lt;/button&gt;
+    &lt;div class=&quot;pd-grid&quot;&gt;
+      &lt;div class=&quot;pd-gallery&quot;&gt;
+        &lt;div class=&quot;pd-main-img&quot;&gt;${p.emoji||'🪞'}&lt;/div&gt;
+        &lt;div class=&quot;pd-thumbs&quot;&gt;
+          &lt;div class=&quot;pd-thumb active&quot;&gt;${p.emoji||'🪞'}&lt;/div&gt;
+          &lt;div class=&quot;pd-thumb&quot; style=&quot;font-size:20px;&quot;&gt;🔲&lt;/div&gt;
+          &lt;div class=&quot;pd-thumb&quot; style=&quot;font-size:20px;&quot;&gt;✨&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;div class=&quot;pd-coll&quot;&gt;${p.collection} Collection&lt;/div&gt;
+        &lt;div class=&quot;pd-name&quot;&gt;${p.name}&lt;/div&gt;
+        ${pr}
+        &lt;p class=&quot;pd-desc&quot;&gt;${p.desc}&lt;/p&gt;
+        ${colorHTML}
+        ${sizeHTML}
+        &lt;div class=&quot;pd-actions&quot;&gt;
+          &lt;button class=&quot;btn-g&quot; onclick=&quot;addToCartDetail()&quot;&gt;Add to Cart&lt;/button&gt;
+          &lt;button class=&quot;btn-o&quot; onclick=&quot;openArModal(${p.id})&quot;&gt;📱 Try in AR&lt;/button&gt;
+          &lt;a class=&quot;btn-wa&quot; href=&quot;https://wa.me/919879282863?text=Hi%20Kanchwale!%20I%27d%20like%20to%20order%3A%20${encodeURIComponent(p.name)}&quot; target=&quot;_blank&quot;&gt;💬 WhatsApp&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;dispatch-note&quot;&gt;📦 Dispatches in ${p.dispatch||7}–${(p.dispatch||7)+3} business days · Wooden crate packaging · Zero damage guarantee&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;`;
+  showView('product');
+  if(openAr)setTimeout(()=&gt;openArModal(id),400);
+}
+
+function selectPdColor(el,name,hex){
+  document.querySelectorAll('#pd-colors .color-opt').forEach(c=&gt;c.classList.remove('sel'));
+  el.classList.add('sel');
+  selColor={name,hex};
+}
+
+function setUnit(unit,btn){
+  selUnit=unit;
+  document.querySelectorAll('.unit-btn').forEach(b=&gt;b.classList.remove('active'));
+  btn.classList.add('active');
+  const h1=document.getElementById('pd-unit-hint');
+  const h2=document.getElementById('unit-hint');
+  if(h1)h1.textContent=`Size in ${unit} — leave blank for standard size`;
+  if(h2)h2.textContent=`Size in ${unit}`;
+}
+
+function addToCartDetail(){
+  const p=getProducts().find(x=&gt;x.id===currentProdId);
+  if(!p)return;
+  const w=document.getElementById('pd-w')?.value;
+  const l=document.getElementById('pd-l')?.value;
+  const cart=getCart();
+  cart.push({
+    id:p.id,name:p.name,price:p.discount||p.price,emoji:p.emoji,qty:1,
+    collection:p.collection,
+    customColor:selColor?selColor.name:null,
+    customSize:w&amp;&amp;l?`${w}×${l} ${selUnit}`:null
+  });
+  saveCart(cart);updateCartBadge();
+  toast('Added to cart — '+p.name);
+}
+
+// ── AR MODAL ─────────────────────────────────────────────
+let arProd=null, arColor=null, arUnit='inch';
+
+function openArModal(id){
+  const p=getProducts().find(x=&gt;x.id===id);
+  if(!p)return;
+  arProd=p;arColor=null;
+  document.getElementById('ar-modal-title').textContent='Try in Your Room — '+p.name;
+  const cs=document.getElementById('ar-color-wrap');
+  const colorsEl=document.getElementById('ar-colors');
+  if(p.colorsOn&amp;&amp;p.colors.length){
+    cs.style.display='block';
+    colorsEl.innerHTML=p.colors.map(c=&gt;`&lt;div class=&quot;color-opt&quot; title=&quot;${c.name}&quot; style=&quot;background:${c.hex};&quot; onclick=&quot;selectArColor(this,'${c.name}','${c.hex}')&quot;&gt;&lt;/div&gt;`).join('');
+  }else{cs.style.display='none';}
+  document.getElementById('ar-size-wrap').style.display=p.customisable?'block':'none';
+  document.getElementById('ar-prev-mirror').style.cssText='';
+  document.getElementById('ar-overlay').classList.add('open');
+}
+
+function closeArModal(){document.getElementById('ar-overlay').classList.remove('open');}
+
+function selectArColor(el,name,hex){
+  document.querySelectorAll('#ar-colors .color-opt').forEach(c=&gt;c.classList.remove('sel'));
+  el.classList.add('sel');arColor={name,hex};
+  const m=document.getElementById('ar-prev-mirror');
+  m.style.background=`linear-gradient(135deg,${hex}44,${hex}11)`;
+  m.style.borderColor=hex;
+}
+
+function addFromArModal(){
+  if(!arProd)return;
+  const w=document.getElementById('ar-w')?.value;
+  const l=document.getElementById('ar-l')?.value;
+  const cart=getCart();
+  cart.push({
+    id:arProd.id,name:arProd.name,price:arProd.discount||arProd.price,
+    emoji:arProd.emoji,qty:1,collection:arProd.collection,
+    customColor:arColor?arColor.name:null,
+    customSize:w&amp;&amp;l?`${w}×${l} ${arUnit}`:null
+  });
+  saveCart(cart);updateCartBadge();closeArModal();
+  toast('Added to cart!');
+}
+
+// ── CART ─────────────────────────────────────────────────
+function getCart(){return JSON.parse(localStorage.getItem('kwCart')||'[]');}
+function saveCart(c){localStorage.setItem('kwCart',JSON.stringify(c));}
+function updateCartBadge(){
+  const n=getCart().reduce((s,i)=&gt;s+i.qty,0);
+  document.getElementById('cart-badge').textContent=n;
+}
+
+function addToCart(id){
+  const p=getProducts().find(x=&gt;x.id===id);
+  if(!p)return;
+  const cart=getCart();
+  const ex=cart.find(i=&gt;i.id===id&amp;&amp;!i.customColor&amp;&amp;!i.customSize);
+  if(ex)ex.qty++;else cart.push({id:p.id,name:p.name,price:p.discount||p.price,emoji:p.emoji,qty:1,collection:p.collection});
+  saveCart(cart);updateCartBadge();
+  toast('Added — '+p.name);
+}
+
+function openCart(){
+  document.getElementById('cart-overlay').classList.add('open');
+  document.getElementById('cart-side').classList.add('open');
+  renderCartSide();
+}
+function closeCart(){
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.getElementById('cart-side').classList.remove('open');
+}
+
+function renderCartSide(){
+  const cart=getCart();
+  const el=document.getElementById('cart-items-list');
+  const tv=document.getElementById('cart-total');
+  if(!cart.length){
+    el.innerHTML='&lt;div class=&quot;cart-empty&quot;&gt;&lt;div class=&quot;cart-empty-icon&quot;&gt;🛒&lt;/div&gt;&lt;p&gt;Your cart is empty&lt;/p&gt;&lt;/div&gt;';
+    tv.textContent='₹0';return;
+  }
+  el.innerHTML=cart.map((item,i)=&gt;`
+    &lt;div class=&quot;ci&quot;&gt;
+      &lt;div class=&quot;ci-img&quot;&gt;${item.emoji||'🪞'}&lt;/div&gt;
+      &lt;div class=&quot;ci-info&quot;&gt;
+        &lt;div class=&quot;ci-name&quot;&gt;${item.name}&lt;/div&gt;
+        &lt;div class=&quot;ci-detail&quot;&gt;${item.collection}${item.customColor?' · '+item.customColor:''}${item.customSize?' · '+item.customSize:''} × ${item.qty}&lt;/div&gt;
+        &lt;div class=&quot;ci-price&quot;&gt;₹${(item.price*item.qty).toLocaleString()}&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;button class=&quot;ci-rm&quot; onclick=&quot;removeFromCart(${i})&quot;&gt;🗑&lt;/button&gt;
+    &lt;/div&gt;`).join('');
+  const total=cart.reduce((s,i)=&gt;s+i.price*i.qty,0);
+  tv.textContent='₹'+total.toLocaleString();
+}
+
+function removeFromCart(i){
+  const c=getCart();c.splice(i,1);saveCart(c);updateCartBadge();renderCartSide();
+}
+
+function doCheckout(){
+  const user=getUser();
+  if(!user){closeCart();showView('login');switchAuthTab('login');toast('Please login to place order');return;}
+  const cart=getCart();
+  if(!cart.length){toast('Your cart is empty',true);return;}
+  const d=db();
+  if(!d.orders)d.orders=[];
+  const order={
+    id:'KW'+Date.now(),userId:user.email,userName:user.name,
+    items:cart,total:cart.reduce((s,i)=&gt;s+i.price*i.qty,0),
+    status:'Processing',date:new Date().toLocaleDateString('en-IN')
+  };
+  d.orders.unshift(order);sdb(d);
+  saveCart([]);updateCartBadge();closeCart();
+  toast('🎉 Order placed! WhatsApp confirmation coming.');
+  const msg=`Hi Kanchwale! New order ${order.id} from ${user.name}. Total: ₹${order.total.toLocaleString()}. Items: ${cart.map(i=&gt;i.name).join(', ')}`;
+  setTimeout(()=&gt;window.open(`https://wa.me/919879282863?text=${encodeURIComponent(msg)}`,'_blank'),800);
+}
+
+// ── AUTH ─────────────────────────────────────────────────
+function getUser(){const u=localStorage.getItem('kwUser');return u?JSON.parse(u):null;}
+
+function updateNavAuth(){
+  const user=getUser();
+  const btn=document.getElementById('nav-auth');
+  if(!btn)return;
+  if(user){
+    btn.textContent=user.name.split(' ')[0];
+    btn.classList.add('in');
+    btn.onclick=()=&gt;{showView('account');initAccount();};
+  }else{
+    btn.textContent='Login';
+    btn.classList.remove('in');
+    btn.onclick=handleAuthBtn;
+  }
+}
+
+function handleAuthBtn(){
+  const user=getUser();
+  if(user){showView('account');initAccount();}
+  else{showView('login');}
+}
+
+function switchAuthTab(tab){
+  ['login','signup','forgot'].forEach(t=&gt;{
+    const f=document.getElementById(t+'-form');
+    const b=document.getElementById('tab-'+t);
+    if(f)f.style.display=t===tab?'block':'none';
+    if(b)b.classList.toggle('active',t===tab);
+  });
+}
+
+function doLogin(){
+  const email=document.getElementById('l-email').value.trim();
+  const pass=document.getElementById('l-pass').value;
+  const err=document.getElementById('l-err');
+  if(!email||!pass){err.textContent='Fill all fields';err.style.display='block';return;}
+  const d=db();
+  const users=d.users||[];
+  const user=users.find(u=&gt;u.email===email&amp;&amp;u.password===pass);
+  if(!user){err.textContent='Incorrect email or password';err.style.display='block';return;}
+  localStorage.setItem('kwUser',JSON.stringify(user));
+  updateNavAuth();showView('account');initAccount();
+  toast('Welcome back, '+user.name+'!');
+}
+
+function doSignup(){
+  const name=document.getElementById('s-name').value.trim();
+  const email=document.getElementById('s-email').value.trim();
+  const phone=document.getElementById('s-phone').value.trim();
+  const pass=document.getElementById('s-pass').value;
+  const err=document.getElementById('s-err');
+  if(!name||!email||!pass){err.textContent='Fill all required fields';err.style.display='block';return;}
+  if(pass.length&lt;6){err.textContent='Password must be at least 6 characters';err.style.display='block';return;}
+  const d=db();
+  if(!d.users)d.users=[];
+  if(d.users.find(u=&gt;u.email===email)){err.textContent='Email already registered';err.style.display='block';return;}
+  const user={id:Date.now(),name,email,phone,password:pass,joined:new Date().toLocaleDateString('en-IN')};
+  d.users.push(user);sdb(d);
+  localStorage.setItem('kwUser',JSON.stringify(user));
+  updateNavAuth();showView('account');initAccount();
+  toast('Welcome to Kanchwale, '+name+'!');
+}
+
+function doForgot(){
+  const email=document.getElementById('f-email').value.trim();
+  if(!email)return;
+  document.getElementById('f-ok').style.display='block';
+}
+
+function doLogout(){
+  localStorage.removeItem('kwUser');
+  updateNavAuth();showView('shop');renderShop('all');
+  toast('Logged out');
+}
+
+// ── ACCOUNT ──────────────────────────────────────────────
+function initAccount(){
+  const user=getUser();
+  if(!user){showView('login');return;}
+  document.getElementById('acc-name').textContent=user.name;
+  document.getElementById('acc-email').textContent=user.email;
+  document.getElementById('p-name').value=user.name;
+  document.getElementById('p-email').value=user.email;
+  document.getElementById('p-phone').value=user.phone||'';
+  renderOrders();
+}
+
+function switchAccTab(tab,btn){
+  document.querySelectorAll('.acc-section').forEach(s=&gt;s.classList.remove('active'));
+  document.getElementById('acc-'+tab).classList.add('active');
+  document.querySelectorAll('.acc-nav-btn').forEach(b=&gt;b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function renderOrders(){
+  const user=getUser();
+  const d=db();
+  const orders=(d.orders||[]).filter(o=&gt;o.userId===user.email);
+  const el=document.getElementById('orders-list');
+  if(!orders.length){el.innerHTML='&lt;p style=&quot;color:rgba(245,240,234,.28);font-size:13px;&quot;&gt;No orders yet. Start shopping!&lt;/p&gt;';return;}
+  el.innerHTML=`&lt;table class=&quot;orders-table&quot;&gt;
+    &lt;tr&gt;&lt;th&gt;Order ID&lt;/th&gt;&lt;th&gt;Items&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;/tr&gt;
+    ${orders.map(o=&gt;`&lt;tr&gt;
+      &lt;td style=&quot;font-size:11px;color:var(--gold);&quot;&gt;${o.id}&lt;/td&gt;
+      &lt;td&gt;${(o.items||[]).length} item(s)&lt;/td&gt;
+      &lt;td&gt;₹${o.total.toLocaleString()}&lt;/td&gt;
+      &lt;td&gt;&lt;span class=&quot;obadge o-${o.status==='Processing'?'proc':o.status==='Dispatched'?'disp':'done'}&quot;&gt;${o.status}&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;${o.date}&lt;/td&gt;
+    &lt;/tr&gt;`).join('')}
+  &lt;/table&gt;`;
+}
+
+function saveProfile(){
+  const user=getUser();
+  const d=db();
+  const u=d.users.find(x=&gt;x.email===user.email);
+  if(u){
+    u.name=document.getElementById('p-name').value;
+    u.phone=document.getElementById('p-phone').value;
+    sdb(d);
+    localStorage.setItem('kwUser',JSON.stringify(u));
+    updateNavAuth();toast('Profile saved!');
+  }
+}
+
+// ── BLOG ─────────────────────────────────────────────────
+function getBlogs(){
+  const d=db();
+  return d.blog&amp;&amp;d.blog.length?d.blog:[
+    {id:1,title:'How to Choose the Right Mirror Size',emoji:'📐',excerpt:'The perfect mirror is all about proportion. Here\'s the formula that works every time.',content:'As a rule, your mirror should be two-thirds the width of the furniture it sits above. For full-length mirrors, you need at least half your height in mirror height.',date:'May 1, 2025'},
+    {id:2,title:'LED Mirrors vs Plain Mirrors',emoji:'💡',excerpt:'Both have their place. Here\'s an honest breakdown to help you decide.',content:'LED mirrors are perfect for bathrooms and vanity areas. Plain mirrors are timeless — perfect for living rooms and bedrooms.',date:'Apr 22, 2025'},
+    {id:3,title:'The Complete Guide to Frame Finishes',emoji:'🎨',excerpt:'Gold, matte black, chrome, bronze — each tells a completely different story.',content:'Gold brings warmth and luxury. Matte black is sleek and architectural. Chrome is bold. Bronze adds vintage depth.',date:'Apr 15, 2025'}
+  ];
+}
+
+function renderBlogList(){
+  const grid=document.getElementById('full-blog-grid');
+  if(!grid)return;
+  grid.innerHTML=getBlogs().map(b=&gt;bCardHTML(b)).join('');
+}
+
+function bCardHTML(b){
+  return `&lt;div class=&quot;bcard&quot; onclick=&quot;openBlogPost(${b.id})&quot;&gt;
+    &lt;div class=&quot;bcard-img&quot;&gt;${b.emoji||'📝'}&lt;/div&gt;
+    &lt;div class=&quot;bcard-body&quot;&gt;
+      &lt;div class=&quot;bdate&quot;&gt;${b.date||''}&lt;/div&gt;
+      &lt;div class=&quot;btitle&quot;&gt;${b.title}&lt;/div&gt;
+      &lt;div class=&quot;bexcerpt&quot;&gt;${b.excerpt||''}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;`;
+}
+
+function openBlogPost(id){
+  const b=getBlogs().find(x=&gt;x.id===id);
+  if(!b)return;
+  document.getElementById('blog-post-content').innerHTML=`
+    &lt;button class=&quot;back-btn&quot; onclick=&quot;showView('blog-list');renderBlogList()&quot;&gt;← Back to Blog&lt;/button&gt;
+    &lt;div style=&quot;text-align:center;font-size:60px;margin-bottom:22px;&quot;&gt;${b.emoji||'📝'}&lt;/div&gt;
+    &lt;div style=&quot;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;&quot;&gt;${b.date||''}&lt;/div&gt;
+    &lt;h1 style=&quot;font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,44px);font-weight:300;margin-bottom:28px;line-height:1.2;&quot;&gt;${b.title}&lt;/h1&gt;
+    &lt;div style=&quot;font-size:14px;color:rgba(245,240,234,.55);line-height:1.9;white-space:pre-line;&quot;&gt;${b.content||b.excerpt||''}&lt;/div&gt;
+    &lt;div style=&quot;margin-top:40px;padding-top:30px;border-top:1px solid var(--gb);&quot;&gt;
+      &lt;a class=&quot;btn-wa&quot; href=&quot;https://wa.me/919879282863?text=Hi%20Kanchwale!%20I%20was%20reading%20your%20blog%20and%20I%27d%20like%20to%20enquire%20about%20mirrors.&quot; target=&quot;_blank&quot;&gt;💬 Ask Us About This&lt;/a&gt;
+    &lt;/div&gt;`;
+  showView('blog-post');
+}
+
+// ── FAQ ──────────────────────────────────────────────────
+function renderFaq(){
+  const d=db();
+  const faqs=d.faq&amp;&amp;d.faq.length?d.faq:[
+    {id:1,q:'Do you deliver across India?',a:'Yes! Pan-India delivery. 5–7 days standard, 10–15 days custom.'},
+    {id:2,q:'Can I customise the size?',a:'Yes. All mirrors can be made to your exact W×L in inches or mm.'},
+    {id:3,q:'What if my mirror arrives damaged?',a:'Photograph it and WhatsApp us within 24 hours. We replace it free.'},
+    {id:4,q:'How do I place a custom order?',a:'WhatsApp us at +91 98792 82863. Quote within 2 hours.'},
+    {id:5,q:'What payment methods do you accept?',a:'UPI, bank transfer, and all major cards. Custom orders need 50% advance.'}
+  ];
+  const el=document.getElementById('faq-list');
+  if(!el)return;
+  el.innerHTML=faqs.map(f=&gt;`
+    &lt;div class=&quot;faq-item&quot;&gt;
+      &lt;button class=&quot;faq-q&quot; onclick=&quot;toggleFaq(this)&quot;&gt;${f.q}&lt;span class=&quot;faq-icon&quot;&gt;+&lt;/span&gt;&lt;/button&gt;
+      &lt;div class=&quot;faq-a&quot;&gt;${f.a}&lt;/div&gt;
+    &lt;/div&gt;`).join('');
+}
+
+function toggleFaq(btn){
+  const a=btn.nextElementSibling,ic=btn.querySelector('.faq-icon');
+  a.classList.toggle('open');ic.classList.toggle('open');
+}
+
+// ── TOAST ────────────────────────────────────────────────
+function toast(msg,err=false){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast'+(err?' err':'')+' on';
+  setTimeout(()=&gt;t.classList.remove('on'),3000);
+}
+
+// ── SECRET ADMIN ─────────────────────────────────────────
+let kbuf='';
+document.addEventListener('keydown',e=&gt;{
+  kbuf+=e.key;if(kbuf.length&gt;8)kbuf=kbuf.slice(-8);
+  if(kbuf.includes('admin'))location.href='admin.html';
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>

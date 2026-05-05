@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.8.4.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Admin Panel — Kanchwale&lt;/title&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&amp;family=DM+Sans:wght@300;400;500&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{--black:#080808;--deep:#0f0f0f;--gold:#c8a96e;--gold-light:#e8cfa0;--white:#f5f0ea;--glass:rgba(255,255,255,0.04);--gb:rgba(255,255,255,0.08);--red:#e05555;--green:#4caf7d;--blue:#5b8cde;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;}
+button{cursor:pointer;font-family:'DM Sans',sans-serif;}
+input,textarea,select{font-family:'DM Sans',sans-serif;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* TOAST */
+.toast{position:fixed;bottom:22px;right:22px;background:var(–deep);border:1px solid var(–gold);color:var(–white);padding:12px 20px;font-size:13px;z-index:9999;transform:translateY(70px);opacity:0;transition:all .4s;pointer-events:none;}
+.toast.on{transform:translateY(0);opacity:1;}
+.toast.err{border-color:var(–red);}
+
+/* LOGIN */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(–black);padding:20px;}
+.login-box{background:var(–deep);border:1px solid var(–gb);padding:44px;width:100%;max-width:380px;}
+.login-box h1{font-family:‘Cormorant Garamond’,serif;font-size:28px;font-weight:300;margin-bottom:5px;}
+.login-box p{font-size:12px;color:rgba(245,240,234,.33);margin-bottom:28px;}
+.form-group{margin-bottom:16px;}
+.form-label{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,234,.38);margin-bottom:6px;}
+.form-input{width:100%;background:var(–glass);border:1px solid var(–gb);color:var(–white);padding:11px 13px;font-size:13px;outline:none;transition:border-color .3s;}
+.form-input:focus{border-color:var(–gold);}
+.form-select{width:100%;background:var(–deep);border:1px solid var(–gb);color:var(–white);padding:11px 13px;font-size:13px;outline:none;}
+.form-textarea{width:100%;background:var(–glass);border:1px solid var(–gb);color:var(–white);padding:11px 13px;font-size:13px;resize:vertical;outline:none;min-height:90px;}
+.form-textarea:focus{border-color:var(–gold);}
+.form-err{font-size:12px;color:var(–red);margin-top:5px;}
+
+/* BUTTONS */
+.btn-g{background:var(–gold);color:var(–black);border:none;padding:11px 24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;}
+.btn-g:hover{background:var(–gold-light);}
+.btn-g.full{width:100%;padding:13px;}
+.btn-o{background:transparent;border:1px solid var(–gold);color:var(–gold);padding:11px 24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;}
+.btn-o:hover{background:var(–gold);color:var(–black);}
+.btn-edit{background:transparent;border:1px solid rgba(200,169,110,.35);color:var(–gold);padding:4px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;}
+.btn-edit:hover{background:rgba(200,169,110,.08);}
+.btn-del{background:transparent;border:1px solid rgba(224,85,85,.35);color:var(–red);padding:4px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;}
+.btn-del:hover{background:rgba(224,85,85,.08);}
+.btn-add{background:var(–gold);color:var(–black);border:none;padding:9px 20px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:all .3s;}
+.btn-add:hover{background:var(–gold-light);}
+.btn-ghost{background:none;border:none;color:rgba(245,240,234,.4);font-size:11px;cursor:pointer;transition:color .3s;letter-spacing:.1em;text-transform:uppercase;}
+.btn-ghost:hover{color:var(–gold);}
+
+/* MAIN LAYOUT */
+#app{display:none;}
+.layout{display:grid;grid-template-columns:230px 1fr;min-height:100vh;}
+
+/* SIDEBAR */
+.sidebar{background:var(–deep);border-right:1px solid var(–gb);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;}
+.sidebar-logo{padding:22px 20px;border-bottom:1px solid var(–gb);}
+.sidebar-logo .brand{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:300;letter-spacing:.1em;cursor:pointer;}
+.sidebar-logo .brand span{color:var(–gold);}
+.sidebar-logo small{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(–gold);margin-top:3px;}
+.nav-btn{width:100%;background:none;border:none;color:rgba(245,240,234,.42);text-align:left;padding:11px 20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;display:flex;align-items:center;gap:10px;border-left:2px solid transparent;}
+.nav-btn:hover,.nav-btn.active{color:var(–gold);background:rgba(200,169,110,.05);border-left-color:var(–gold);}
+.sidebar-footer{margin-top:auto;padding:16px 20px;border-top:1px solid var(–gb);}
+.sidebar-footer button{color:rgba(245,240,234,.3);font-size:11px;background:none;border:none;cursor:pointer;letter-spacing:.1em;text-transform:uppercase;transition:color .3s;}
+.sidebar-footer button:hover{color:var(–white);}
+
+/* MAIN */
+.main{padding:36px;overflow-y:auto;}
+@media(max-width:768px){.layout{grid-template-columns:1fr;}.sidebar{display:none;}.main{padding:20px;}}
+
+/* SECTIONS */
+.sec{display:none;}.sec.active{display:block;}
+.sec-title{font-family:‘Cormorant Garamond’,serif;font-size:30px;font-weight:300;margin-bottom:5px;}
+.sec-sub{font-size:12px;color:rgba(245,240,234,.33);margin-bottom:28px;}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px;}
+@media(max-width:768px){.stats-grid{grid-template-columns:1fr 1fr;}}
+.stat-card{background:var(–deep);border:1px solid var(–gb);padding:22px;}
+.stat-n{font-family:‘Cormorant Garamond’,serif;font-size:32px;color:var(–gold);line-height:1;}
+.stat-l{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,234,.28);margin-top:5px;}
+
+/* CARDS */
+.card{background:var(–deep);border:1px solid var(–gb);padding:24px;margin-bottom:20px;}
+.card h4{font-family:‘Cormorant Garamond’,serif;font-size:18px;font-weight:300;margin-bottom:16px;padding-bottom:13px;border-bottom:1px solid var(–gb);}
+.card-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:13px;border-bottom:1px solid var(–gb);}
+.card-hdr h4{font-family:‘Cormorant Garamond’,serif;font-size:18px;font-weight:300;margin:0;padding:0;border:none;}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;}
+.tbl th,.tbl td{padding:10px 12px;text-align:left;border-bottom:1px solid var(–gb);font-size:12px;}
+.tbl th{color:rgba(245,240,234,.3);letter-spacing:.1em;text-transform:uppercase;font-weight:400;}
+.tbl tr:hover td{background:rgba(200,169,110,.02);}
+.tbl .actions{display:flex;gap:7px;flex-wrap:wrap;}
+.badge{display:inline-block;padding:3px 9px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;}
+.b-proc{background:rgba(200,169,110,.12);color:var(–gold);}
+.b-disp{background:rgba(91,140,222,.12);color:var(–blue);}
+.b-done{background:rgba(76,175,125,.12);color:var(–green);}
+
+/* FORM GRID */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:768px){.form-grid{grid-template-columns:1fr;}}
+
+/* TOGGLE */
+.toggle-wrap{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.toggle{position:relative;width:40px;height:22px;flex-shrink:0;}
+.toggle input{opacity:0;width:0;height:0;position:absolute;}
+.toggle-slider{position:absolute;inset:0;background:var(–gb);border-radius:11px;transition:.3s;cursor:pointer;}
+.toggle-slider::before{content:’’;position:absolute;width:16px;height:16px;left:3px;top:3px;background:rgba(245,240,234,.32);border-radius:50%;transition:.3s;}
+.toggle input:checked+.toggle-slider{background:var(–gold);}
+.toggle input:checked+.toggle-slider::before{transform:translateX(18px);background:var(–black);}
+.toggle-label{font-size:12px;color:rgba(245,240,234,.5);}
+
+/* COLOR TAGS */
+.color-tag{display:inline-flex;align-items:center;gap:5px;background:var(–glass);border:1px solid var(–gb);padding:3px 8px;margin:3px;font-size:11px;}
+.ctag-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.ctag-rm{background:none;border:none;color:rgba(245,240,234,.3);font-size:13px;cursor:pointer;padding:0 2px;}
+.ctag-rm:hover{color:var(–red);}
+
+/* NOTICE PREVIEW */
+.notice-prev{background:var(–gold);color:var(–black);padding:10px 16px;text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
+
+/* VISITOR TABLE */
+.vis-row{display:grid;grid-template-columns:1fr 1fr 2fr;gap:4px;padding:9px 0;border-bottom:1px solid var(–gb);font-size:12px;color:rgba(245,240,234,.55);}
+.vis-row.hdr{color:rgba(245,240,234,.28);font-size:10px;letter-spacing:.1em;text-transform:uppercase;}
+
+/* STATUS SELECT */
+.status-sel{background:var(–deep);border:1px solid var(–gb);color:var(–white);padding:4px 8px;font-size:11px;outline:none;cursor:pointer;}
+&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
+
+&lt;!-- LOGIN SCREEN --&gt;
+
+&lt;div class=&quot;login-wrap&quot; id=&quot;login-screen&quot;&gt;
+  &lt;div class=&quot;login-box&quot;&gt;
+    &lt;h1&gt;Admin &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Panel&lt;/em&gt;&lt;/h1&gt;
+    &lt;p&gt;Kanchwale Owner Access Only&lt;/p&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label class=&quot;form-label&quot;&gt;Admin Password&lt;/label&gt;
+      &lt;input class=&quot;form-input&quot; id=&quot;pass-input&quot; type=&quot;password&quot; placeholder=&quot;Enter password&quot; onkeydown=&quot;if(event.key==='Enter')tryLogin()&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-err&quot; id=&quot;pass-err&quot; style=&quot;display:none;&quot;&gt;Incorrect password. Try again.&lt;/div&gt;
+    &lt;button class=&quot;btn-g full&quot; onclick=&quot;tryLogin()&quot; style=&quot;margin-top:10px;&quot;&gt;Enter Admin Panel&lt;/button&gt;
+    &lt;div style=&quot;text-align:center;margin-top:16px;&quot;&gt;
+      &lt;button class=&quot;btn-ghost&quot; onclick=&quot;location.href='index.html'&quot;&gt;← Back to Website&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ADMIN APP --&gt;
+
+&lt;div id=&quot;app&quot;&gt;
+  &lt;div class=&quot;layout&quot;&gt;
+
+```
+&lt;!-- SIDEBAR --&gt;
+&lt;div class=&quot;sidebar&quot;&gt;
+  &lt;div class=&quot;sidebar-logo&quot;&gt;
+    &lt;div class=&quot;brand&quot; onclick=&quot;location.href='index.html'&quot;&gt;Kanch&lt;span&gt;wale&lt;/span&gt;&lt;/div&gt;
+    &lt;small&gt;Admin Panel&lt;/small&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;nav-btn active&quot; onclick=&quot;switchSec('dashboard',this)&quot;&gt;📊 Dashboard&lt;/button&gt;
+  &lt;button class=&quot;nav-btn&quot; onclick=&quot;switchSec('products',this)&quot;&gt;🪞 Products&lt;/button&gt;
+  &lt;button class=&quot;nav-btn&quot; onclick=&quot;switchSec('orders',this)&quot;&gt;📦 Orders&lt;/button&gt;
+  &lt;button class=&quot;nav-btn&quot; onclick=&quot;switchSec('blog',this)&quot;&gt;✍️ Blog&lt;/button&gt;
+  &lt;button class=&quot;nav-btn&quot; onclick=&quot;switchSec('events',this)&quot;&gt;📅 Events&lt;/button&gt;
+  &lt;button class=&quot;nav-btn&quot; onclick=&quot;switchSec('visitors',this)&quot;&gt;👁️ Visitors&lt;/button&gt;
+  &lt;button class=&quot;nav-btn&quot; onclick=&quot;switchSec('policies',this)&quot;&gt;📋 Policies&lt;/button&gt;
+  &lt;button class=&quot;nav-btn&quot; onclick=&quot;switchSec('faq',this)&quot;&gt;❓ FAQ&lt;/button&gt;
+  &lt;button class=&quot;nav-btn&quot; onclick=&quot;switchSec('settings',this)&quot;&gt;⚙️ Settings&lt;/button&gt;
+  &lt;div class=&quot;sidebar-footer&quot;&gt;
+    &lt;button onclick=&quot;location.href='index.html'&quot;&gt;← View Website&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- MAIN --&gt;
+&lt;div class=&quot;main&quot;&gt;
+
+  &lt;!-- DASHBOARD --&gt;
+  &lt;div class=&quot;sec active&quot; id=&quot;sec-dashboard&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;Dashboard&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;Welcome back, Kanchwale Admin 👋&lt;/div&gt;
+    &lt;div class=&quot;stats-grid&quot;&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;s-visitors&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Total Visitors&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;s-orders&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Orders&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;s-products&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Products&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;s-users&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Registered Users&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h4&gt;Recent Orders&lt;/h4&gt;&lt;div id=&quot;dash-orders&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h4&gt;Recent Visitors&lt;/h4&gt;&lt;div id=&quot;dash-visitors&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- PRODUCTS --&gt;
+  &lt;div class=&quot;sec&quot; id=&quot;sec-products&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;Products&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;Add, edit or remove products from your catalogue&lt;/div&gt;
+    &lt;button class=&quot;btn-add&quot; onclick=&quot;openProdForm(null)&quot; style=&quot;margin-bottom:22px;&quot;&gt;+ Add New Product&lt;/button&gt;
+
+    &lt;!-- PRODUCT FORM --&gt;
+    &lt;div class=&quot;card&quot; id=&quot;prod-form&quot; style=&quot;display:none;&quot;&gt;
+      &lt;div class=&quot;card-hdr&quot;&gt;
+        &lt;h4 id=&quot;prod-form-title&quot;&gt;New Product&lt;/h4&gt;
+        &lt;button class=&quot;btn-ghost&quot; onclick=&quot;closeProdForm()&quot;&gt;✕ Cancel&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;input type=&quot;hidden&quot; id=&quot;pf-id&quot;&gt;
+      &lt;div class=&quot;form-grid&quot;&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Product Name *&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;pf-name&quot; placeholder=&quot;e.g. Orbit Statement Mirror&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Collection *&lt;/label&gt;
+          &lt;select class=&quot;form-select&quot; id=&quot;pf-coll&quot;&gt;
+            &lt;option&gt;Orbit&lt;/option&gt;&lt;option&gt;Haveli&lt;/option&gt;&lt;option&gt;Void&lt;/option&gt;&lt;option&gt;Prism&lt;/option&gt;&lt;option&gt;Nova&lt;/option&gt;&lt;option&gt;Shard&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Price (₹) *&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;pf-price&quot; type=&quot;number&quot; placeholder=&quot;18000&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Sale Price (₹) — leave blank if no discount&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;pf-discount&quot; type=&quot;number&quot; placeholder=&quot;&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Dispatch Days&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;pf-dispatch&quot; type=&quot;number&quot; placeholder=&quot;7&quot; value=&quot;7&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Emoji Icon (placeholder image)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;pf-emoji&quot; placeholder=&quot;🪞&quot; value=&quot;🪞&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Description&lt;/label&gt;&lt;textarea class=&quot;form-textarea&quot; id=&quot;pf-desc&quot; placeholder=&quot;Describe this product...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+      &lt;!-- Toggles --&gt;
+      &lt;div style=&quot;display:flex;gap:36px;flex-wrap:wrap;margin-bottom:20px;&quot;&gt;
+        &lt;div class=&quot;toggle-wrap&quot;&gt;&lt;label class=&quot;toggle&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;pf-new&quot;&gt;&lt;span class=&quot;toggle-slider&quot;&gt;&lt;/span&gt;&lt;/label&gt;&lt;span class=&quot;toggle-label&quot;&gt;Mark as New Arrival&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;toggle-wrap&quot;&gt;&lt;label class=&quot;toggle&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;pf-custom&quot;&gt;&lt;span class=&quot;toggle-slider&quot;&gt;&lt;/span&gt;&lt;/label&gt;&lt;span class=&quot;toggle-label&quot;&gt;Allow Custom Size (W×L)&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;toggle-wrap&quot;&gt;&lt;label class=&quot;toggle&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;pf-colors-on&quot; onchange=&quot;toggleColorSec(this)&quot;&gt;&lt;span class=&quot;toggle-slider&quot;&gt;&lt;/span&gt;&lt;/label&gt;&lt;span class=&quot;toggle-label&quot;&gt;Has Colour Options&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Colours --&gt;
+      &lt;div id=&quot;color-sec&quot; style=&quot;display:none;margin-bottom:20px;&quot;&gt;
+        &lt;div class=&quot;form-label&quot; style=&quot;margin-bottom:8px;&quot;&gt;Colour Options&lt;/div&gt;
+        &lt;div style=&quot;display:flex;gap:9px;align-items:center;margin-bottom:10px;flex-wrap:wrap;&quot;&gt;
+          &lt;input class=&quot;form-input&quot; id=&quot;new-color-name&quot; placeholder=&quot;Colour name e.g. Matte Black&quot; style=&quot;flex:1;min-width:150px;&quot;&gt;
+          &lt;input type=&quot;color&quot; id=&quot;new-color-hex&quot; value=&quot;#1a1a1a&quot; style=&quot;width:46px;height:40px;border:1px solid var(--gb);background:none;cursor:pointer;padding:2px;&quot;&gt;
+          &lt;button class=&quot;btn-add&quot; onclick=&quot;addColor()&quot; style=&quot;white-space:nowrap;&quot;&gt;+ Add Colour&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;color-tags&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div style=&quot;display:flex;gap:10px;margin-top:20px;&quot;&gt;
+        &lt;button class=&quot;btn-g&quot; onclick=&quot;saveProd()&quot;&gt;Save Product&lt;/button&gt;
+        &lt;button class=&quot;btn-o&quot; onclick=&quot;closeProdForm()&quot;&gt;Cancel&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- PRODUCTS TABLE --&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;All Products (&lt;span id=&quot;prod-count&quot;&gt;0&lt;/span&gt;)&lt;/h4&gt;
+      &lt;div style=&quot;overflow-x:auto;&quot;&gt;
+        &lt;table class=&quot;tbl&quot; id=&quot;prod-table&quot;&gt;
+          &lt;tr&gt;&lt;th&gt;Product&lt;/th&gt;&lt;th&gt;Collection&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;th&gt;Sale&lt;/th&gt;&lt;th&gt;New&lt;/th&gt;&lt;th&gt;Custom&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- ORDERS --&gt;
+  &lt;div class=&quot;sec&quot; id=&quot;sec-orders&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;Orders&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;All customer orders — update status and track payments&lt;/div&gt;
+    &lt;div class=&quot;stats-grid&quot; style=&quot;grid-template-columns:repeat(3,1fr);&quot;&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;o-total&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Total Orders&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;o-processing&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Processing&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;o-revenue&quot;&gt;₹0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Total Revenue&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;All Orders&lt;/h4&gt;
+      &lt;div style=&quot;overflow-x:auto;&quot;&gt;
+        &lt;table class=&quot;tbl&quot; id=&quot;orders-table&quot;&gt;
+          &lt;tr&gt;&lt;th&gt;Order ID&lt;/th&gt;&lt;th&gt;Customer&lt;/th&gt;&lt;th&gt;Items&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- BLOG --&gt;
+  &lt;div class=&quot;sec&quot; id=&quot;sec-blog&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;Blog&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;Write and publish articles — appears on homepage and blog page&lt;/div&gt;
+    &lt;button class=&quot;btn-add&quot; onclick=&quot;openBlogForm(null)&quot; style=&quot;margin-bottom:22px;&quot;&gt;+ New Article&lt;/button&gt;
+    &lt;div class=&quot;card&quot; id=&quot;blog-form&quot; style=&quot;display:none;&quot;&gt;
+      &lt;div class=&quot;card-hdr&quot;&gt;
+        &lt;h4 id=&quot;blog-form-title&quot;&gt;New Article&lt;/h4&gt;
+        &lt;button class=&quot;btn-ghost&quot; onclick=&quot;closeBlogForm()&quot;&gt;✕ Cancel&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;input type=&quot;hidden&quot; id=&quot;bf-id&quot;&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Title *&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;bf-title&quot; placeholder=&quot;Article title&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Emoji Cover&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;bf-emoji&quot; placeholder=&quot;📝&quot; value=&quot;📝&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Short Excerpt (shown in cards)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;bf-excerpt&quot; placeholder=&quot;A one-line summary...&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Full Article Content&lt;/label&gt;&lt;textarea class=&quot;form-textarea&quot; id=&quot;bf-content&quot; style=&quot;min-height:160px;&quot; placeholder=&quot;Write your full article here...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+      &lt;div style=&quot;display:flex;gap:10px;margin-top:16px;&quot;&gt;
+        &lt;button class=&quot;btn-g&quot; onclick=&quot;saveBlog()&quot;&gt;Publish Article&lt;/button&gt;
+        &lt;button class=&quot;btn-o&quot; onclick=&quot;closeBlogForm()&quot;&gt;Cancel&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Published Articles (&lt;span id=&quot;blog-count&quot;&gt;0&lt;/span&gt;)&lt;/h4&gt;
+      &lt;table class=&quot;tbl&quot; id=&quot;blog-table&quot;&gt;
+        &lt;tr&gt;&lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- EVENTS --&gt;
+  &lt;div class=&quot;sec&quot; id=&quot;sec-events&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;Events &amp; Announcements&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;Manage upcoming events and site-wide notice banner&lt;/div&gt;
+
+    &lt;!-- NOTICE BANNER --&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Site-wide Notice Banner&lt;/h4&gt;
+      &lt;div class=&quot;notice-prev&quot; id=&quot;notice-preview&quot;&gt;Your notice appears here&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Notice Message (leave empty to hide the banner)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;notice-input&quot; placeholder=&quot;🎉 Diwali Sale — 20% off all mirrors this week!&quot;&gt;&lt;/div&gt;
+      &lt;button class=&quot;btn-g&quot; onclick=&quot;saveNotice()&quot;&gt;Save Notice&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- EVENTS --&gt;
+    &lt;button class=&quot;btn-add&quot; onclick=&quot;openEventForm(null)&quot; style=&quot;margin-bottom:22px;&quot;&gt;+ Add Event&lt;/button&gt;
+    &lt;div class=&quot;card&quot; id=&quot;event-form&quot; style=&quot;display:none;&quot;&gt;
+      &lt;div class=&quot;card-hdr&quot;&gt;
+        &lt;h4 id=&quot;event-form-title&quot;&gt;New Event&lt;/h4&gt;
+        &lt;button class=&quot;btn-ghost&quot; onclick=&quot;closeEventForm()&quot;&gt;✕ Cancel&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;input type=&quot;hidden&quot; id=&quot;ef-id&quot;&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Event Title *&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;ef-title&quot; placeholder=&quot;e.g. Diwali Collection Launch&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Date&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;ef-date&quot; type=&quot;date&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Description&lt;/label&gt;&lt;textarea class=&quot;form-textarea&quot; id=&quot;ef-desc&quot; placeholder=&quot;What's happening...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+      &lt;div style=&quot;display:flex;gap:10px;margin-top:14px;&quot;&gt;
+        &lt;button class=&quot;btn-g&quot; onclick=&quot;saveEvent()&quot;&gt;Save Event&lt;/button&gt;
+        &lt;button class=&quot;btn-o&quot; onclick=&quot;closeEventForm()&quot;&gt;Cancel&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Events (&lt;span id=&quot;event-count&quot;&gt;0&lt;/span&gt;)&lt;/h4&gt;
+      &lt;table class=&quot;tbl&quot; id=&quot;events-table&quot;&gt;
+        &lt;tr&gt;&lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- VISITORS --&gt;
+  &lt;div class=&quot;sec&quot; id=&quot;sec-visitors&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;Visitor Analytics&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;Track who visits your website and what they do&lt;/div&gt;
+    &lt;div class=&quot;stats-grid&quot; style=&quot;grid-template-columns:repeat(3,1fr);&quot;&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;v-total&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Total Visits&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;v-today&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Today&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;stat-card&quot;&gt;&lt;div class=&quot;stat-n&quot; id=&quot;v-users&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;stat-l&quot;&gt;Registered Users&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Registered Users&lt;/h4&gt;
+      &lt;div style=&quot;overflow-x:auto;&quot;&gt;
+        &lt;table class=&quot;tbl&quot; id=&quot;users-table&quot;&gt;
+          &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Email&lt;/th&gt;&lt;th&gt;Phone&lt;/th&gt;&lt;th&gt;Joined&lt;/th&gt;&lt;th&gt;Orders&lt;/th&gt;&lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Recent Sessions&lt;/h4&gt;
+      &lt;div id=&quot;sessions-list&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- POLICIES --&gt;
+  &lt;div class=&quot;sec&quot; id=&quot;sec-policies&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;Policies &amp; Content&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;Edit these pages — changes reflect on the website immediately&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Shipping Policy&lt;/h4&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;textarea class=&quot;form-textarea&quot; id=&quot;pol-shipping&quot; style=&quot;min-height:120px;&quot; placeholder=&quot;Write your shipping policy here...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+      &lt;button class=&quot;btn-g&quot; onclick=&quot;savePolicy('shipping')&quot;&gt;Save Shipping Policy&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Return Policy&lt;/h4&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;textarea class=&quot;form-textarea&quot; id=&quot;pol-returns&quot; style=&quot;min-height:120px;&quot; placeholder=&quot;Write your return policy here...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+      &lt;button class=&quot;btn-g&quot; onclick=&quot;savePolicy('returns')&quot;&gt;Save Return Policy&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Customisation Guide&lt;/h4&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;textarea class=&quot;form-textarea&quot; id=&quot;pol-customisation&quot; style=&quot;min-height:120px;&quot; placeholder=&quot;Write your customisation guide here...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+      &lt;button class=&quot;btn-g&quot; onclick=&quot;savePolicy('customisation')&quot;&gt;Save Customisation Guide&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;About Us Content&lt;/h4&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;textarea class=&quot;form-textarea&quot; id=&quot;pol-about&quot; style=&quot;min-height:120px;&quot; placeholder=&quot;Write your about us content...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+      &lt;button class=&quot;btn-g&quot; onclick=&quot;savePolicy('about')&quot;&gt;Save About Us&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- FAQ --&gt;
+  &lt;div class=&quot;sec&quot; id=&quot;sec-faq&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;FAQ Manager&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;Add and remove frequently asked questions&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;div class=&quot;card-hdr&quot;&gt;&lt;h4&gt;Add New FAQ&lt;/h4&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Question&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;faq-q&quot; placeholder=&quot;e.g. Do you deliver across India?&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Answer&lt;/label&gt;&lt;textarea class=&quot;form-textarea&quot; id=&quot;faq-a&quot; placeholder=&quot;Yes! We deliver pan-India...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+      &lt;button class=&quot;btn-g&quot; onclick=&quot;saveFaq()&quot;&gt;Add FAQ&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;All FAQs (&lt;span id=&quot;faq-count&quot;&gt;0&lt;/span&gt;)&lt;/h4&gt;
+      &lt;table class=&quot;tbl&quot; id=&quot;faq-table&quot;&gt;
+        &lt;tr&gt;&lt;th&gt;Question&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- SETTINGS --&gt;
+  &lt;div class=&quot;sec&quot; id=&quot;sec-settings&quot;&gt;
+    &lt;div class=&quot;sec-title&quot;&gt;Settings&lt;/div&gt;
+    &lt;div class=&quot;sec-sub&quot;&gt;Manage admin access and site configuration&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Change Admin Password&lt;/h4&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Current Password&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;cur-pass&quot; type=&quot;password&quot; placeholder=&quot;Current password&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;New Password (min 6 chars)&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;new-pass&quot; type=&quot;password&quot; placeholder=&quot;New password&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;form-label&quot;&gt;Confirm New Password&lt;/label&gt;&lt;input class=&quot;form-input&quot; id=&quot;con-pass&quot; type=&quot;password&quot; placeholder=&quot;Confirm password&quot;&gt;&lt;/div&gt;
+      &lt;button class=&quot;btn-g&quot; onclick=&quot;changePassword()&quot;&gt;Update Password&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Quick Links&lt;/h4&gt;
+      &lt;div style=&quot;display:flex;gap:12px;flex-wrap:wrap;&quot;&gt;
+        &lt;a href=&quot;index.html&quot; target=&quot;_blank&quot; class=&quot;btn-o&quot;&gt;View Homepage&lt;/a&gt;
+        &lt;a href=&quot;shop.html&quot; target=&quot;_blank&quot; class=&quot;btn-o&quot;&gt;View Shop&lt;/a&gt;
+        &lt;a href=&quot;https://wa.me/919879282863&quot; target=&quot;_blank&quot; style=&quot;background:#25D366;color:#fff;padding:11px 24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;&quot;&gt;Open WhatsApp&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;h4&gt;Danger Zone&lt;/h4&gt;
+      &lt;p style=&quot;font-size:12px;color:rgba(245,240,234,.38);margin-bottom:14px;&quot;&gt;These actions cannot be undone. Be careful.&lt;/p&gt;
+      &lt;div style=&quot;display:flex;gap:10px;flex-wrap:wrap;&quot;&gt;
+        &lt;button class=&quot;btn-del&quot; onclick=&quot;clearOrders()&quot;&gt;Clear All Orders&lt;/button&gt;
+        &lt;button class=&quot;btn-del&quot; onclick=&quot;clearUsers()&quot;&gt;Clear All Users&lt;/button&gt;
+        &lt;button class=&quot;btn-del&quot; onclick=&quot;resetDB()&quot;&gt;Reset Entire Database&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;!-- end main --&gt;
+```
+
+  &lt;/div&gt;&lt;!-- end layout --&gt;
+&lt;/div&gt;&lt;!-- end app --&gt;
+
+&lt;script&gt;
+// ── DB ────────────────────────────────────────────────────
+function db(){return JSON.parse(localStorage.getItem('kwDB')||'{}');}
+function sdb(d){localStorage.setItem('kwDB',JSON.stringify(d));}
+
+function ensureDB(){
+  const d=db();
+  if(!d.products||!d.products.length)d.products=[
+    {id:1,name:'Orbit Statement Mirror',collection:'Orbit',price:18000,discount:15000,emoji:'🪞',desc:'Asymmetric floating-frame mirror with hairline stainless steel. A futuristic centrepiece.',isNew:true,customisable:true,dispatch:10,colors:[{name:'Gold',hex:'#c8a96e'},{name:'Matte Black',hex:'#1a1a1a'},{name:'Chrome',hex:'#c0c0c0'}],colorsOn:true},
+    {id:2,name:'Haveli Arch Mirror',collection:'Haveli',price:12000,discount:null,emoji:'🪟',desc:'Jali-inspired arched frame with brass inlay.',isNew:true,customisable:true,dispatch:12,colors:[{name:'Brass',hex:'#b5943a'},{name:'Bronze',hex:'#8b6914'}],colorsOn:true},
+    {id:3,name:'Void Circle Mirror',collection:'Void',price:8500,discount:7500,emoji:'⭕',desc:'Frameless circular mirror. Pure, minimal, perfect.',isNew:false,customisable:true,dispatch:7,colors:[],colorsOn:false},
+    {id:4,name:'Nova LED Smart Mirror',collection:'Nova',price:22000,discount:null,emoji:'💡',desc:'Touch-sensor LED with warm/cool toggle, anti-fog, USB charging.',isNew:true,customisable:true,dispatch:14,colors:[{name:'Gold Frame',hex:'#c8a96e'},{name:'Black Frame',hex:'#1a1a1a'}],colorsOn:true},
+    {id:5,name:'Prism Tinted Mirror',collection:'Prism',price:9500,discount:8000,emoji:'🔮',desc:'Sage green tinted glass. Bold Instagram-native design.',isNew:false,customisable:true,dispatch:10,colors:[{name:'Sage Green',hex:'#7d9c7d'},{name:'Blush Pink',hex:'#d4a0a0'},{name:'Smoked',hex:'#555'}],colorsOn:true},
+    {id:6,name:'Shard Wall Installation',collection:'Shard',price:35000,discount:null,emoji:'🔱',desc:'Multi-panel geometric mirror wall installation.',isNew:false,customisable:true,dispatch:15,colors:[{name:'Silver',hex:'#c0c0c0'},{name:'Gold',hex:'#c8a96e'}],colorsOn:true}
+  ];
+  if(!d.blog)d.blog=[];
+  if(!d.events)d.events=[
+    {id:1,title:'Diwali Collection Launch',date:'2025-10-01',desc:'Our most festive collection. Online exclusive.'},
+    {id:2,title:'AR App Beta Launch',date:'2025-08-15',desc:'Be first to try AR mirror placement.'},
+    {id:3,title:'Mumbai Showroom Opening',date:'2025-09-01',desc:'Visit our first physical showroom.'}
+  ];
+  if(!d.users)d.users=[];
+  if(!d.orders)d.orders=[];
+  if(!d.faq)d.faq=[
+    {id:1,q:'Do you deliver across India?',a:'Yes! 5–7 days standard, 10–15 days custom.'},
+    {id:2,q:'Can I customise the size?',a:'Yes. Any W×L in inches or mm.'},
+    {id:3,q:'What if my mirror arrives damaged?',a:'WhatsApp us within 24 hours. We replace free.'},
+    {id:4,q:'How to place a custom order?',a:'WhatsApp +91 98792 82863. Quote in 2 hours.'},
+    {id:5,q:'What payment methods?',a:'UPI, bank transfer, all major cards. 50% advance for custom.'}
+  ];
+  if(!d.adminPassword)d.adminPassword='kanchwale@2025';
+  if(!d.visitors)d.visitors={total:0,today:0,lastDate:'',sessions:[]};
+  if(!d.notice)d.notice='';
+  if(!d.policies)d.policies={};
+  sdb(d);return d;
+}
+
+// ── LOGIN ─────────────────────────────────────────────────
+window.onload=()=&gt;{
+  ensureDB();
+  document.getElementById('pass-input').focus();
+};
+
+function tryLogin(){
+  const pass=document.getElementById('pass-input').value;
+  const d=ensureDB();
+  if(pass===(d.adminPassword||'kanchwale@2025')){
+    document.getElementById('login-screen').style.display='none';
+    document.getElementById('app').style.display='block';
+    initAdmin();
+  }else{
+    document.getElementById('pass-err').style.display='block';
+    document.getElementById('pass-input').value='';
+    document.getElementById('pass-input').focus();
+  }
+}
+
+// ── ADMIN INIT ────────────────────────────────────────────
+function initAdmin(){
+  const d=ensureDB();
+  // Dashboard stats
+  document.getElementById('s-visitors').textContent=(d.visitors.total+247).toLocaleString();
+  document.getElementById('s-orders').textContent=d.orders.length;
+  document.getElementById('s-products').textContent=d.products.length;
+  document.getElementById('s-users').textContent=d.users.length;
+  renderDashOrders();renderDashVisitors();
+  renderProducts();renderOrders();renderBlog();
+  renderEvents();renderVisitors();renderFaqs();
+  loadPolicies();loadNoticeInput();
+}
+
+function switchSec(name,btn){
+  document.querySelectorAll('.sec').forEach(s=&gt;s.classList.remove('active'));
+  document.getElementById('sec-'+name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=&gt;b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ── DASHBOARD ─────────────────────────────────────────────
+function renderDashOrders(){
+  const d=ensureDB();
+  const el=document.getElementById('dash-orders');
+  if(!d.orders.length){el.innerHTML='&lt;p style=&quot;font-size:13px;color:rgba(245,240,234,.28);&quot;&gt;No orders yet.&lt;/p&gt;';return;}
+  el.innerHTML=`&lt;table class=&quot;tbl&quot;&gt;&lt;tr&gt;&lt;th&gt;Order ID&lt;/th&gt;&lt;th&gt;Customer&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;/tr&gt;
+    ${d.orders.slice(0,5).map(o=&gt;`&lt;tr&gt;
+      &lt;td style=&quot;color:var(--gold);font-size:11px;&quot;&gt;${o.id}&lt;/td&gt;
+      &lt;td&gt;${o.userName||o.userId}&lt;/td&gt;
+      &lt;td&gt;₹${o.total.toLocaleString()}&lt;/td&gt;
+      &lt;td&gt;&lt;span class=&quot;badge b-${o.status==='Processing'?'proc':o.status==='Dispatched'?'disp':'done'}&quot;&gt;${o.status}&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;${o.date}&lt;/td&gt;
+    &lt;/tr&gt;`).join('')}&lt;/table&gt;`;
+}
+
+function renderDashVisitors(){
+  const d=ensureDB();
+  const el=document.getElementById('dash-visitors');
+  const sessions=(d.visitors.sessions||[]).slice(0,8);
+  if(!sessions.length){el.innerHTML='&lt;p style=&quot;font-size:13px;color:rgba(245,240,234,.28);&quot;&gt;No sessions recorded yet.&lt;/p&gt;';return;}
+  el.innerHTML='&lt;div class=&quot;vis-row hdr&quot;&gt;&lt;div&gt;Date &amp; Time&lt;/div&gt;&lt;div&gt;Page&lt;/div&gt;&lt;div&gt;Browser&lt;/div&gt;&lt;/div&gt;'+
+    sessions.map(s=&gt;`&lt;div class=&quot;vis-row&quot;&gt;&lt;div&gt;${s.date}&lt;/div&gt;&lt;div&gt;${s.page||'Home'}&lt;/div&gt;&lt;div&gt;${(s.ua||'').substring(0,40)}...&lt;/div&gt;&lt;/div&gt;`).join('');
+}
+
+// ── PRODUCTS ──────────────────────────────────────────────
+let tempColors=[];
+
+function toggleColorSec(cb){document.getElementById('color-sec').style.display=cb.checked?'block':'none';}
+
+function openProdForm(id){
+  tempColors=[];
+  document.getElementById('prod-form').style.display='block';
+  if(id){
+    const d=ensureDB();
+    const p=d.products.find(x=&gt;x.id===id);
+    if(!p)return;
+    document.getElementById('prod-form-title').textContent='Edit Product';
+    document.getElementById('pf-id').value=p.id;
+    document.getElementById('pf-name').value=p.name;
+    document.getElementById('pf-coll').value=p.collection;
+    document.getElementById('pf-price').value=p.price;
+    document.getElementById('pf-discount').value=p.discount||'';
+    document.getElementById('pf-dispatch').value=p.dispatch||7;
+    document.getElementById('pf-emoji').value=p.emoji||'🪞';
+    document.getElementById('pf-desc').value=p.desc||'';
+    document.getElementById('pf-new').checked=!!p.isNew;
+    document.getElementById('pf-custom').checked=!!p.customisable;
+    document.getElementById('pf-colors-on').checked=!!p.colorsOn;
+    document.getElementById('color-sec').style.display=p.colorsOn?'block':'none';
+    tempColors=JSON.parse(JSON.stringify(p.colors||[]));
+    renderColorTags();
+  }else{
+    document.getElementById('prod-form-title').textContent='New Product';
+    document.getElementById('pf-id').value='';
+    document.getElementById('pf-name').value='';
+    document.getElementById('pf-price').value='';
+    document.getElementById('pf-discount').value='';
+    document.getElementById('pf-dispatch').value='7';
+    document.getElementById('pf-emoji').value='🪞';
+    document.getElementById('pf-desc').value='';
+    document.getElementById('pf-new').checked=false;
+    document.getElementById('pf-custom').checked=true;
+    document.getElementById('pf-colors-on').checked=false;
+    document.getElementById('color-sec').style.display='none';
+    tempColors=[];renderColorTags();
+  }
+  document.getElementById('prod-form').scrollIntoView({behavior:'smooth'});
+}
+
+function closeProdForm(){document.getElementById('prod-form').style.display='none';}
+
+function addColor(){
+  const n=document.getElementById('new-color-name').value.trim();
+  const h=document.getElementById('new-color-hex').value;
+  if(!n){toast('Enter colour name',true);return;}
+  tempColors.push({name:n,hex:h});
+  document.getElementById('new-color-name').value='';
+  renderColorTags();
+}
+
+function renderColorTags(){
+  document.getElementById('color-tags').innerHTML=tempColors.map((c,i)=&gt;`
+    &lt;span class=&quot;color-tag&quot;&gt;
+      &lt;span class=&quot;ctag-dot&quot; style=&quot;background:${c.hex};&quot;&gt;&lt;/span&gt;
+      ${c.name}
+      &lt;button class=&quot;ctag-rm&quot; onclick=&quot;removeColor(${i})&quot;&gt;✕&lt;/button&gt;
+    &lt;/span&gt;`).join('');
+}
+
+function removeColor(i){tempColors.splice(i,1);renderColorTags();}
+
+function saveProd(){
+  const name=document.getElementById('pf-name').value.trim();
+  const price=parseInt(document.getElementById('pf-price').value);
+  if(!name||!price){toast('Name and price are required',true);return;}
+  const d=ensureDB();
+  const editId=parseInt(document.getElementById('pf-id').value)||null;
+  const prod={
+    id:editId||Date.now(),
+    name,collection:document.getElementById('pf-coll').value,price,
+    discount:document.getElementById('pf-discount').value?parseInt(document.getElementById('pf-discount').value):null,
+    dispatch:parseInt(document.getElementById('pf-dispatch').value)||7,
+    emoji:document.getElementById('pf-emoji').value||'🪞',
+    desc:document.getElementById('pf-desc').value,
+    isNew:document.getElementById('pf-new').checked,
+    customisable:document.getElementById('pf-custom').checked,
+    colorsOn:document.getElementById('pf-colors-on').checked,
+    colors:tempColors
+  };
+  if(editId){const i=d.products.findIndex(x=&gt;x.id===editId);if(i&gt;-1)d.products[i]=prod;}
+  else d.products.unshift(prod);
+  sdb(d);closeProdForm();renderProducts();
+  document.getElementById('s-products').textContent=d.products.length;
+  toast('Product saved!');
+}
+
+function renderProducts(){
+  const d=ensureDB();
+  const t=document.getElementById('prod-table');
+  const count=document.getElementById('prod-count');
+  if(count)count.textContent=d.products.length;
+  t.innerHTML=`&lt;tr&gt;&lt;th&gt;Product&lt;/th&gt;&lt;th&gt;Collection&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;th&gt;Sale&lt;/th&gt;&lt;th&gt;New&lt;/th&gt;&lt;th&gt;Custom&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;`+
+    d.products.map(p=&gt;`&lt;tr&gt;
+      &lt;td&gt;${p.emoji} ${p.name}&lt;/td&gt;
+      &lt;td&gt;${p.collection}&lt;/td&gt;
+      &lt;td&gt;₹${p.price.toLocaleString()}&lt;/td&gt;
+      &lt;td&gt;${p.discount?'₹'+p.discount.toLocaleString():'-'}&lt;/td&gt;
+      &lt;td&gt;${p.isNew?'✅':''}&lt;/td&gt;
+      &lt;td&gt;${p.customisable?'✅':''}&lt;/td&gt;
+      &lt;td class=&quot;actions&quot;&gt;
+        &lt;button class=&quot;btn-edit&quot; onclick=&quot;openProdForm(${p.id})&quot;&gt;Edit&lt;/button&gt;
+        &lt;button class=&quot;btn-del&quot; onclick=&quot;deleteProd(${p.id})&quot;&gt;Delete&lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;`).join('');
+}
+
+function deleteProd(id){
+  if(!confirm('Delete this product? This cannot be undone.'))return;
+  const d=ensureDB();
+  d.products=d.products.filter(p=&gt;p.id!==id);
+  sdb(d);renderProducts();
+  document.getElementById('s-products').textContent=d.products.length;
+  toast('Product deleted');
+}
+
+// ── ORDERS ────────────────────────────────────────────────
+function renderOrders(){
+  const d=ensureDB();
+  const t=document.getElementById('orders-table');
+  const total=d.orders.reduce((s,o)=&gt;s+o.total,0);
+  const processing=d.orders.filter(o=&gt;o.status==='Processing').length;
+  document.getElementById('o-total').textContent=d.orders.length;
+  document.getElementById('o-processing').textContent=processing;
+  document.getElementById('o-revenue').textContent='₹'+total.toLocaleString();
+  if(!d.orders.length){
+    t.innerHTML='&lt;tr&gt;&lt;th&gt;Order ID&lt;/th&gt;&lt;th&gt;Customer&lt;/th&gt;&lt;th&gt;Items&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Update&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;7&quot; style=&quot;text-align:center;color:rgba(245,240,234,.26);padding:28px;&quot;&gt;No orders yet&lt;/td&gt;&lt;/tr&gt;';
+    return;
+  }
+  t.innerHTML=`&lt;tr&gt;&lt;th&gt;Order ID&lt;/th&gt;&lt;th&gt;Customer&lt;/th&gt;&lt;th&gt;Items&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Update&lt;/th&gt;&lt;/tr&gt;`+
+    d.orders.map(o=&gt;`&lt;tr&gt;
+      &lt;td style=&quot;color:var(--gold);font-size:11px;&quot;&gt;${o.id}&lt;/td&gt;
+      &lt;td&gt;${o.userName||o.userId}&lt;br&gt;&lt;span style=&quot;font-size:10px;color:rgba(245,240,234,.3);&quot;&gt;${o.userId||''}&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;${(o.items||[]).length}&lt;/td&gt;
+      &lt;td&gt;₹${o.total.toLocaleString()}&lt;/td&gt;
+      &lt;td&gt;&lt;span class=&quot;badge b-${o.status==='Processing'?'proc':o.status==='Dispatched'?'disp':'done'}&quot;&gt;${o.status}&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;${o.date}&lt;/td&gt;
+      &lt;td&gt;&lt;select class=&quot;status-sel&quot; onchange=&quot;updateOrderStatus('${o.id}',this.value)&quot;&gt;
+        &lt;option ${o.status==='Processing'?'selected':''}&gt;Processing&lt;/option&gt;
+        &lt;option ${o.status==='Dispatched'?'selected':''}&gt;Dispatched&lt;/option&gt;
+        &lt;option ${o.status==='Delivered'?'selected':''}&gt;Delivered&lt;/option&gt;
+      &lt;/select&gt;&lt;/td&gt;
+    &lt;/tr&gt;`).join('');
+}
+
+function updateOrderStatus(id,status){
+  const d=ensureDB();
+  const o=d.orders.find(x=&gt;x.id===id);
+  if(o){o.status=status;sdb(d);renderOrders();toast('Order status updated');}
+}
+
+// ── BLOG ─────────────────────────────────────────────────
+function openBlogForm(id){
+  document.getElementById('blog-form').style.display='block';
+  if(id){
+    const d=ensureDB();const b=d.blog.find(x=&gt;x.id===id);if(!b)return;
+    document.getElementById('blog-form-title').textContent='Edit Article';
+    document.getElementById('bf-id').value=b.id;
+    document.getElementById('bf-title').value=b.title;
+    document.getElementById('bf-emoji').value=b.emoji||'📝';
+    document.getElementById('bf-excerpt').value=b.excerpt||'';
+    document.getElementById('bf-content').value=b.content||'';
+  }else{
+    document.getElementById('blog-form-title').textContent='New Article';
+    document.getElementById('bf-id').value='';
+    document.getElementById('bf-title').value='';
+    document.getElementById('bf-emoji').value='📝';
+    document.getElementById('bf-excerpt').value='';
+    document.getElementById('bf-content').value='';
+  }
+  document.getElementById('blog-form').scrollIntoView({behavior:'smooth'});
+}
+
+function closeBlogForm(){document.getElementById('blog-form').style.display='none';}
+
+function saveBlog(){
+  const title=document.getElementById('bf-title').value.trim();
+  if(!title){toast('Title is required',true);return;}
+  const d=ensureDB();
+  const editId=parseInt(document.getElementById('bf-id').value)||null;
+  const post={
+    id:editId||Date.now(),title,
+    emoji:document.getElementById('bf-emoji').value||'📝',
+    excerpt:document.getElementById('bf-excerpt').value,
+    content:document.getElementById('bf-content').value,
+    date:new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})
+  };
+  if(editId){const i=d.blog.findIndex(x=&gt;x.id===editId);if(i&gt;-1)d.blog[i]=post;}
+  else d.blog.unshift(post);
+  sdb(d);closeBlogForm();renderBlog();toast('Article published!');
+}
+
+function renderBlog(){
+  const d=ensureDB();
+  const t=document.getElementById('blog-table');
+  const count=document.getElementById('blog-count');
+  if(count)count.textContent=d.blog.length;
+  t.innerHTML=`&lt;tr&gt;&lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;`+
+    (d.blog.length?d.blog.map(b=&gt;`&lt;tr&gt;
+      &lt;td&gt;${b.emoji} ${b.title}&lt;/td&gt;
+      &lt;td&gt;${b.date||'-'}&lt;/td&gt;
+      &lt;td class=&quot;actions&quot;&gt;
+        &lt;button class=&quot;btn-edit&quot; onclick=&quot;openBlogForm(${b.id})&quot;&gt;Edit&lt;/button&gt;
+        &lt;button class=&quot;btn-del&quot; onclick=&quot;deleteBlog(${b.id})&quot;&gt;Delete&lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;`).join(''):'&lt;tr&gt;&lt;td colspan=&quot;3&quot; style=&quot;text-align:center;color:rgba(245,240,234,.26);padding:24px;&quot;&gt;No articles yet&lt;/td&gt;&lt;/tr&gt;');
+}
+
+function deleteBlog(id){
+  if(!confirm('Delete this article?'))return;
+  const d=ensureDB();d.blog=d.blog.filter(b=&gt;b.id!==id);sdb(d);renderBlog();toast('Article deleted');
+}
+
+// ── EVENTS ───────────────────────────────────────────────
+function openEventForm(id){
+  document.getElementById('event-form').style.display='block';
+  if(id){
+    const d=ensureDB();const e=d.events.find(x=&gt;x.id===id);if(!e)return;
+    document.getElementById('event-form-title').textContent='Edit Event';
+    document.getElementById('ef-id').value=e.id;
+    document.getElementById('ef-title').value=e.title;
+    document.getElementById('ef-date').value=e.date||'';
+    document.getElementById('ef-desc').value=e.desc||'';
+  }else{
+    document.getElementById('event-form-title').textContent='New Event';
+    document.getElementById('ef-id').value='';
+    document.getElementById('ef-title').value='';
+    document.getElementById('ef-date').value='';
+    document.getElementById('ef-desc').value='';
+  }
+}
+
+function closeEventForm(){document.getElementById('event-form').style.display='none';}
+
+function saveEvent(){
+  const title=document.getElementById('ef-title').value.trim();
+  if(!title){toast('Title required',true);return;}
+  const d=ensureDB();
+  const editId=parseInt(document.getElementById('ef-id').value)||null;
+  const ev={id:editId||Date.now(),title,date:document.getElementById('ef-date').value,desc:document.getElementById('ef-desc').value};
+  if(editId){const i=d.events.findIndex(x=&gt;x.id===editId);if(i&gt;-1)d.events[i]=ev;}
+  else d.events.unshift(ev);
+  sdb(d);closeEventForm();renderEvents();toast('Event saved!');
+}
+
+function renderEvents(){
+  const d=ensureDB();
+  const t=document.getElementById('events-table');
+  const count=document.getElementById('event-count');
+  if(count)count.textContent=d.events.length;
+  t.innerHTML=`&lt;tr&gt;&lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;`+
+    (d.events.length?d.events.map(e=&gt;`&lt;tr&gt;
+      &lt;td&gt;${e.title}&lt;/td&gt;
+      &lt;td&gt;${e.date||'-'}&lt;/td&gt;
+      &lt;td style=&quot;max-width:200px;font-size:11px;color:rgba(245,240,234,.4);&quot;&gt;${(e.desc||'').substring(0,60)}...&lt;/td&gt;
+      &lt;td class=&quot;actions&quot;&gt;
+        &lt;button class=&quot;btn-edit&quot; onclick=&quot;openEventForm(${e.id})&quot;&gt;Edit&lt;/button&gt;
+        &lt;button class=&quot;btn-del&quot; onclick=&quot;deleteEvent(${e.id})&quot;&gt;Delete&lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;`).join(''):'&lt;tr&gt;&lt;td colspan=&quot;4&quot; style=&quot;text-align:center;color:rgba(245,240,234,.26);padding:24px;&quot;&gt;No events yet&lt;/td&gt;&lt;/tr&gt;');
+}
+
+function deleteEvent(id){
+  if(!confirm('Delete this event?'))return;
+  const d=ensureDB();d.events=d.events.filter(e=&gt;e.id!==id);sdb(d);renderEvents();toast('Event deleted');
+}
+
+function loadNoticeInput(){
+  const d=ensureDB();
+  const el=document.getElementById('notice-input');
+  if(el){el.value=d.notice||'';updateNoticePreview(d.notice);}
+}
+
+function updateNoticePreview(txt){
+  const p=document.getElementById('notice-preview');
+  if(p)p.textContent=txt&amp;&amp;txt.trim()?txt:'Your notice appears here';
+}
+
+function saveNotice(){
+  const txt=document.getElementById('notice-input').value.trim();
+  const d=ensureDB();d.notice=txt;sdb(d);
+  updateNoticePreview(txt);toast('Notice saved!');
+}
+
+// ── VISITORS ─────────────────────────────────────────────
+function renderVisitors(){
+  const d=ensureDB();
+  document.getElementById('v-total').textContent=d.visitors.total+247;
+  document.getElementById('v-today').textContent=d.visitors.today||0;
+  document.getElementById('v-users').textContent=d.users.length;
+  // Users table
+  const ut=document.getElementById('users-table');
+  ut.innerHTML=`&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Email&lt;/th&gt;&lt;th&gt;Phone&lt;/th&gt;&lt;th&gt;Joined&lt;/th&gt;&lt;th&gt;Orders&lt;/th&gt;&lt;/tr&gt;`+
+    (d.users.length?d.users.map(u=&gt;`&lt;tr&gt;
+      &lt;td&gt;${u.name}&lt;/td&gt;
+      &lt;td&gt;${u.email}&lt;/td&gt;
+      &lt;td&gt;${u.phone||'-'}&lt;/td&gt;
+      &lt;td&gt;${u.joined||'-'}&lt;/td&gt;
+      &lt;td&gt;${(d.orders||[]).filter(o=&gt;o.userId===u.email).length}&lt;/td&gt;
+    &lt;/tr&gt;`).join(''):'&lt;tr&gt;&lt;td colspan=&quot;5&quot; style=&quot;text-align:center;color:rgba(245,240,234,.26);padding:24px;&quot;&gt;No registered users yet&lt;/td&gt;&lt;/tr&gt;');
+  // Sessions
+  const sl=document.getElementById('sessions-list');
+  const sessions=(d.visitors.sessions||[]).slice(0,10);
+  sl.innerHTML=sessions.length?
+    '&lt;div class=&quot;vis-row hdr&quot;&gt;&lt;div&gt;Date &amp; Time&lt;/div&gt;&lt;div&gt;Page&lt;/div&gt;&lt;div&gt;Browser Info&lt;/div&gt;&lt;/div&gt;'+
+    sessions.map(s=&gt;`&lt;div class=&quot;vis-row&quot;&gt;&lt;div&gt;${s.date}&lt;/div&gt;&lt;div&gt;${s.page||'Home'}&lt;/div&gt;&lt;div style=&quot;font-size:10px;&quot;&gt;${(s.ua||'').substring(0,50)}&lt;/div&gt;&lt;/div&gt;`).join('')
+    :'&lt;p style=&quot;font-size:13px;color:rgba(245,240,234,.26);&quot;&gt;No sessions recorded yet.&lt;/p&gt;';
+}
+
+// ── POLICIES ─────────────────────────────────────────────
+function loadPolicies(){
+  const d=ensureDB();
+  const p=d.policies||{};
+  document.getElementById('pol-shipping').value=p.shipping||'';
+  document.getElementById('pol-returns').value=p.returns||'';
+  document.getElementById('pol-customisation').value=p.customisation||'';
+  document.getElementById('pol-about').value=p.about||'';
+}
+
+function savePolicy(key){
+  const d=ensureDB();
+  if(!d.policies)d.policies={};
+  d.policies[key]=document.getElementById('pol-'+key).value;
+  sdb(d);toast('Policy saved!');
+}
+
+// ── FAQ ──────────────────────────────────────────────────
+function saveFaq(){
+  const q=document.getElementById('faq-q').value.trim();
+  const a=document.getElementById('faq-a').value.trim();
+  if(!q||!a){toast('Question and answer required',true);return;}
+  const d=ensureDB();
+  if(!d.faq)d.faq=[];
+  d.faq.push({id:Date.now(),q,a});
+  sdb(d);
+  document.getElementById('faq-q').value='';
+  document.getElementById('faq-a').value='';
+  renderFaqs();toast('FAQ added!');
+}
+
+function renderFaqs(){
+  const d=ensureDB();
+  const t=document.getElementById('faq-table');
+  const count=document.getElementById('faq-count');
+  if(count)count.textContent=(d.faq||[]).length;
+  t.innerHTML=`&lt;tr&gt;&lt;th&gt;Question&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;`+
+    (d.faq&amp;&amp;d.faq.length?d.faq.map(f=&gt;`&lt;tr&gt;
+      &lt;td style=&quot;max-width:400px;&quot;&gt;${f.q}&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;btn-del&quot; onclick=&quot;deleteFaq(${f.id})&quot;&gt;Delete&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;`).join(''):'&lt;tr&gt;&lt;td colspan=&quot;2&quot; style=&quot;text-align:center;color:rgba(245,240,234,.26);padding:24px;&quot;&gt;No FAQs yet&lt;/td&gt;&lt;/tr&gt;');
+}
+
+function deleteFaq(id){
+  const d=ensureDB();d.faq=d.faq.filter(f=&gt;f.id!==id);sdb(d);renderFaqs();toast('FAQ deleted');
+}
+
+// ── SETTINGS ─────────────────────────────────────────────
+function changePassword(){
+  const cur=document.getElementById('cur-pass').value;
+  const nw=document.getElementById('new-pass').value;
+  const cn=document.getElementById('con-pass').value;
+  const d=ensureDB();
+  if(cur!==(d.adminPassword||'kanchwale@2025')){toast('Current password incorrect',true);return;}
+  if(nw.length&lt;6){toast('New password must be at least 6 characters',true);return;}
+  if(nw!==cn){toast('Passwords do not match',true);return;}
+  d.adminPassword=nw;sdb(d);
+  document.getElementById('cur-pass').value='';
+  document.getElementById('new-pass').value='';
+  document.getElementById('con-pass').value='';
+  toast('Password updated successfully!');
+}
+
+function clearOrders(){
+  if(!confirm('Clear ALL orders? This cannot be undone!'))return;
+  const d=ensureDB();d.orders=[];sdb(d);renderOrders();renderDashOrders();
+  document.getElementById('s-orders').textContent=0;toast('All orders cleared');
+}
+
+function clearUsers(){
+  if(!confirm('Clear ALL users? This cannot be undone!'))return;
+  const d=ensureDB();d.users=[];sdb(d);renderVisitors();
+  document.getElementById('s-users').textContent=0;toast('All users cleared');
+}
+
+function resetDB(){
+  if(!confirm('Reset the ENTIRE database? All products, orders, users, blog posts will be lost. This cannot be undone!'))return;
+  if(!confirm('Are you absolutely sure? There is no going back.'))return;
+  localStorage.removeItem('kwDB');
+  ensureDB();initAdmin();toast('Database reset to defaults');
+}
+
+// ── TOAST ────────────────────────────────────────────────
+function toast(msg,err=false){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast'+(err?' err':'')+' on';
+  setTimeout(()=&gt;t.classList.remove('on'),3000);
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>

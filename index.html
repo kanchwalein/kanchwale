@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.8.4.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Kanchwale — Luxury Glass &amp; Mirrors | Mumbai&lt;/title&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Premium glass and mirror manufacturer based in Mumbai. Custom designs, futuristic collections, AR try-on. Pan India delivery.&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;luxury mirrors India, glass manufacturer Mumbai, custom mirrors, decorative mirrors, LED mirrors, kanchwale&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{--black:#080808;--deep:#0f0f0f;--gold:#c8a96e;--gl:#e8cfa0;--white:#f5f0ea;--glass:rgba(255,255,255,.04);--gb:rgba(255,255,255,.08);--red:#e05555;--green:#4caf7d;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:'DM Sans',sans-serif;}
+input,textarea,select{font-family:'DM Sans',sans-serif;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold);}
+@media(max-width:768px){body{cursor:auto;}}
+
+/* PAGE TRANSITION */
+#pt{position:fixed;inset:0;z-index:9999;display:flex;pointer-events:none;}
+.ptp{flex:1;background:var(–black);transform-origin:top;transition:transform .65s cubic-bezier(.77,0,.18,1);}
+.ptp:nth-child(2){transition-delay:.06s;}.ptp:nth-child(3){transition-delay:.12s;}.ptp:nth-child(4){transition-delay:.18s;}.ptp:nth-child(5){transition-delay:.24s;}
+#pt.out .ptp{transform:scaleY(0);}
+
+/* LOADER */
+#loader{position:fixed;inset:0;background:var(–black);z-index:9998;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transition:opacity .5s .2s,visibility .5s .2s;}
+#loader.done{opacity:0;visibility:hidden;}
+.l-icon{position:relative;width:52px;height:52px;animation:lspin .9s ease .3s both;}
+@keyframes lspin{from{opacity:0;transform:rotate(-45deg) scale(.5);}to{opacity:1;transform:rotate(0deg) scale(1);}}
+.l-diamond{position:absolute;inset:0;border:1.5px solid var(–gold);transform:rotate(45deg);border-radius:2px;}
+.l-mirror{position:absolute;width:22px;height:30px;top:50%;left:50%;transform:translate(-50%,-50%);border:1.5px solid rgba(200,169,110,.7);border-radius:11px 11px 2px 2px;background:linear-gradient(135deg,rgba(200,169,110,.15),rgba(255,255,255,.05));}
+.l-dot{position:absolute;width:4px;height:4px;background:var(–gold);border-radius:50%;}
+.l-dot.a{top:50%;left:-2px;transform:translateY(-50%);}.l-dot.b{top:50%;right:-2px;transform:translateY(-50%);}.l-dot.c{top:-2px;left:50%;transform:translateX(-50%);}.l-dot.d{bottom:-2px;left:50%;transform:translateX(-50%);}
+.l-brand{font-family:‘Cormorant Garamond’,serif;font-size:26px;font-weight:300;letter-spacing:.25em;text-transform:uppercase;animation:fu .6s .6s both;}
+.l-brand em{color:var(–gold);font-style:normal;}
+.l-sub{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(200,169,110,.45);animation:fu .6s .8s both;}
+.l-bar{width:130px;height:1px;background:rgba(200,169,110,.12);overflow:hidden;}
+.l-bar::after{content:’’;display:block;height:100%;width:0;background:var(–gold);animation:lb 1.5s .4s both;}
+@keyframes lb{to{width:100%;}} @keyframes fu{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* CURSOR */
+.cursor{width:7px;height:7px;background:var(–gold);border-radius:50%;position:fixed;pointer-events:none;z-index:9997;top:0;left:0;transition:transform .1s;}
+.cursor-ring{width:32px;height:32px;border:1px solid rgba(200,169,110,.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9996;top:0;left:0;transition:all .15s ease;}
+.cursor.h{background:transparent;border:1px solid var(–gold);transform:scale(2);}
+
+/* FLOATS */
+#wa-f{position:fixed;bottom:28px;right:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:23px;z-index:400;box-shadow:0 8px 28px rgba(37,211,102,.35);transition:transform .3s;text-decoration:none;}
+#wa-f:hover{transform:scale(1.1);}
+#btt{position:fixed;bottom:28px;right:94px;width:40px;height:40px;background:var(–deep);border:1px solid rgba(200,169,110,.28);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:15px;z-index:400;cursor:pointer;color:var(–gold);transition:all .3s;}
+#btt.on{display:flex;}
+#btt:hover{background:var(–gold);color:var(–black);}
+
+/* TOAST */
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(70px);background:var(–deep);border:1px solid var(–gold);color:var(–white);padding:12px 22px;font-size:12px;z-index:500;opacity:0;transition:all .4s;pointer-events:none;white-space:nowrap;}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1;}
+.toast.err{border-color:var(–red);}
+
+/* NOTICE */
+#notice{background:var(–gold);color:var(–black);text-align:center;padding:10px 44px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;display:none;position:relative;}
+#notice.on{display:block;}
+#nx{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;cursor:pointer;color:var(–black);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;transition:all .4s;}
+nav.sc{background:rgba(8,8,8,.97);backdrop-filter:blur(24px);border-bottom:1px solid var(–gb);padding:14px 60px;}
+.nlogo{display:flex;align-items:center;gap:11px;cursor:pointer;}
+.nico{position:relative;width:32px;height:32px;flex-shrink:0;}
+.nico .ld{position:absolute;inset:0;border:1.5px solid var(–gold);transform:rotate(45deg);border-radius:2px;}
+.nico .lm{position:absolute;width:14px;height:20px;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid rgba(200,169,110,.7);border-radius:7px 7px 2px 2px;background:linear-gradient(135deg,rgba(200,169,110,.15),rgba(255,255,255,.05));}
+.nico .ldot{position:absolute;width:3px;height:3px;background:var(–gold);border-radius:50%;}
+.nico .ldot.a{top:50%;left:-1.5px;transform:translateY(-50%);}.nico .ldot.b{top:50%;right:-1.5px;transform:translateY(-50%);}.nico .ldot.c{top:-1.5px;left:50%;transform:translateX(-50%);}.nico .ldot.d{bottom:-1.5px;left:50%;transform:translateX(-50%);}
+.ntxt{font-family:‘Cormorant Garamond’,serif;font-size:19px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;}
+.ntxt em{color:var(–gold);font-style:normal;}
+.nlinks{display:flex;gap:26px;list-style:none;}
+.nlinks a{color:rgba(245,240,234,.5);font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;cursor:pointer;position:relative;}
+.nlinks a::after{content:’’;position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(–gold);transition:width .3s;}
+.nlinks a:hover{color:var(–gold);}
+.nlinks a:hover::after{width:100%;}
+.nright{display:flex;align-items:center;gap:12px;}
+.nico-btn{background:none;border:none;color:rgba(245,240,234,.5);font-size:18px;padding:6px;position:relative;transition:color .3s;}
+.nico-btn:hover{color:var(–gold);}
+.cbadge{position:absolute;top:0;right:0;background:var(–gold);color:var(–black);width:15px;height:15px;border-radius:50%;font-size:8px;font-weight:500;display:flex;align-items:center;justify-content:center;}
+.ncta{background:transparent;border:1px solid var(–gold);color:var(–gold);padding:8px 18px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;}
+.ncta:hover{background:var(–gold);color:var(–black);}
+.hbg{display:none;background:none;border:none;color:var(–white);font-size:22px;}
+@media(max-width:768px){nav{padding:14px 20px;}nav.sc{padding:12px 20px;}.nlinks{display:none;position:fixed;top:57px;left:0;right:0;background:rgba(8,8,8,.98);flex-direction:column;padding:20px;gap:14px;border-bottom:1px solid var(–gb);z-index:499;}.nlinks.open{display:flex;}.hbg{display:block;}.ncta{display:none;}}
+
+/* BUTTONS */
+.bg{background:var(–gold);color:var(–black);padding:14px 32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:none;transition:all .35s;cursor:pointer;display:inline-block;position:relative;overflow:hidden;}
+.bg span{position:relative;z-index:1;}
+.bg::after{content:’’;position:absolute;inset:0;background:var(–gl);transform:translateX(-101%);transition:transform .35s;}
+.bg:hover::after{transform:translateX(0);}
+.bo{background:transparent;border:1px solid var(–gold);color:var(–gold);padding:14px 32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:all .35s;cursor:pointer;display:inline-block;}
+.bo:hover{background:var(–gold);color:var(–black);}
+.bwa{background:#25D366;color:#fff;padding:14px 32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;display:inline-block;transition:all .3s;}
+.bwa:hover{background:#1db954;}
+.bgh{color:rgba(245,240,234,.4);font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:none;border:none;cursor:pointer;transition:color .3s;}
+.bgh:hover{color:var(–gold);}
+
+/* SEC */
+.sec{padding:108px 60px;}
+@media(max-width:768px){.sec{padding:70px 24px;}}
+.stag{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(–gold);margin-bottom:12px;display:flex;align-items:center;gap:12px;}
+.stag::before{content:’’;width:22px;height:1px;background:var(–gold);}
+.stitle{font-family:‘Cormorant Garamond’,serif;font-size:clamp(28px,4vw,48px);font-weight:300;line-height:1.1;margin-bottom:12px;}
+.stitle em{font-style:italic;color:var(–gold);}
+.shdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:14px;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 60px 60px;background:var(–black);}
+.hglow{position:absolute;right:0;top:0;width:65%;height:100%;background:radial-gradient(ellipse 60% 70% at 70% 40%,rgba(200,169,110,.07),transparent 70%);}
+.hglow2{position:absolute;left:0;bottom:0;width:40%;height:60%;background:radial-gradient(ellipse 80% 80% at 10% 90%,rgba(200,169,110,.04),transparent 70%);}
+.hgrain{position:absolute;inset:0;opacity:.035;background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=’.9’ numOctaves=‘4’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’/%3E%3C/svg%3E”);background-size:200px;}
+.hcontent{max-width:560px;position:relative;z-index:2;}
+.htag{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(–gold);margin-bottom:26px;display:flex;align-items:center;gap:16px;animation:fu .8s .4s both;}
+.htag::before{content:’’;width:40px;height:1px;background:var(–gold);}
+.hh1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(44px,6.5vw,84px);font-weight:300;line-height:1.03;margin-bottom:22px;animation:fu .8s .6s both;}
+.hh1 em{font-style:italic;color:var(–gold);}
+.hp{font-size:13px;line-height:1.9;color:rgba(245,240,234,.46);max-width:420px;margin-bottom:42px;animation:fu .8s .8s both;}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;animation:fu .8s 1s both;}
+.hstats{display:flex;gap:44px;margin-top:48px;animation:fu .8s 1.2s both;}
+.sn{font-family:‘Cormorant Garamond’,serif;font-size:30px;color:var(–gold);line-height:1;}
+.sl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,234,.26);margin-top:4px;}
+.hmirror{position:absolute;right:7%;top:50%;transform:translateY(-50%);width:270px;height:390px;animation:hfl 8s ease-in-out infinite,fr .9s .5s both;}
+@keyframes hfl{0%,100%{transform:translateY(-50%);}50%{transform:translateY(-52%) translateX(-6px);}}
+@keyframes fr{from{opacity:0;transform:translateY(-50%) translateX(40px);}to{opacity:1;transform:translateY(-50%);}}
+.mframe{width:100%;height:100%;border:1.5px solid var(–gold);position:relative;background:linear-gradient(135deg,rgba(200,169,110,.08),rgba(255,255,255,.02));box-shadow:0 0 80px rgba(200,169,110,.06);}
+.mc{position:absolute;width:18px;height:18px;border-color:var(–gl);border-style:solid;border-width:0;}
+.mc.tl{top:10px;left:10px;border-top-width:1px;border-left-width:1px;}.mc.tr{top:10px;right:10px;border-top-width:1px;border-right-width:1px;}.mc.bl{bottom:10px;left:10px;border-bottom-width:1px;border-left-width:1px;}.mc.br{bottom:10px;right:10px;border-bottom-width:1px;border-right-width:1px;}
+.mshine{position:absolute;top:15%;left:18%;width:1.5px;height:44%;background:linear-gradient(to bottom,transparent,rgba(200,169,110,.55),transparent);transform:rotate(-15deg);animation:sh 5s ease-in-out infinite;}
+.mshine2{position:absolute;top:28%;left:44%;width:1px;height:28%;background:linear-gradient(to bottom,transparent,rgba(200,169,110,.28),transparent);transform:rotate(-10deg);animation:sh 5s ease-in-out infinite 1.5s;}
+@keyframes sh{0%,100%{opacity:.22;}50%{opacity:.75;}}
+.marbadge{position:absolute;top:16px;right:-13px;background:var(–gold);color:var(–black);font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:4px 11px;font-weight:500;}
+@media(max-width:768px){.hero{padding:90px 24px 60px;}.hmirror{display:none;}.hstats{gap:26px;}}
+
+/* MARQUEE */
+.mqw{border-top:1px solid var(–gb);border-bottom:1px solid var(–gb);padding:14px 0;overflow:hidden;background:rgba(200,169,110,.02);}
+.mqt{display:flex;animation:mq 22s linear infinite;white-space:nowrap;}
+.mqi{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,240,234,.24);padding:0 34px;flex-shrink:0;}
+.mqi::after{content:’ ◆ ’;color:var(–gold);}
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* PRODUCT CARD */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:1024px){.pgrid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){.pgrid{grid-template-columns:1fr 1fr;gap:10px;}}
+.pcard{border:1px solid var(–gb);background:var(–deep);transition:border-color .35s,transform .35s,box-shadow .35s;cursor:pointer;position:relative;overflow:hidden;}
+.pcard:hover{border-color:rgba(200,169,110,.5);transform:translateY(-5px);box-shadow:0 18px 48px rgba(0,0,0,.4);}
+.pimg{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:54px;position:relative;overflow:hidden;}
+.pimg img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s;}
+.pcard:hover .pimg img{transform:scale(1.04);}
+.pbadge{position:absolute;top:10px;left:10px;background:var(–gold);color:var(–black);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;}
+.pbadge.sl{background:var(–red);left:auto;right:10px;}
+.pinf{padding:12px;}
+.pname{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-weight:300;margin-bottom:3px;}
+.pcoll{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,234,.28);margin-bottom:7px;}
+.ppr{display:flex;align-items:center;gap:7px;}
+.pprice{font-size:14px;color:var(–gold);}
+.pold{font-size:11px;color:rgba(245,240,234,.2);text-decoration:line-through;}
+.pbtns{display:flex;gap:6px;margin-top:9px;}
+.badd{flex:1;background:var(–gold);color:var(–black);border:none;padding:8px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;}
+.badd:hover{background:var(–gl);}
+.bar{background:transparent;border:1px solid rgba(200,169,110,.3);color:var(–gold);padding:8px 10px;font-size:10px;transition:all .3s;white-space:nowrap;}
+.bar:hover{border-color:var(–gold);}
+
+/* COLLECTIONS */
+.cgrid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 230px;gap:12px;}
+.ccard{position:relative;overflow:hidden;background:var(–deep);border:1px solid var(–gb);cursor:pointer;transition:border-color .4s;}
+.ccard:hover{border-color:rgba(200,169,110,.45);}
+.ccard.lg{grid-row:span 2;}
+.cbg{position:absolute;inset:0;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
+.ccard:hover .cbg{transform:scale(1.04);}
+.bg-orbit{background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(200,169,110,.12),transparent 70%),linear-gradient(135deg,#0a0a0a,#141210);}
+.bg-haveli{background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(139,115,85,.15),transparent 70%),linear-gradient(135deg,#0d0b08,#1a140a);}
+.bg-void{background:linear-gradient(135deg,#080808,#111);}
+.bg-prism{background:linear-gradient(135deg,rgba(44,62,80,.3),rgba(200,169,110,.08)),#0a0c0f;}
+.bg-nova{background:radial-gradient(ellipse at 50% 80%,rgba(200,169,110,.15),transparent 60%),#0a0a0a;}
+.csh{position:absolute;border:1px solid rgba(200,169,110,.3);background:linear-gradient(135deg,rgba(200,169,110,.08),rgba(255,255,255,.02));}
+.cinf{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(8,8,8,.95),transparent);}
+.cname{font-family:‘Cormorant Garamond’,serif;font-size:18px;font-weight:300;margin-bottom:3px;}
+.cdesc{font-size:10px;color:rgba(245,240,234,.3);letter-spacing:.1em;}
+.cprice{position:absolute;top:14px;right:14px;font-size:10px;color:var(–gold);}
+.carr{position:absolute;bottom:20px;right:20px;width:30px;height:30px;border:1px solid rgba(200,169,110,.28);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(–gold);opacity:0;transform:translateX(-10px);transition:all .35s;}
+.ccard:hover .carr{opacity:1;transform:translateX(0);}
+@media(max-width:768px){.cgrid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.ccard.lg{grid-row:span 1;height:210px;}.ccard{height:165px;}}
+
+/* AR */
+.arinr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+@media(max-width:768px){.arinr{grid-template-columns:1fr;gap:38px;}}
+.arphone{width:186px;height:356px;border:1.5px solid rgba(200,169,110,.38);border-radius:30px;margin:0 auto;background:#0a0a0a;position:relative;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.7);}
+.arscr{position:absolute;inset:10px;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#1a1510,#0f0d0a);}
+.arroom{width:100%;height:100%;position:relative;background:linear-gradient(to bottom,#2a2520,#1a1510 60%,#0f0d0a);}
+.arfl{position:absolute;bottom:35%;left:0;right:0;height:1px;background:rgba(200,169,110,.17);}
+.arsc{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 10px,rgba(200,169,110,.024) 10px,rgba(200,169,110,.024) 11px);}
+.armirr{position:absolute;left:50%;bottom:35%;transform:translateX(-50%);width:52px;height:86px;border:1.5px solid var(–gold);background:linear-gradient(135deg,rgba(200,169,110,.15),rgba(255,255,255,.04));box-shadow:0 0 20px rgba(200,169,110,.3);animation:pulse 3s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 20px rgba(200,169,110,.3);}50%{box-shadow:0 0 40px rgba(200,169,110,.55);}}
+.artag{position:absolute;top:11px;left:50%;transform:translateX(-50%);font-size:7px;letter-spacing:.2em;color:var(–gold);background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.28);padding:3px 7px;white-space:nowrap;}
+.chips{position:absolute;right:-17px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;}
+.chip{width:22px;height:22px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all .25s;}
+.chip.on,.chip:hover{border-color:var(–gold);transform:scale(1.2);}
+.arfeats{display:flex;flex-direction:column;gap:22px;}
+.arfeat{display:flex;gap:15px;align-items:flex-start;}
+.arn{font-family:‘Cormorant Garamond’,serif;font-size:26px;color:rgba(200,169,110,.15);flex-shrink:0;width:32px;line-height:1;}
+.arfeat h4{font-size:14px;font-weight:400;margin-bottom:4px;}
+.arfeat p{font-size:12px;color:rgba(245,240,234,.35);line-height:1.7;}
+
+/* EVENTS */
+.egrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+@media(max-width:768px){.egrid{grid-template-columns:1fr;}}
+.ecard{border:1px solid var(–gb);padding:24px;background:var(–glass);transition:border-color .3s,transform .3s;}
+.ecard:hover{border-color:rgba(200,169,110,.33);transform:translateY(-3px);}
+.edt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(–gold);margin-bottom:8px;}
+.etitle{font-family:‘Cormorant Garamond’,serif;font-size:18px;font-weight:300;margin-bottom:6px;}
+.edesc{font-size:12px;color:rgba(245,240,234,.35);line-height:1.7;}
+
+/* WHY */
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(–gb);border:1px solid var(–gb);}
+@media(max-width:768px){.wgrid{grid-template-columns:1fr 1fr;}}
+.wcard{background:var(–deep);padding:36px 26px;transition:background .3s;}
+.wcard:hover{background:rgba(200,169,110,.04);}
+.wico{font-size:24px;margin-bottom:17px;display:block;}
+.wtit{font-family:‘Cormorant Garamond’,serif;font-size:17px;font-weight:400;margin-bottom:8px;}
+.wtxt{font-size:12px;color:rgba(245,240,234,.35);line-height:1.8;}
+
+/* PROCESS */
+.psteps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;text-align:center;}
+.psteps::before{content:’’;position:absolute;top:26px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(to right,transparent,var(–gold),transparent);}
+@media(max-width:768px){.psteps{grid-template-columns:1fr 1fr;}.psteps::before{display:none;}}
+.pstep{padding:0 20px;}
+.pnum{width:52px;height:52px;border:1px solid var(–gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:‘Cormorant Garamond’,serif;font-size:20px;color:var(–gold);background:var(–black);position:relative;z-index:1;transition:all .3s;}
+.pstep:hover .pnum{background:var(–gold);color:var(–black);}
+.ptit{font-family:‘Cormorant Garamond’,serif;font-size:15px;font-weight:400;margin-bottom:8px;}
+.ptxt{font-size:11px;color:rgba(245,240,234,.32);line-height:1.8;}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:768px){.tgrid{grid-template-columns:1fr;}}
+.tcard{border:1px solid var(–gb);padding:28px;background:var(–glass);transition:border-color .3s,transform .3s;position:relative;}
+.tcard:hover{border-color:rgba(200,169,110,.28);transform:translateY(-3px);}
+.tcard::before{content:‘❝’;position:absolute;top:14px;left:20px;font-size:30px;color:rgba(200,169,110,.13);font-family:‘Cormorant Garamond’,serif;line-height:1;}
+.tstar{color:var(–gold);font-size:12px;letter-spacing:3px;margin-bottom:12px;margin-top:10px;}
+.ttxt{font-family:‘Cormorant Garamond’,serif;font-size:15px;font-style:italic;line-height:1.75;color:rgba(245,240,234,.7);margin-bottom:16px;}
+.tauth{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:rgba(245,240,234,.26);}
+.tauth em{color:var(–gold);font-style:normal;}
+.tver{font-size:9px;letter-spacing:.12em;color:var(–green);text-transform:uppercase;margin-top:5px;}
+
+/* B2B */
+.b2bsec{background:var(–deep);position:relative;overflow:hidden;}
+.b2bsec::before{content:’’;position:absolute;top:-150px;right:-150px;width:450px;height:450px;background:radial-gradient(circle,rgba(200,169,110,.05),transparent 70%);border-radius:50%;}
+.b2binr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+@media(max-width:768px){.b2binr{grid-template-columns:1fr;gap:42px;}}
+.b2bfeats{display:flex;flex-direction:column;gap:22px;margin-top:28px;}
+.b2bfeat{display:flex;gap:16px;align-items:flex-start;}
+.b2bico{width:40px;height:40px;border:1px solid rgba(200,169,110,.22);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.b2bfeat h4{font-size:14px;font-weight:400;margin-bottom:4px;}
+.b2bfeat p{font-size:12px;color:rgba(245,240,234,.35);line-height:1.7;}
+.b2btags{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;}
+.b2btag{border:1px solid var(–gb);padding:5px 13px;font-size:11px;color:rgba(245,240,234,.32);letter-spacing:.1em;}
+.b2bform{background:rgba(200,169,110,.03);border:1px solid rgba(200,169,110,.1);padding:34px;}
+.b2bftt{font-family:‘Cormorant Garamond’,serif;font-size:24px;font-weight:300;margin-bottom:5px;}
+.b2bfsub{font-size:12px;color:rgba(245,240,234,.33);margin-bottom:24px;line-height:1.7;}
+
+/* CONTACT */
+.ctsec{background:var(–black);}
+.ctinr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+@media(max-width:768px){.ctinr{grid-template-columns:1fr;gap:42px;}}
+.ctinfo h3{font-family:‘Cormorant Garamond’,serif;font-size:28px;font-weight:300;margin-bottom:12px;line-height:1.2;}
+.ctinfo p{font-size:13px;color:rgba(245,240,234,.4);line-height:1.9;margin-bottom:22px;}
+.ctmeth{display:flex;gap:13px;align-items:flex-start;margin-bottom:16px;}
+.ctmico{width:36px;height:36px;border:1px solid rgba(200,169,110,.2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.ctlab{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,234,.28);margin-bottom:3px;}
+.ctval{font-size:13px;color:rgba(245,240,234,.65);}
+.ctval a{color:var(–gold);}
+.ctformw{background:var(–deep);border:1px solid var(–gb);padding:34px;}
+
+/* FORM */
+.fg{margin-bottom:15px;}
+.fl{display:block;font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:rgba(245,240,234,.37);margin-bottom:6px;}
+.fi{width:100%;background:rgba(8,8,8,.7);border:1px solid var(–gb);color:var(–white);padding:11px 13px;font-size:13px;outline:none;transition:border-color .3s;}
+.fi:focus{border-color:var(–gold);}
+.fs{width:100%;background:rgba(8,8,8,.9);border:1px solid var(–gb);color:var(–white);padding:11px 13px;font-size:13px;outline:none;}
+.ft{width:100%;background:rgba(8,8,8,.7);border:1px solid var(–gb);color:var(–white);padding:11px 13px;font-size:13px;resize:vertical;outline:none;min-height:88px;transition:border-color .3s;}
+.ft:focus{border-color:var(–gold);}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+@media(max-width:540px){.f2{grid-template-columns:1fr;}}
+.fok{font-size:12px;color:var(–green);margin-top:9px;display:none;}
+
+/* BLOG */
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;}
+@media(max-width:768px){.bgrid{grid-template-columns:1fr;}}
+.bcard{border:1px solid var(–gb);cursor:pointer;transition:border-color .3s,transform .3s;overflow:hidden;}
+.bcard:hover{border-color:rgba(200,169,110,.33);transform:translateY(-3px);}
+.bimg{width:100%;height:175px;background:linear-gradient(135deg,#111,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:38px;overflow:hidden;}
+.bbody{padding:20px;}
+.bdt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(–gold);margin-bottom:7px;}
+.btit{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-weight:300;margin-bottom:6px;line-height:1.3;}
+.bex{font-size:12px;color:rgba(245,240,234,.35);line-height:1.7;}
+
+/* COUNTER */
+.countwrap{background:var(–deep);padding:68px;text-align:center;position:relative;overflow:hidden;}
+.countwrap::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 50%,rgba(200,169,110,.05),transparent 70%);}
+.countn{font-family:‘Cormorant Garamond’,serif;font-size:88px;font-weight:300;color:var(–gold);line-height:1;position:relative;}
+.countl{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,240,234,.28);margin-top:14px;position:relative;}
+
+/* IG STRIP */
+.igsec{background:var(–deep);padding:60px;text-align:center;border-top:1px solid var(–gb);}
+.igtit{font-family:‘Cormorant Garamond’,serif;font-size:26px;font-weight:300;margin-bottom:8px;}
+.igsub{font-size:12px;color:rgba(245,240,234,.32);margin-bottom:28px;}
+.iggrid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-bottom:26px;}
+@media(max-width:768px){.iggrid{grid-template-columns:repeat(3,1fr);}}
+.igtile{aspect-ratio:1;background:linear-gradient(135deg,#111,#1a1a1a);border:1px solid var(–gb);display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;transition:all .3s;}
+.igtile:hover{border-color:rgba(200,169,110,.38);}
+.ighandle{font-family:‘Cormorant Garamond’,serif;font-size:20px;font-weight:300;color:var(–gold);margin-bottom:6px;}
+
+/* NEWSLETTER */
+.nlsec{background:var(–black);padding:80px 60px;text-align:center;position:relative;overflow:hidden;}
+.nlsec::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(200,169,110,.04),transparent 70%);}
+.nltit{font-family:‘Cormorant Garamond’,serif;font-size:32px;font-weight:300;margin-bottom:9px;position:relative;}
+.nlsub{font-size:12px;color:rgba(245,240,234,.34);margin-bottom:28px;position:relative;}
+.nlform{display:flex;gap:0;max-width:440px;margin:0 auto;position:relative;}
+.nli{flex:1;background:var(–deep);border:1px solid var(–gb);border-right:none;color:var(–white);padding:13px 17px;font-size:13px;outline:none;transition:border-color .3s;}
+.nli:focus{border-color:var(–gold);}
+.nlbtn{background:var(–gold);color:var(–black);border:none;padding:13px 22px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;white-space:nowrap;}
+.nlbtn:hover{background:var(–gl);}
+.nlok{font-size:12px;color:var(–green);margin-top:10px;display:none;position:relative;}
+
+/* CTA */
+.cta{background:var(–black);text-align:center;padding:138px 60px;position:relative;overflow:hidden;}
+.cta::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(200,169,110,.05),transparent 70%);}
+.ctatit{font-family:‘Cormorant Garamond’,serif;font-size:clamp(34px,5vw,66px);font-weight:300;line-height:1.1;margin-bottom:17px;position:relative;}
+.ctasub{font-size:13px;color:rgba(245,240,234,.35);margin-bottom:42px;position:relative;}
+.ctabtns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;position:relative;}
+
+/* FOOTER */
+footer{background:var(–deep);border-top:1px solid var(–gb);padding:62px 60px 30px;}
+@media(max-width:768px){footer{padding:44px 24px 24px;}}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:46px;margin-bottom:46px;}
+@media(max-width:768px){.ftop{grid-template-columns:1fr 1fr;gap:26px;}}
+.fbrand{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+.fbtxt{font-family:‘Cormorant Garamond’,serif;font-size:18px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;}
+.fbtxt em{color:var(–gold);font-style:normal;}
+.ftag{font-size:12px;color:rgba(245,240,234,.24);line-height:1.8;max-width:236px;margin-bottom:18px;}
+.fsoc{display:flex;gap:8px;}
+.fsoca{width:30px;height:30px;border:1px solid var(–gb);display:flex;align-items:center;justify-content:center;color:rgba(245,240,234,.28);font-size:11px;transition:all .3s;text-decoration:none;}
+.fsoca:hover{border-color:var(–gold);color:var(–gold);}
+.fcol h4{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(–gold);margin-bottom:15px;}
+.flinks{list-style:none;}
+.flinks li{margin-bottom:8px;}
+.flinks a{font-size:12px;color:rgba(245,240,234,.28);transition:color .3s;cursor:pointer;}
+.flinks a:hover{color:var(–white);}
+.fbot{border-top:1px solid var(–gb);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.fcopy{font-size:11px;color:rgba(245,240,234,.15);}
+.fpay{display:flex;gap:7px;}
+.fptag{font-size:10px;color:rgba(245,240,234,.18);border:1px solid var(–gb);padding:3px 7px;}
+
+/* REVEAL */
+.reveal,.rl,.rr{opacity:0;transition:opacity .75s ease,transform .75s ease;}
+.reveal{transform:translateY(22px);}
+.rl{transform:translateX(-28px);}
+.rr{transform:translateX(28px);}
+.reveal.vis,.rl.vis,.rr.vis{opacity:1;transform:none;}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;pt&quot;&gt;&lt;div class=&quot;ptp&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ptp&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ptp&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ptp&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ptp&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div id=&quot;loader&quot;&gt;
+  &lt;div class=&quot;l-icon&quot;&gt;&lt;div class=&quot;l-diamond&quot;&gt;&lt;/div&gt;&lt;div class=&quot;l-mirror&quot;&gt;&lt;/div&gt;&lt;div class=&quot;l-dot a&quot;&gt;&lt;/div&gt;&lt;div class=&quot;l-dot b&quot;&gt;&lt;/div&gt;&lt;div class=&quot;l-dot c&quot;&gt;&lt;/div&gt;&lt;div class=&quot;l-dot d&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;l-brand&quot;&gt;KANCH&lt;em&gt;WALE&lt;/em&gt;&lt;/div&gt;
+  &lt;div class=&quot;l-sub&quot;&gt;Luxury Glass &amp;amp; Mirrors · Mumbai&lt;/div&gt;
+  &lt;div class=&quot;l-bar&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;cursor&quot; id=&quot;cur&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cursor-ring&quot; id=&quot;ring&quot;&gt;&lt;/div&gt;
+
+&lt;a id=&quot;wa-f&quot; href=&quot;https://wa.me/919879282863?text=Hi%20Kanchwale!&quot; target=&quot;_blank&quot; title=&quot;WhatsApp&quot;&gt;💬&lt;/a&gt;
+&lt;button id=&quot;btt&quot; onclick=&quot;window.scrollTo({top:0,behavior:'smooth'})&quot; title=&quot;Back to top&quot;&gt;↑&lt;/button&gt;
+
+&lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
+
+&lt;div id=&quot;notice&quot;&gt;&lt;span id=&quot;ntxt&quot;&gt;&lt;/span&gt;&lt;button id=&quot;nx&quot; onclick=&quot;document.getElementById('notice').classList.remove('on')&quot;&gt;✕&lt;/button&gt;&lt;/div&gt;
+
+&lt;nav id=&quot;nav&quot;&gt;
+  &lt;div class=&quot;nlogo&quot; onclick=&quot;goTo('index.html')&quot;&gt;
+    &lt;div class=&quot;nico&quot;&gt;&lt;div class=&quot;ld&quot;&gt;&lt;/div&gt;&lt;div class=&quot;lm&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ldot a&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ldot b&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ldot c&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ldot d&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;ntxt&quot;&gt;KANCH&lt;em&gt;WALE&lt;/em&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;ul class=&quot;nlinks&quot; id=&quot;nl&quot;&gt;
+    &lt;li&gt;&lt;a onclick=&quot;goTo('shop.html')&quot;&gt;Shop&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;sto('cgrid')&quot;&gt;Collections&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;sto('arsec')&quot;&gt;AR Try-On&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;sto('b2bsec')&quot;&gt;B2B&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;goTo('shop.html#blog')&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a onclick=&quot;sto('ctsec')&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;nright&quot;&gt;
+    &lt;button class=&quot;nico-btn&quot; onclick=&quot;goTo('shop.html#cart')&quot;&gt;🛒&lt;span class=&quot;cbadge&quot; id=&quot;cbadge&quot;&gt;0&lt;/span&gt;&lt;/button&gt;
+    &lt;button class=&quot;ncta&quot; id=&quot;nauth&quot; onclick=&quot;goTo('shop.html#login')&quot;&gt;Login&lt;/button&gt;
+    &lt;button class=&quot;hbg&quot; onclick=&quot;document.getElementById('nl').classList.toggle('open')&quot;&gt;☰&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- HERO --&gt;
+
+&lt;section class=&quot;hero&quot;&gt;
+  &lt;div class=&quot;hgrain&quot;&gt;&lt;/div&gt;&lt;div class=&quot;hglow&quot;&gt;&lt;/div&gt;&lt;div class=&quot;hglow2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;hcontent&quot;&gt;
+    &lt;div class=&quot;htag&quot;&gt;Made in Mumbai · Premium Glass &amp;amp; Mirrors&lt;/div&gt;
+    &lt;h1 class=&quot;hh1&quot;&gt;Crafted in Glass.&lt;br&gt;Defined by &lt;em&gt;Design.&lt;/em&gt;&lt;/h1&gt;
+    &lt;p class=&quot;hp&quot;&gt;From mirrors to partitions, decorative glass to futuristic creations — everything manufactured in our Mumbai facility. Designed for your space. Delivered across India.&lt;/p&gt;
+    &lt;div class=&quot;hbtns&quot;&gt;
+      &lt;a class=&quot;bg&quot; href=&quot;shop.html&quot;&gt;&lt;span&gt;Shop Now&lt;/span&gt;&lt;/a&gt;
+      &lt;button class=&quot;bo&quot; onclick=&quot;sto('arsec')&quot;&gt;📱 Try in Your Room&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;hstats&quot;&gt;
+      &lt;div&gt;&lt;div class=&quot;sn&quot; id=&quot;hcount&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;sl&quot;&gt;Happy Customers&lt;/div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;div class=&quot;sn&quot; id=&quot;hprod&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;sl&quot;&gt;Products&lt;/div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;div class=&quot;sn&quot;&gt;100%&lt;/div&gt;&lt;div class=&quot;sl&quot;&gt;Made in Mumbai&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;hmirror&quot;&gt;
+    &lt;div class=&quot;mframe&quot;&gt;
+      &lt;div class=&quot;mc tl&quot;&gt;&lt;/div&gt;&lt;div class=&quot;mc tr&quot;&gt;&lt;/div&gt;&lt;div class=&quot;mc bl&quot;&gt;&lt;/div&gt;&lt;div class=&quot;mc br&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;mshine&quot;&gt;&lt;/div&gt;&lt;div class=&quot;mshine2&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;marbadge&quot;&gt;AR Ready&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- MARQUEE --&gt;
+
+&lt;div class=&quot;mqw&quot;&gt;&lt;div class=&quot;mqt&quot;&gt;
+  &lt;span class=&quot;mqi&quot;&gt;Luxury Mirrors&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;AR Try-On&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Made in Mumbai&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Custom Frames&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Pan India Delivery&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Futuristic Designs&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Glass Partitions&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;LED Smart Mirrors&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;B2B Supply&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Corporate Gifting&lt;/span&gt;
+  &lt;span class=&quot;mqi&quot;&gt;Luxury Mirrors&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;AR Try-On&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Made in Mumbai&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Custom Frames&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Pan India Delivery&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Futuristic Designs&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Glass Partitions&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;LED Smart Mirrors&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;B2B Supply&lt;/span&gt;&lt;span class=&quot;mqi&quot;&gt;Corporate Gifting&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- NEW ARRIVALS --&gt;
+
+&lt;section class=&quot;sec&quot; id=&quot;newarr&quot; style=&quot;background:var(--deep);&quot;&gt;
+  &lt;div class=&quot;shdr reveal&quot;&gt;&lt;div&gt;&lt;div class=&quot;stag&quot;&gt;Just In&lt;/div&gt;&lt;h2 class=&quot;stitle&quot;&gt;New &lt;em&gt;Arrivals&lt;/em&gt;&lt;/h2&gt;&lt;/div&gt;&lt;a class=&quot;bgh&quot; href=&quot;shop.html&quot;&gt;View All →&lt;/a&gt;&lt;/div&gt;
+  &lt;div class=&quot;pgrid&quot; id=&quot;ngrid&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- COLLECTIONS --&gt;
+
+&lt;section class=&quot;sec&quot; id=&quot;cgrid&quot; style=&quot;background:var(--black);&quot;&gt;
+  &lt;div class=&quot;shdr reveal&quot;&gt;&lt;div&gt;&lt;div class=&quot;stag&quot;&gt;Our Work&lt;/div&gt;&lt;h2 class=&quot;stitle&quot;&gt;Six &lt;em&gt;Worlds&lt;/em&gt; of Glass&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;cgrid reveal&quot;&gt;
+    &lt;div class=&quot;ccard lg&quot; onclick=&quot;goTo('shop.html?cat=Orbit')&quot;&gt;&lt;div class=&quot;cbg bg-orbit&quot;&gt;&lt;div class=&quot;csh&quot; style=&quot;width:108px;height:162px;top:50%;left:55%;transform:translate(-50%,-50%) rotate(-8deg);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;cprice&quot;&gt;₹12,000+&lt;/div&gt;&lt;div class=&quot;cinf&quot;&gt;&lt;div class=&quot;cname&quot;&gt;Orbit&lt;/div&gt;&lt;div class=&quot;cdesc&quot;&gt;Futuristic · Asymmetric · Statement&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;carr&quot;&gt;→&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;ccard&quot; onclick=&quot;goTo('shop.html?cat=Haveli')&quot;&gt;&lt;div class=&quot;cbg bg-haveli&quot;&gt;&lt;div class=&quot;csh&quot; style=&quot;width:56px;height:92px;top:40%;left:50%;transform:translate(-50%,-50%);border-radius:28px 28px 0 0;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;cprice&quot;&gt;₹8,000+&lt;/div&gt;&lt;div class=&quot;cinf&quot;&gt;&lt;div class=&quot;cname&quot;&gt;Haveli&lt;/div&gt;&lt;div class=&quot;cdesc&quot;&gt;Heritage · Arched · Indian Luxury&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;carr&quot;&gt;→&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;ccard&quot; onclick=&quot;goTo('shop.html?cat=Void')&quot;&gt;&lt;div class=&quot;cbg bg-void&quot;&gt;&lt;div class=&quot;csh&quot; style=&quot;width:68px;height:68px;top:40%;left:50%;transform:translate(-50%,-50%);border-radius:50%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;cprice&quot;&gt;₹6,000+&lt;/div&gt;&lt;div class=&quot;cinf&quot;&gt;&lt;div class=&quot;cname&quot;&gt;Void&lt;/div&gt;&lt;div class=&quot;cdesc&quot;&gt;Minimal · Frameless · Pure&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;carr&quot;&gt;→&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;ccard&quot; onclick=&quot;goTo('shop.html?cat=Prism')&quot;&gt;&lt;div class=&quot;cbg bg-prism&quot;&gt;&lt;div class=&quot;csh&quot; style=&quot;width:56px;height:80px;top:40%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,rgba(44,62,80,.4),rgba(200,169,110,.1));&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;cprice&quot;&gt;₹5,000+&lt;/div&gt;&lt;div class=&quot;cinf&quot;&gt;&lt;div class=&quot;cname&quot;&gt;Prism&lt;/div&gt;&lt;div class=&quot;cdesc&quot;&gt;Coloured Glass · Tinted · Bold&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;carr&quot;&gt;→&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;ccard&quot; onclick=&quot;goTo('shop.html?cat=Nova')&quot;&gt;&lt;div class=&quot;cbg bg-nova&quot;&gt;&lt;div class=&quot;csh&quot; style=&quot;width:64px;height:100px;top:35%;left:50%;transform:translate(-50%,-50%);box-shadow:0 0 22px rgba(200,169,110,.4);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;cprice&quot;&gt;₹9,000+&lt;/div&gt;&lt;div class=&quot;cinf&quot;&gt;&lt;div class=&quot;cname&quot;&gt;Nova&lt;/div&gt;&lt;div class=&quot;cdesc&quot;&gt;LED Smart · Touch · Illuminated&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;carr&quot;&gt;→&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- AR --&gt;
+
+&lt;section class=&quot;sec&quot; id=&quot;arsec&quot; style=&quot;background:var(--deep);&quot;&gt;
+  &lt;div class=&quot;arinr&quot;&gt;
+    &lt;div class=&quot;rl&quot;&gt;
+      &lt;div style=&quot;position:relative;width:fit-content;margin:0 auto;&quot;&gt;
+        &lt;div class=&quot;arphone&quot;&gt;
+          &lt;div class=&quot;arscr&quot;&gt;&lt;div class=&quot;arroom&quot;&gt;&lt;div class=&quot;arsc&quot;&gt;&lt;/div&gt;&lt;div class=&quot;arfl&quot;&gt;&lt;/div&gt;&lt;div class=&quot;armirr&quot; id=&quot;ardem&quot;&gt;&lt;/div&gt;&lt;div class=&quot;artag&quot;&gt;◆ AR Active&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;chips&quot;&gt;
+          &lt;div class=&quot;chip on&quot; style=&quot;background:#c8a96e;&quot; onclick=&quot;setChip(this,'#c8a96e')&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;chip&quot; style=&quot;background:#1a1a1a;border:1px solid #444;&quot; onclick=&quot;setChip(this,'#1a1a1a')&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;chip&quot; style=&quot;background:#8b6914;&quot; onclick=&quot;setChip(this,'#8b6914')&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;chip&quot; style=&quot;background:#7d9c7d;&quot; onclick=&quot;setChip(this,'#7d9c7d')&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;chip&quot; style=&quot;background:#c0c0c0;&quot; onclick=&quot;setChip(this,'#c0c0c0')&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;rr&quot;&gt;
+      &lt;div class=&quot;stag&quot;&gt;Coming Soon&lt;/div&gt;
+      &lt;h2 class=&quot;stitle&quot;&gt;Try It On&lt;br&gt;Your &lt;em&gt;Wall&lt;/em&gt;&lt;/h2&gt;
+      &lt;p style=&quot;font-size:13px;color:rgba(245,240,234,.4);line-height:1.9;margin-bottom:32px;&quot;&gt;Point your phone at any wall. Watch your mirror appear in real scale. Switch frame colours live using the dots. Order with one tap.&lt;/p&gt;
+      &lt;div class=&quot;arfeats&quot;&gt;
+        &lt;div class=&quot;arfeat&quot;&gt;&lt;span class=&quot;arn&quot;&gt;01&lt;/span&gt;&lt;div&gt;&lt;h4&gt;Real-Time Wall Placement&lt;/h4&gt;&lt;p&gt;Mirror on your actual wall in exact scale and proportion.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;arfeat&quot;&gt;&lt;span class=&quot;arn&quot;&gt;02&lt;/span&gt;&lt;div&gt;&lt;h4&gt;Live Frame Colour Switch&lt;/h4&gt;&lt;p&gt;Tap the colour dots to see instant colour changes on the AR preview.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;arfeat&quot;&gt;&lt;span class=&quot;arn&quot;&gt;03&lt;/span&gt;&lt;div&gt;&lt;h4&gt;One-Tap Order&lt;/h4&gt;&lt;p&gt;Love it? Order directly from the AR view — size and colour confirmed.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div style=&quot;margin-top:30px;&quot;&gt;&lt;a class=&quot;bg&quot; href=&quot;shop.html&quot;&gt;&lt;span&gt;Browse Products&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- EVENTS --&gt;
+
+&lt;section class=&quot;sec&quot; id=&quot;eventsec&quot; style=&quot;background:var(--black);&quot;&gt;
+  &lt;div class=&quot;shdr reveal&quot;&gt;&lt;div&gt;&lt;div class=&quot;stag&quot;&gt;What's Coming&lt;/div&gt;&lt;h2 class=&quot;stitle&quot;&gt;Upcoming &lt;em&gt;Events&lt;/em&gt;&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;egrid reveal&quot; id=&quot;egrid&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- WHY --&gt;
+
+&lt;section class=&quot;sec&quot; style=&quot;background:var(--deep);&quot;&gt;
+  &lt;div class=&quot;reveal&quot; style=&quot;margin-bottom:44px;&quot;&gt;&lt;div class=&quot;stag&quot;&gt;Why Us&lt;/div&gt;&lt;h2 class=&quot;stitle&quot;&gt;Built Different.&lt;br&gt;&lt;em&gt;Manufactured&lt;/em&gt; Better.&lt;/h2&gt;&lt;/div&gt;
+  &lt;div class=&quot;wgrid&quot;&gt;
+    &lt;div class=&quot;wcard reveal d1&quot;&gt;&lt;span class=&quot;wico&quot;&gt;🏭&lt;/span&gt;&lt;div class=&quot;wtit&quot;&gt;Own Manufacturing&lt;/div&gt;&lt;p class=&quot;wtxt&quot;&gt;Every piece crafted in our Mumbai facility. No middlemen. Factory-to-home pricing.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;wcard reveal d2&quot;&gt;&lt;span class=&quot;wico&quot;&gt;📱&lt;/span&gt;&lt;div class=&quot;wtit&quot;&gt;AR Try Before Buy&lt;/div&gt;&lt;p class=&quot;wtxt&quot;&gt;See your mirror on your actual wall before placing the order. India's first.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;wcard reveal d3&quot;&gt;&lt;span class=&quot;wico&quot;&gt;✏️&lt;/span&gt;&lt;div class=&quot;wtit&quot;&gt;Full Customisation&lt;/div&gt;&lt;p class=&quot;wtxt&quot;&gt;Size, shape, frame colour — everything made to specification at factory level.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;wcard reveal d4&quot;&gt;&lt;span class=&quot;wico&quot;&gt;📦&lt;/span&gt;&lt;div class=&quot;wtit&quot;&gt;Zero Damage Delivery&lt;/div&gt;&lt;p class=&quot;wtxt&quot;&gt;Honeycomb + wooden crate packaging. Every piece arrives perfect — guaranteed.&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- PROCESS --&gt;
+
+&lt;section class=&quot;sec&quot; style=&quot;background:var(--black);text-align:center;&quot;&gt;
+  &lt;div class=&quot;reveal&quot; style=&quot;margin-bottom:54px;&quot;&gt;&lt;div class=&quot;stag&quot; style=&quot;justify-content:center;&quot;&gt;Process&lt;/div&gt;&lt;h2 class=&quot;stitle&quot;&gt;From &lt;em&gt;Idea&lt;/em&gt; to Your Wall in 4 Steps&lt;/h2&gt;&lt;/div&gt;
+  &lt;div class=&quot;psteps&quot;&gt;
+    &lt;div class=&quot;pstep reveal d1&quot;&gt;&lt;div class=&quot;pnum&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;ptit&quot;&gt;Browse &amp;amp; AR Preview&lt;/div&gt;&lt;p class=&quot;ptxt&quot;&gt;Explore collections. Place any mirror on your wall in AR.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;pstep reveal d2&quot;&gt;&lt;div class=&quot;pnum&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;ptit&quot;&gt;Customise&lt;/div&gt;&lt;p class=&quot;ptxt&quot;&gt;Pick size, frame colour, and finish. WhatsApp for bespoke.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;pstep reveal d3&quot;&gt;&lt;div class=&quot;pnum&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;ptit&quot;&gt;We Manufacture&lt;/div&gt;&lt;p class=&quot;ptxt&quot;&gt;Crafted in Mumbai to exact specifications. 7–12 days.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;pstep reveal d4&quot;&gt;&lt;div class=&quot;pnum&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;ptit&quot;&gt;Delivered Perfectly&lt;/div&gt;&lt;p class=&quot;ptxt&quot;&gt;Pan-India delivery in wooden crate. Zero damage guarantee.&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- TESTIMONIALS --&gt;
+
+&lt;section class=&quot;sec&quot; style=&quot;background:var(--deep);&quot;&gt;
+  &lt;div class=&quot;reveal&quot; style=&quot;text-align:center;margin-bottom:48px;&quot;&gt;&lt;div class=&quot;stag&quot; style=&quot;justify-content:center;&quot;&gt;Reviews&lt;/div&gt;&lt;h2 class=&quot;stitle&quot;&gt;What Our Customers &lt;em&gt;Say&lt;/em&gt;&lt;/h2&gt;&lt;p style=&quot;font-size:12px;color:rgba(245,240,234,.33);margin-top:7px;&quot;&gt;Real reviews from verified buyers across India&lt;/p&gt;&lt;/div&gt;
+  &lt;div class=&quot;tgrid&quot;&gt;
+    &lt;div class=&quot;tcard reveal d1&quot;&gt;&lt;div class=&quot;tstar&quot;&gt;★★★★★&lt;/div&gt;&lt;p class=&quot;ttxt&quot;&gt;&quot;The AR feature completely changed how I shop. Placed the Orbit mirror on my bedroom wall virtually and ordered immediately. Arrived better than expected.&quot;&lt;/p&gt;&lt;div class=&quot;tauth&quot;&gt;Priya M. — &lt;em&gt;Mumbai&lt;/em&gt;&lt;/div&gt;&lt;div class=&quot;tver&quot;&gt;✓ Verified Purchase&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;tcard reveal d2&quot;&gt;&lt;div class=&quot;tstar&quot;&gt;★★★★★&lt;/div&gt;&lt;p class=&quot;ttxt&quot;&gt;&quot;The Haveli collection gets compliments from every guest. Craftsmanship unlike anything I've seen in this price range. Will definitely order again.&quot;&lt;/p&gt;&lt;div class=&quot;tauth&quot;&gt;Rahul K. — &lt;em&gt;Delhi&lt;/em&gt;&lt;/div&gt;&lt;div class=&quot;tver&quot;&gt;✓ Verified Purchase&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;tcard reveal d3&quot;&gt;&lt;div class=&quot;tstar&quot;&gt;★★★★★&lt;/div&gt;&lt;p class=&quot;ttxt&quot;&gt;&quot;Custom Nova LED mirror for my bathroom. WhatsApp process was seamless. The wooden crate packaging was extraordinary — arrived perfect.&quot;&lt;/p&gt;&lt;div class=&quot;tauth&quot;&gt;Ananya S. — &lt;em&gt;Bangalore&lt;/em&gt;&lt;/div&gt;&lt;div class=&quot;tver&quot;&gt;✓ Verified Purchase&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;tcard reveal d1&quot;&gt;&lt;div class=&quot;tstar&quot;&gt;★★★★★&lt;/div&gt;&lt;p class=&quot;ttxt&quot;&gt;&quot;Ordered 3 Void circle mirrors for our villa renovation. The frameless finish is so clean. Delivery faster than expected and crate packaging was impressive.&quot;&lt;/p&gt;&lt;div class=&quot;tauth&quot;&gt;Meera J. — &lt;em&gt;Pune&lt;/em&gt;&lt;/div&gt;&lt;div class=&quot;tver&quot;&gt;✓ Verified Purchase&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;tcard reveal d2&quot;&gt;&lt;div class=&quot;tstar&quot;&gt;★★★★★&lt;/div&gt;&lt;p class=&quot;ttxt&quot;&gt;&quot;I gave them specific dimensions and a reference image. They delivered exactly what I imagined — at a fraction of what showrooms quoted. Unbelievable.&quot;&lt;/p&gt;&lt;div class=&quot;tauth&quot;&gt;Arjun T. — &lt;em&gt;Hyderabad&lt;/em&gt;&lt;/div&gt;&lt;div class=&quot;tver&quot;&gt;✓ Verified Purchase&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;tcard reveal d3&quot;&gt;&lt;div class=&quot;tstar&quot;&gt;★★★★★&lt;/div&gt;&lt;p class=&quot;ttxt&quot;&gt;&quot;As an interior designer I've sourced from many vendors. Kanchwale is in a different league — quality, communication, and packaging are all exceptional.&quot;&lt;/p&gt;&lt;div class=&quot;tauth&quot;&gt;Deepa R. — &lt;em&gt;Chennai · Interior Designer&lt;/em&gt;&lt;/div&gt;&lt;div class=&quot;tver&quot;&gt;✓ Verified Purchase&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style=&quot;text-align:center;margin-top:34px;&quot; class=&quot;reveal&quot;&gt;
+    &lt;a class=&quot;bo&quot; href=&quot;https://wa.me/919879282863?text=Hi%20Kanchwale!%20I%27d%20like%20to%20share%20a%20review.&quot; target=&quot;_blank&quot;&gt;Share Your Experience&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- B2B --&gt;
+
+&lt;section class=&quot;sec b2bsec&quot; id=&quot;b2bsec&quot;&gt;
+  &lt;div class=&quot;b2binr&quot;&gt;
+    &lt;div class=&quot;rl&quot;&gt;
+      &lt;div class=&quot;stag&quot;&gt;For Businesses&lt;/div&gt;
+      &lt;h2 class=&quot;stitle&quot;&gt;Glass Supply for&lt;br&gt;&lt;em&gt;Trade &amp;amp; Projects&lt;/em&gt;&lt;/h2&gt;
+      &lt;p style=&quot;font-size:13px;color:rgba(245,240,234,.4);line-height:1.9;margin-bottom:26px;&quot;&gt;We supply interior designers, architects, builders, hotels, and corporate gifting companies. Direct from our factory — trade pricing, priority dispatch, dedicated account management.&lt;/p&gt;
+      &lt;div class=&quot;b2bfeats&quot;&gt;
+        &lt;div class=&quot;b2bfeat&quot;&gt;&lt;div class=&quot;b2bico&quot;&gt;🏗️&lt;/div&gt;&lt;div&gt;&lt;h4&gt;Builders &amp;amp; Developers&lt;/h4&gt;&lt;p&gt;Glass partitions, shower enclosures, balustrades for residential and commercial projects.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;b2bfeat&quot;&gt;&lt;div class=&quot;b2bico&quot;&gt;🎨&lt;/div&gt;&lt;div&gt;&lt;h4&gt;Interior Designers&lt;/h4&gt;&lt;p&gt;Trade account with designer discounts, priority sampling, and mock-ups for client presentations.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;b2bfeat&quot;&gt;&lt;div class=&quot;b2bico&quot;&gt;🏨&lt;/div&gt;&lt;div&gt;&lt;h4&gt;Hotels &amp;amp; Hospitality&lt;/h4&gt;&lt;p&gt;Bulk mirror supply for rooms, lobbies, spas. Custom branding available on request.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;b2bfeat&quot;&gt;&lt;div class=&quot;b2bico&quot;&gt;🎁&lt;/div&gt;&lt;div&gt;&lt;h4&gt;Corporate Gifting&lt;/h4&gt;&lt;p&gt;Branded glass gifts for Diwali, events, recognition. MOQ 50 units. Custom packaging.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;b2btags&quot;&gt;
+        &lt;div class=&quot;b2btag&quot;&gt;Interior Designers&lt;/div&gt;&lt;div class=&quot;b2btag&quot;&gt;Architects&lt;/div&gt;
+        &lt;div class=&quot;b2btag&quot;&gt;Builders&lt;/div&gt;&lt;div class=&quot;b2btag&quot;&gt;Hotels&lt;/div&gt;
+        &lt;div class=&quot;b2btag&quot;&gt;Corporates&lt;/div&gt;&lt;div class=&quot;b2btag&quot;&gt;Retailers&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;rr&quot;&gt;
+      &lt;div class=&quot;b2bform&quot;&gt;
+        &lt;div class=&quot;b2bftt&quot;&gt;Request a B2B Quote&lt;/div&gt;
+        &lt;div class=&quot;b2bfsub&quot;&gt;Fill in your requirements and our trade team will respond within 4 business hours.&lt;/div&gt;
+        &lt;div class=&quot;f2&quot;&gt;
+          &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Full Name *&lt;/label&gt;&lt;input class=&quot;fi&quot; id=&quot;b2bn&quot; placeholder=&quot;Your name&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Company *&lt;/label&gt;&lt;input class=&quot;fi&quot; id=&quot;b2bc&quot; placeholder=&quot;Company name&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f2&quot;&gt;
+          &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Phone *&lt;/label&gt;&lt;input class=&quot;fi&quot; id=&quot;b2bp&quot; type=&quot;tel&quot; placeholder=&quot;+91 XXXXX XXXXX&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Email&lt;/label&gt;&lt;input class=&quot;fi&quot; id=&quot;b2be&quot; type=&quot;email&quot; placeholder=&quot;you@company.com&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Business Type&lt;/label&gt;&lt;select class=&quot;fs&quot; id=&quot;b2bt&quot;&gt;&lt;option value=&quot;&quot;&gt;Select type&lt;/option&gt;&lt;option&gt;Interior Designer / Architect&lt;/option&gt;&lt;option&gt;Builder / Developer&lt;/option&gt;&lt;option&gt;Hotel / Hospitality&lt;/option&gt;&lt;option&gt;Corporate / Events&lt;/option&gt;&lt;option&gt;Retailer / Distributor&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Estimated Quantity&lt;/label&gt;&lt;select class=&quot;fs&quot; id=&quot;b2bq&quot;&gt;&lt;option value=&quot;&quot;&gt;Select range&lt;/option&gt;&lt;option&gt;1–10 units&lt;/option&gt;&lt;option&gt;10–50 units&lt;/option&gt;&lt;option&gt;50–200 units&lt;/option&gt;&lt;option&gt;200+ units&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Your Requirements&lt;/label&gt;&lt;textarea class=&quot;ft&quot; id=&quot;b2br&quot; placeholder=&quot;Describe product type, size, finish, timeline, delivery location...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+        &lt;button class=&quot;bg&quot; onclick=&quot;subB2B()&quot; style=&quot;width:100%;margin-top:6px;&quot;&gt;&lt;span&gt;Send Enquiry&lt;/span&gt;&lt;/button&gt;
+        &lt;div class=&quot;fok&quot; id=&quot;b2bok&quot;&gt;✓ Enquiry sent! Our trade team will contact you within 4 hours.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- BLOG --&gt;
+
+&lt;section class=&quot;sec&quot; id=&quot;blogsec&quot; style=&quot;background:var(--black);&quot;&gt;
+  &lt;div class=&quot;shdr reveal&quot;&gt;&lt;div&gt;&lt;div class=&quot;stag&quot;&gt;Stories&lt;/div&gt;&lt;h2 class=&quot;stitle&quot;&gt;From Our &lt;em&gt;Journal&lt;/em&gt;&lt;/h2&gt;&lt;/div&gt;&lt;a class=&quot;bgh&quot; href=&quot;shop.html#blog&quot;&gt;All Articles →&lt;/a&gt;&lt;/div&gt;
+  &lt;div class=&quot;bgrid reveal&quot; id=&quot;bgrid&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- IG STRIP --&gt;
+
+&lt;div class=&quot;igsec reveal&quot;&gt;
+  &lt;div class=&quot;igtit&quot;&gt;Follow Our Journey&lt;/div&gt;
+  &lt;div class=&quot;igsub&quot;&gt;Behind the scenes from our Mumbai factory · New collections · Customer installs&lt;/div&gt;
+  &lt;div class=&quot;iggrid&quot;&gt;&lt;div class=&quot;igtile&quot;&gt;🪞&lt;/div&gt;&lt;div class=&quot;igtile&quot;&gt;✨&lt;/div&gt;&lt;div class=&quot;igtile&quot;&gt;🏭&lt;/div&gt;&lt;div class=&quot;igtile&quot;&gt;📦&lt;/div&gt;&lt;div class=&quot;igtile&quot;&gt;🔮&lt;/div&gt;&lt;div class=&quot;igtile&quot;&gt;💡&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;ighandle&quot;&gt;@kanchwale.official&lt;/div&gt;
+  &lt;p style=&quot;font-size:11px;color:rgba(245,240,234,.26);margin-top:6px;margin-bottom:18px;&quot;&gt;Add your product photos here&lt;/p&gt;
+  &lt;a class=&quot;bo&quot; href=&quot;https://instagram.com/kanchwale.official&quot; target=&quot;_blank&quot;&gt;Follow on Instagram&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- COUNTER --&gt;
+
+&lt;div class=&quot;countwrap reveal&quot;&gt;&lt;div class=&quot;countn&quot; id=&quot;vcnt&quot;&gt;0&lt;/div&gt;&lt;div class=&quot;countl&quot;&gt;Visitors &amp;amp; Counting&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- CONTACT --&gt;
+
+&lt;section class=&quot;sec ctsec&quot; id=&quot;ctsec&quot;&gt;
+  &lt;div class=&quot;ctinr&quot;&gt;
+    &lt;div class=&quot;rl&quot;&gt;
+      &lt;div class=&quot;stag&quot;&gt;Get In Touch&lt;/div&gt;
+      &lt;h2 class=&quot;stitle&quot;&gt;Let's Build&lt;br&gt;Your &lt;em&gt;Vision&lt;/em&gt;&lt;/h2&gt;
+      &lt;div class=&quot;ctinfo&quot;&gt;
+        &lt;p&gt;Tell us what you need — we'll suggest the perfect mirror, customise it to your specification, and deliver to your door.&lt;/p&gt;
+        &lt;div class=&quot;ctmeth&quot;&gt;&lt;div class=&quot;ctmico&quot;&gt;💬&lt;/div&gt;&lt;div&gt;&lt;div class=&quot;ctlab&quot;&gt;WhatsApp&lt;/div&gt;&lt;div class=&quot;ctval&quot;&gt;&lt;a href=&quot;https://wa.me/919879282863&quot; target=&quot;_blank&quot;&gt;+91 98792 82863&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;ctmeth&quot;&gt;&lt;div class=&quot;ctmico&quot;&gt;📧&lt;/div&gt;&lt;div&gt;&lt;div class=&quot;ctlab&quot;&gt;Email&lt;/div&gt;&lt;div class=&quot;ctval&quot;&gt;&lt;a href=&quot;mailto:kanchwale.in@gmail.com&quot;&gt;kanchwale.in@gmail.com&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;ctmeth&quot;&gt;&lt;div class=&quot;ctmico&quot;&gt;📍&lt;/div&gt;&lt;div&gt;&lt;div class=&quot;ctlab&quot;&gt;Location&lt;/div&gt;&lt;div class=&quot;ctval&quot;&gt;Mumbai, Maharashtra, India&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;ctmeth&quot;&gt;&lt;div class=&quot;ctmico&quot;&gt;⏰&lt;/div&gt;&lt;div&gt;&lt;div class=&quot;ctlab&quot;&gt;Response Time&lt;/div&gt;&lt;div class=&quot;ctval&quot;&gt;Within 2 hours on WhatsApp&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;rr&quot;&gt;
+      &lt;div class=&quot;ctformw&quot;&gt;
+        &lt;div style=&quot;font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:300;margin-bottom:20px;&quot;&gt;Send an Enquiry&lt;/div&gt;
+        &lt;div class=&quot;f2&quot;&gt;
+          &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Name *&lt;/label&gt;&lt;input class=&quot;fi&quot; id=&quot;eqn&quot; placeholder=&quot;Your name&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Phone *&lt;/label&gt;&lt;input class=&quot;fi&quot; id=&quot;eqp&quot; type=&quot;tel&quot; placeholder=&quot;+91 XXXXX&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Email&lt;/label&gt;&lt;input class=&quot;fi&quot; id=&quot;eqe&quot; type=&quot;email&quot; placeholder=&quot;your@email.com&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;I'm interested in&lt;/label&gt;&lt;select class=&quot;fs&quot; id=&quot;eqi&quot;&gt;&lt;option value=&quot;&quot;&gt;Select product type&lt;/option&gt;&lt;option&gt;Decorative Mirrors&lt;/option&gt;&lt;option&gt;LED Smart Mirrors&lt;/option&gt;&lt;option&gt;Glass Partitions&lt;/option&gt;&lt;option&gt;Custom Size Mirror&lt;/option&gt;&lt;option&gt;Corporate Gifting&lt;/option&gt;&lt;option&gt;Full Home Fit-out&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;div class=&quot;fg&quot;&gt;&lt;label class=&quot;fl&quot;&gt;Message&lt;/label&gt;&lt;textarea class=&quot;ft&quot; id=&quot;eqm&quot; placeholder=&quot;Tell us about your space, budget, and what you're looking for...&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;
+        &lt;button class=&quot;bg&quot; onclick=&quot;subEq()&quot; style=&quot;width:100%;margin-top:4px;&quot;&gt;&lt;span&gt;Send Message&lt;/span&gt;&lt;/button&gt;
+        &lt;div class=&quot;fok&quot; id=&quot;eqok&quot;&gt;✓ Message received! We'll WhatsApp you within 2 hours.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- NEWSLETTER --&gt;
+
+&lt;div class=&quot;nlsec reveal&quot;&gt;
+  &lt;div class=&quot;nltit&quot;&gt;Stay in the &lt;em style=&quot;font-style:italic;color:var(--gold);&quot;&gt;Loop&lt;/em&gt;&lt;/div&gt;
+  &lt;div class=&quot;nlsub&quot;&gt;New collections, exclusive offers, and AR launch updates — straight to your inbox.&lt;/div&gt;
+  &lt;div class=&quot;nlform&quot;&gt;
+    &lt;input class=&quot;nli&quot; id=&quot;nle&quot; type=&quot;email&quot; placeholder=&quot;your@email.com&quot; onkeydown=&quot;if(event.key==='Enter')subNL()&quot;&gt;
+    &lt;button class=&quot;nlbtn&quot; onclick=&quot;subNL()&quot;&gt;Subscribe&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;nlok&quot; id=&quot;nlok&quot;&gt;✓ You're in! Welcome to the Kanchwale family.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CTA --&gt;
+
+&lt;section class=&quot;cta&quot;&gt;
+  &lt;h2 class=&quot;ctatit reveal&quot;&gt;Ready to Transform&lt;br&gt;Your &lt;em&gt;Space?&lt;/em&gt;&lt;/h2&gt;
+  &lt;p class=&quot;ctasub reveal&quot;&gt;Share your wall photo on WhatsApp. We'll suggest the perfect mirror.&lt;/p&gt;
+  &lt;div class=&quot;ctabtns reveal&quot;&gt;
+    &lt;a class=&quot;bwa&quot; href=&quot;https://wa.me/919879282863?text=Hi%20Kanchwale!%20I%27d%20like%20to%20enquire%20about%20a%20mirror.&quot; target=&quot;_blank&quot;&gt;💬 Chat on WhatsApp&lt;/a&gt;
+    &lt;a class=&quot;bo&quot; href=&quot;shop.html&quot;&gt;Shop Now&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- FOOTER --&gt;
+
+&lt;footer&gt;
+  &lt;div class=&quot;ftop&quot;&gt;
+    &lt;div&gt;
+      &lt;div class=&quot;fbrand&quot;&gt;
+        &lt;div class=&quot;nico&quot; style=&quot;width:26px;height:26px;&quot;&gt;&lt;div class=&quot;ld&quot;&gt;&lt;/div&gt;&lt;div class=&quot;lm&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ldot a&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ldot b&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ldot c&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ldot d&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;fbtxt&quot;&gt;KANCH&lt;em&gt;WALE&lt;/em&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p class=&quot;ftag&quot;&gt;India's finest glass manufacturer. Made in Mumbai with precision. Delivered across India with care.&lt;/p&gt;
+      &lt;div class=&quot;fsoc&quot;&gt;
+        &lt;a class=&quot;fsoca&quot; href=&quot;https://instagram.com/kanchwale.official&quot; target=&quot;_blank&quot;&gt;IG&lt;/a&gt;
+        &lt;a class=&quot;fsoca&quot; href=&quot;https://wa.me/919879282863&quot; target=&quot;_blank&quot;&gt;WA&lt;/a&gt;
+        &lt;a class=&quot;fsoca&quot; href=&quot;mailto:kanchwale.in@gmail.com&quot;&gt;✉&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fcol&quot;&gt;&lt;h4&gt;Collections&lt;/h4&gt;&lt;ul class=&quot;flinks&quot;&gt;&lt;li&gt;&lt;a href=&quot;shop.html?cat=Orbit&quot;&gt;Orbit — Futuristic&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html?cat=Haveli&quot;&gt;Haveli — Heritage&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html?cat=Void&quot;&gt;Void — Minimal&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html?cat=Prism&quot;&gt;Prism — Colour&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html?cat=Nova&quot;&gt;Nova — LED&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+    &lt;div class=&quot;fcol&quot;&gt;&lt;h4&gt;Company&lt;/h4&gt;&lt;ul class=&quot;flinks&quot;&gt;&lt;li&gt;&lt;a href=&quot;shop.html#about&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html#blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;sto('b2bsec')&quot;&gt;B2B / Trade&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html#faq&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html#terms&quot;&gt;Terms&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+    &lt;div class=&quot;fcol&quot;&gt;&lt;h4&gt;Support&lt;/h4&gt;&lt;ul class=&quot;flinks&quot;&gt;&lt;li&gt;&lt;a href=&quot;shop.html#shipping&quot;&gt;Shipping&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html#returns&quot;&gt;Returns&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;shop.html#customisation&quot;&gt;Customisation&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://wa.me/919879282863&quot; target=&quot;_blank&quot;&gt;WhatsApp Us&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a onclick=&quot;sto('ctsec')&quot;&gt;Contact Form&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;fbot&quot;&gt;
+    &lt;div class=&quot;fcopy&quot;&gt;© 2025 Kanchwale · kanchwale.com · All rights reserved.&lt;/div&gt;
+    &lt;div class=&quot;fpay&quot;&gt;&lt;div class=&quot;fptag&quot;&gt;UPI&lt;/div&gt;&lt;div class=&quot;fptag&quot;&gt;Cards&lt;/div&gt;&lt;div class=&quot;fptag&quot;&gt;Net Banking&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;
+
+&lt;script&gt;
+// DB
+function db(){return JSON.parse(localStorage.getItem('kwDB')||'{}');}
+function sdb(d){localStorage.setItem('kwDB',JSON.stringify(d));}
+function defProds(){return[{id:1,name:'Orbit Statement Mirror',collection:'Orbit',price:18000,discount:15000,emoji:'🪞',isNew:true},{id:2,name:'Haveli Arch Mirror',collection:'Haveli',price:12000,discount:null,emoji:'🪟',isNew:true},{id:3,name:'Void Circle Mirror',collection:'Void',price:8500,discount:7500,emoji:'⭕',isNew:false},{id:4,name:'Nova LED Smart Mirror',collection:'Nova',price:22000,discount:null,emoji:'💡',isNew:true}];}
+
+window.onload=()=&gt;{
+  setTimeout(()=&gt;document.getElementById('pt').classList.add('out'),100);
+  setTimeout(()=&gt;document.getElementById('loader').classList.add('done'),2100);
+  trackVis();loadNotice();renderNew();renderEvents();renderBlog();updateStats();updateCartBadge();updateNav();
+  setupReveal();setupCursor();setupNav();
+  window.addEventListener('scroll',()=&gt;document.getElementById('btt').classList.toggle('on',scrollY&gt;600));
+};
+
+function goTo(url){
+  const pt=document.getElementById('pt');
+  pt.querySelectorAll('.ptp').forEach(p=&gt;p.style.transform='');
+  pt.classList.remove('out');
+  setTimeout(()=&gt;location.href=url,550);
+}
+function sto(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+
+function setupCursor(){
+  const c=document.getElementById('cur'),r=document.getElementById('ring');
+  if(!c||innerWidth&lt;=768)return;
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=&gt;{mx=e.clientX;my=e.clientY;c.style.left=mx-3.5+'px';c.style.top=my-3.5+'px';});
+  (function anim(){rx+=(mx-rx-16)*.12;ry+=(my-ry-16)*.12;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(anim);})();
+  document.querySelectorAll('a,button,.ccard,.pcard,.tcard,.ecard,.bcard').forEach(el=&gt;{
+    el.addEventListener('mouseenter',()=&gt;c.classList.add('h'));
+    el.addEventListener('mouseleave',()=&gt;c.classList.remove('h'));
+  });
+}
+
+function setupNav(){
+  window.addEventListener('scroll',()=&gt;document.getElementById('nav').classList.toggle('sc',scrollY&gt;60));
+}
+
+function setupReveal(){
+  const obs=new IntersectionObserver(es=&gt;es.forEach(e=&gt;{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.1});
+  document.querySelectorAll('.reveal,.rl,.rr').forEach(el=&gt;obs.observe(el));
+}
+
+function trackVis(){
+  const d=db(),today=new Date().toDateString();
+  if(!d.visitors)d.visitors={total:0,today:0,lastDate:'',sessions:[]};
+  d.visitors.total++;
+  if(d.visitors.lastDate!==today){d.visitors.today=1;d.visitors.lastDate=today;}else d.visitors.today++;
+  d.visitors.sessions.unshift({date:new Date().toLocaleString(),page:'Home',ua:navigator.userAgent});
+  if(d.visitors.sessions.length&gt;100)d.visitors.sessions.pop();
+  sdb(d);
+}
+
+function updateStats(){
+  const d=db();
+  const tot=(d.visitors?.total||0)+247;
+  const vcnt=document.getElementById('vcnt');
+  const hc=document.getElementById('hcount');
+  const hp=document.getElementById('hprod');
+  if(vcnt){let n=0;const t=setInterval(()=&gt;{n=Math.min(n+Math.ceil(tot/60),tot);vcnt.textContent=n.toLocaleString();if(n&gt;=tot)clearInterval(t);},30);}
+  if(hc)hc.textContent=tot.toLocaleString();
+  if(hp)hp.textContent=(d.products?.length||6);
+}
+
+function loadNotice(){
+  const d=db();
+  if(d.notice&amp;&amp;d.notice.trim()){document.getElementById('ntxt').textContent=d.notice;document.getElementById('notice').classList.add('on');}
+}
+
+function renderNew(){
+  const d=db();
+  const prods=d.products?.length?d.products:defProds();
+  const items=prods.filter(p=&gt;p.isNew).slice(0,4);
+  document.getElementById('ngrid').innerHTML=items.map(p=&gt;{
+    const pr=p.discount?`&lt;span class=&quot;pprice&quot;&gt;₹${p.discount.toLocaleString()}&lt;/span&gt;&lt;span class=&quot;pold&quot;&gt;₹${p.price.toLocaleString()}&lt;/span&gt;`:`&lt;span class=&quot;pprice&quot;&gt;₹${p.price.toLocaleString()}&lt;/span&gt;`;
+    return `&lt;div class=&quot;pcard&quot; onclick=&quot;goTo('shop.html?product=${p.id}')&quot;&gt;
+      &lt;div class=&quot;pbadge&quot;&gt;New&lt;/div&gt;${p.discount?'&lt;div class=&quot;pbadge sl&quot;&gt;Sale&lt;/div&gt;':''}
+      &lt;div class=&quot;pimg&quot;&gt;${p.emoji||'🪞'}&lt;/div&gt;
+      &lt;div class=&quot;pinf&quot;&gt;
+        &lt;div class=&quot;pname&quot;&gt;${p.name}&lt;/div&gt;
+        &lt;div class=&quot;pcoll&quot;&gt;${p.collection} Collection&lt;/div&gt;
+        &lt;div class=&quot;ppr&quot;&gt;${pr}&lt;/div&gt;
+        &lt;div class=&quot;pbtns&quot;&gt;
+          &lt;button class=&quot;bar&quot; onclick=&quot;event.stopPropagation();goTo('shop.html?product=${p.id}&amp;ar=1')&quot;&gt;📱 Try AR&lt;/button&gt;
+          &lt;button class=&quot;badd&quot; onclick=&quot;event.stopPropagation();addCart(${p.id})&quot;&gt;Add to Cart&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;`;
+  }).join('');
+}
+
+function getCart(){return JSON.parse(localStorage.getItem('kwCart')||'[]');}
+function saveCart(c){localStorage.setItem('kwCart',JSON.stringify(c));}
+function updateCartBadge(){document.getElementById('cbadge').textContent=getCart().reduce((s,i)=&gt;s+i.qty,0);}
+function addCart(id){
+  const d=db();const prods=d.products?.length?d.products:defProds();const p=prods.find(x=&gt;x.id===id);if(!p)return;
+  const c=getCart();const ex=c.find(i=&gt;i.id===id);
+  if(ex)ex.qty++;else c.push({id:p.id,name:p.name,price:p.discount||p.price,emoji:p.emoji,qty:1,collection:p.collection});
+  saveCart(c);updateCartBadge();toast('Added — '+p.name);
+}
+
+function updateNav(){
+  const u=localStorage.getItem('kwUser');const btn=document.getElementById('nauth');
+  if(u&amp;&amp;btn){const user=JSON.parse(u);btn.textContent=user.name.split(' ')[0];btn.onclick=()=&gt;goTo('shop.html#account');}
+}
+
+function renderBlog(){
+  const d=db();
+  const blogs=d.blog?.length?d.blog:[{id:1,title:'How to Choose the Right Mirror Size',emoji:'📐',excerpt:'The perfect mirror is all about proportion.',date:'May 1, 2025'},{id:2,title:'LED Mirrors vs Plain Mirrors',emoji:'💡',excerpt:'Both have their place. Here\'s an honest breakdown.',date:'Apr 22, 2025'},{id:3,title:'The Complete Guide to Frame Finishes',emoji:'🎨',excerpt:'Gold, black, chrome — each tells a different story.',date:'Apr 15, 2025'}];
+  document.getElementById('bgrid').innerHTML=blogs.slice(0,3).map(b=&gt;`&lt;div class=&quot;bcard&quot; onclick=&quot;goTo('shop.html?blog=${b.id}')&quot;&gt;&lt;div class=&quot;bimg&quot;&gt;${b.emoji||'📝'}&lt;/div&gt;&lt;div class=&quot;bbody&quot;&gt;&lt;div class=&quot;bdt&quot;&gt;${b.date||''}&lt;/div&gt;&lt;div class=&quot;btit&quot;&gt;${b.title}&lt;/div&gt;&lt;div class=&quot;bex&quot;&gt;${b.excerpt||''}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;`).join('');
+}
+
+function renderEvents(){
+  const d=db();
+  const events=d.events?.length?d.events:[{id:1,title:'Diwali Collection Launch',date:'2025-10-01',desc:'Our most festive collection. Online exclusive.'},{id:2,title:'AR App Beta Launch',date:'2025-08-15',desc:'Be first to try AR mirror placement on your wall.'},{id:3,title:'Mumbai Showroom Opening',date:'2025-09-01',desc:'Visit our first physical showroom.'}];
+  const sec=document.getElementById('eventsec');
+  if(!events.length){if(sec)sec.style.display='none';return;}
+  document.getElementById('egrid').innerHTML=events.map(e=&gt;`&lt;div class=&quot;ecard&quot;&gt;&lt;div class=&quot;edt&quot;&gt;📅 ${e.date?new Date(e.date).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'}):''}&lt;/div&gt;&lt;div class=&quot;etitle&quot;&gt;${e.title}&lt;/div&gt;&lt;div class=&quot;edesc&quot;&gt;${e.desc}&lt;/div&gt;&lt;/div&gt;`).join('');
+}
+
+function setChip(el,color){
+  document.querySelectorAll('.chip').forEach(c=&gt;c.classList.remove('on'));el.classList.add('on');
+  const m=document.getElementById('ardem');m.style.background=`linear-gradient(135deg,${color}44,${color}11)`;m.style.borderColor=color;
+}
+
+function subB2B(){
+  const n=document.getElementById('b2bn').value.trim(),p=document.getElementById('b2bp').value.trim(),c=document.getElementById('b2bc').value.trim();
+  if(!n||!p||!c){toast('Please fill all required fields',true);return;}
+  const msg=`Hi Kanchwale! B2B Enquiry from ${n} (${c}). Phone: ${p}. Type: ${document.getElementById('b2bt').value}. Qty: ${document.getElementById('b2bq').value}. Requirements: ${document.getElementById('b2br').value}`;
+  window.open(`https://wa.me/919879282863?text=${encodeURIComponent(msg)}`,'_blank');
+  document.getElementById('b2bok').style.display='block';
+  ['b2bn','b2bc','b2bp','b2be','b2br'].forEach(id=&gt;document.getElementById(id).value='');
+}
+
+function subEq(){
+  const n=document.getElementById('eqn').value.trim(),p=document.getElementById('eqp').value.trim();
+  if(!n||!p){toast('Please fill your name and phone',true);return;}
+  const msg=`Hi Kanchwale! Enquiry from ${n}. Phone: ${p}. Email: ${document.getElementById('eqe').value}. Interest: ${document.getElementById('eqi').value}. Message: ${document.getElementById('eqm').value}`;
+  window.open(`https://wa.me/919879282863?text=${encodeURIComponent(msg)}`,'_blank');
+  document.getElementById('eqok').style.display='block';
+}
+
+function subNL(){
+  const e=document.getElementById('nle').value.trim();
+  if(!e||!e.includes('@')){toast('Enter a valid email',true);return;}
+  const d=db();if(!d.newsletter)d.newsletter=[];d.newsletter.push({email:e,date:new Date().toISOString()});sdb(d);
+  document.getElementById('nlok').style.display='block';document.getElementById('nle').value='';
+}
+
+function toast(msg,err=false){
+  const t=document.getElementById('toast');t.textContent=msg;t.className='toast'+(err?' err':'')+' on';
+  setTimeout(()=&gt;t.classList.remove('on'),3000);
+}
+
+let kb='';
+document.addEventListener('keydown',e=&gt;{kb+=e.key;if(kb.length&gt;8)kb=kb.slice(-8);if(kb.includes('admin'))goTo('admin.html');});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
