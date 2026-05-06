@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanchwale — Premium Glass & Mirrors | Made in India</title>
+<meta name="description" content="India's finest glass manufacturer. Mirrors, partitions, decorative glass — all glass needs in one place. Made in India for India by Indians.">
+<meta name="keywords" content="luxury mirrors India, glass manufacturer, custom mirrors, glass partitions, decorative glass, kanchwale, made in India">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#080808;--deep:#0f0f0f;--gold:#c8a96e;--gl:#e8cfa0;--white:#f5f0ea;--glass:rgba(255,255,255,.04);--gb:rgba(255,255,255,.08);--red:#e05555;--green:#4caf7d;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:'DM Sans',sans-serif;}
+input,textarea,select{font-family:'DM Sans',sans-serif;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--deep);}::-webkit-scrollbar-thumb{background:var(--gold);}
+@media(max-width:768px){body{cursor:auto;}}
+
+/* PAGE TRANSITION */
+#pt{position:fixed;inset:0;z-index:9999;display:flex;pointer-events:none;}
+.ptp{flex:1;background:var(--black);transform-origin:top;transition:transform .65s cubic-bezier(.77,0,.18,1);}
+.ptp:nth-child(2){transition-delay:.06s;}.ptp:nth-child(3){transition-delay:.12s;}.ptp:nth-child(4){transition-delay:.18s;}.ptp:nth-child(5){transition-delay:.24s;}
+#pt.out .ptp{transform:scaleY(0);}
+
+/* LOADER */
+#loader{position:fixed;inset:0;background:var(--black);z-index:9998;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transition:opacity .5s .2s,visibility .5s .2s;}
+#loader.done{opacity:0;visibility:hidden;}
+.l-icon{position:relative;width:52px;height:52px;animation:lspin .9s ease .3s both;}
+@keyframes lspin{from{opacity:0;transform:rotate(-45deg) scale(.5);}to{opacity:1;transform:rotate(0deg) scale(1);}}
+.l-diamond{position:absolute;inset:0;border:1.5px solid var(--gold);transform:rotate(45deg);border-radius:2px;}
+.l-mirror{position:absolute;width:22px;height:30px;top:50%;left:50%;transform:translate(-50%,-50%);border:1.5px solid rgba(200,169,110,.7);border-radius:11px 11px 2px 2px;background:linear-gradient(135deg,rgba(200,169,110,.15),rgba(255,255,255,.05));}
+.l-dot{position:absolute;width:4px;height:4px;background:var(--gold);border-radius:50%;}
+.l-dot.a{top:50%;left:-2px;transform:translateY(-50%);}.l-dot.b{top:50%;right:-2px;transform:translateY(-50%);}.l-dot.c{top:-2px;left:50%;transform:translateX(-50%);}.l-dot.d{bottom:-2px;left:50%;transform:translateX(-50%);}
+.l-brand{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;letter-spacing:.25em;text-transform:uppercase;animation:fu .6s .6s both;}
+.l-brand em{color:var(--gold);font-style:normal;}
+.l-sub{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(200,169,110,.45);animation:fu .6s .8s both;}
+.l-bar{width:130px;height:1px;background:rgba(200,169,110,.12);overflow:hidden;}
+.l-bar::after{content:'';display:block;height:100%;width:0;background:var(--gold);animation:lb 1.5s .4s both;}
+@keyframes lb{to{width:100%;}} @keyframes fu{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* CURSOR */
+.cursor{width:7px;height:7px;background:var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:9997;top:0;left:0;transition:transform .1s;}
+.cursor-ring{width:32px;height:32px;border:1px solid rgba(200,169,110,.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9996;top:0;left:0;transition:all .15s ease;}
+.cursor.h{background:transparent;border:1px solid var(--gold);transform:scale(2);}
+
+/* FLOATS */
+#wa-f{position:fixed;bottom:28px;right:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:23px;z-index:400;box-shadow:0 8px 28px rgba(37,211,102,.35);transition:transform .3s;text-decoration:none;}
+#wa-f:hover{transform:scale(1.1);}
+#btt{position:fixed;bottom:28px;right:94px;width:40px;height:40px;background:var(--deep);border:1px solid rgba(200,169,110,.28);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:15px;z-index:400;cursor:pointer;color:var(--gold);transition:all .3s;}
+#btt.on{display:flex;}
+#btt:hover{background:var(--gold);color:var(--black);}
+
+/* TOAST */
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--deep);border:1px solid var(--gold);color:var(--white);padding:12px 22px;font-size:12px;z-index:500;opacity:0;transition:all .4s;pointer-events:none;white-space:nowrap;}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1;}
+.toast.err{border-color:var(--red);}
+
+/* NOTICE */
+#notice{background:var(--gold);color:var(--black);text-align:center;padding:10px 44px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;display:none;position:relative;}
+#notice.on{display:block;}
+#nx{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;cursor:pointer;color:var(--black);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;transition:all .4s;}
+nav.sc{background:rgba(8,8,8,.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--gb);padding:14px 60px;}
+.nlogo{display:flex;align-items:center;gap:11px;cursor:pointer;}
+.nico{position:relative;width:32px;height:32px;flex-shrink:0;}
+.nico .ld{position:absolute;inset:0;border:1.5px solid var(--gold);transform:rotate(45deg);border-radius:2px;}
+.nico .lm{position:absolute;width:14px;height:20px;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid rgba(200,169,110,.7);border-radius:7px 7px 2px 2px;background:linear-gradient(135deg,rgba(200,169,110,.15),rgba(255,255,255,.05));}
+.nico .ldot{position:absolute;width:3px;height:3px;background:var(--gold);border-radius:50%;}
+.nico .ldot.a{top:50%;left:-1.5px;transform:translateY(-50%);}.nico .ldot.b{top:50%;right:-1.5px;transform:translateY(-50%);}.nico .ldot.c{top:-1.5px;left:50%;transform:translateX(-50%);}.nico .ldot.d{bottom:-1.5px;left:50%;transform:translateX(-50%);}
+.ntxt{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;}
+.ntxt em{color:var(--gold);font-style:normal;}
+.nlinks{display:flex;gap:26px;list-style:none;}
+.nlinks a{color:rgba(245,240,234,.5);font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;cursor:pointer;position:relative;}
+.nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nlinks a:hover{color:var(--gold);}
+.nlinks a:hover::after{width:100%;}
+.nright{display:flex;align-items:center;gap:12px;}
+.nico-btn{background:none;border:none;color:rgba(245,240,234,.5);font-size:18px;padding:6px;position:relative;transition:color .3s;}
+.nico-btn:hover{color:var(--gold);}
+.cbadge{position:absolute;top:0;right:0;background:var(--gold);color:var(--black);width:15px;height:15px;border-radius:50%;font-size:8px;font-weight:500;display:flex;align-items:center;justify-content:center;}
+.ncta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 18px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;}
+.ncta:hover{background:var(--gold);color:var(--black);}
+.hbg{display:none;background:none;border:none;color:var(--white);font-size:22px;}
+@media(max-width:768px){nav{padding:14px 20px;}nav.sc{padding:12px 20px;}.nlinks{display:none;position:fixed;top:57px;left:0;right:0;background:rgba(8,8,8,.98);flex-direction:column;padding:20px;gap:14px;border-bottom:1px solid var(--gb);z-index:499;}.nlinks.open{display:flex;}.hbg{display:block;}.ncta{display:none;}}
+
+/* BUTTONS */
+.bg{background:var(--gold);color:var(--black);padding:14px 32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:none;transition:all .35s;cursor:pointer;display:inline-block;position:relative;overflow:hidden;}
+.bg span{position:relative;z-index:1;}
+.bg::after{content:'';position:absolute;inset:0;background:var(--gl);transform:translateX(-101%);transition:transform .35s;}
+.bg:hover::after{transform:translateX(0);}
+.bo{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:14px 32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:all .35s;cursor:pointer;display:inline-block;}
+.bo:hover{background:var(--gold);color:var(--black);}
+.bwa{background:#25D366;color:#fff;padding:14px 32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;display:inline-block;transition:all .3s;}
+.bwa:hover{background:#1db954;}
+.bgh{color:rgba(245,240,234,.4);font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:none;border:none;cursor:pointer;transition:color .3s;}
+.bgh:hover{color:var(--gold);}
+
+/* FORM */
+.fg{margin-bottom:14px;}
+.fl{display:block;font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:rgba(245,240,234,.37);margin-bottom:6px;}
+.fi{width:100%;background:rgba(8,8,8,.7);border:1px solid var(--gb);color:var(--white);padding:11px 13px;font-size:13px;outline:none;transition:border-color .3s;}
+.fi:focus{border-color:var(--gold);}
+.fs{width:100%;background:rgba(8,8,8,.9);border:1px solid var(--gb);color:var(--white);padding:11px 13px;font-size:13px;outline:none;}
+.ft{width:100%;background:rgba(8,8,8,.7);border:1px solid var(--gb);color:var(--white);padding:11px 13px;font-size:13px;resize:vertical;outline:none;min-height:88px;transition:border-color .3s;}
+.ft:focus{border-color:var(--gold);}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+@media(max-width:540px){.f2{grid-template-columns:1fr;}}
+.fok{font-size:12px;color:var(--green);margin-top:9px;display:none;}
+.ferr{font-size:12px;color:var(--red);margin-top:5px;display:none;}
+
+/* SEC */
+.sec{padding:108px 60px;}
+@media(max-width:768px){.sec{padding:70px 24px;}}
+.stag{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:12px;}
+.stag::before{content:'';width:22px;height:1px;background:var(--gold);}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:300;line-height:1.1;margin-bottom:12px;}
+.stitle em{font-style:italic;color:var(--gold);}
+.shdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:14px;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 60px 60px;background:var(--black);}
+.hglow{position:absolute;right:0;top:0;width:65%;height:100%;background:radial-gradient(ellipse 60% 70% at 70% 40%,rgba(200,169,110,.07),transparent 70%);}
+.hglow2{position:absolute;left:0;bottom:0;width:40%;height:60%;background:radial-gradient(ellipse 80% 80% at 10% 90%,rgba(200,169,110,.04),transparent 70%);}
+.hgrain{position:absolute;inset:0;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;}
+.hcontent{max-width:580px;position:relative;z-index:2;}
+.htag{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;display:flex;align-items:center;gap:16px;animation:fu .8s .4s both;}
+.htag::before{content:'';width:40px;height:1px;background:var(--gold);}
+.hh1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6.5vw,84px);font-weight:300;line-height:1.03;margin-bottom:18px;animation:fu .8s .6s both;}
+.hh1 em{font-style:italic;color:var(--gold);}
+.hmade{font-size:13px;color:var(--gold);letter-spacing:.08em;margin-bottom:16px;animation:fu .8s .7s both;font-style:italic;font-family:'Cormorant Garamond',serif;}
+.hp{font-size:13px;line-height:1.9;color:rgba(245,240,234,.46);max-width:440px;margin-bottom:42px;animation:fu .8s .8s both;}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;animation:fu .8s 1s both;}
+.hstats{display:flex;gap:44px;margin-top:48px;animation:fu .8s 1.2s both;}
+.sn{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold);line-height:1;}
+.sl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,234,.26);margin-top:4px;}
+.hmirror{position:absolute;right:7%;top:50%;transform:translateY(-50%);width:270px;height:390px;animation:hfl 8s ease-in-out infinite,fr .9s .5s both;}
+@keyframes hfl{0%,100%{transform:translateY(-50%);}50%{transform:translateY(-52%) translateX(-6px);}}
+@keyframes fr{from{opacity:0;transform:translateY(-50%) translateX(40px);}to{opacity:1;transform:translateY(-50%);}}
+.mframe{width:100%;height:100%;border:1.5px solid var(--gold);position:relative;background:linear-gradient(135deg,rgba(200,169,110,.08),rgba(255,255,255,.02));box-shadow:0 0 80px rgba(200,169,110,.06);}
+.mc{position:absolute;width:18px;height:18px;border-color:var(--gl);border-style:solid;border-width:0;}
+.mc.tl{top:10px;left:10px;border-top-width:1px;border-left-width:1px;}.mc.tr{top:10px;right:10px;border-top-width:1px;border-right-width:1px;}.mc.bl{bottom:10px;left:10px;border-bottom-width:1px;border-left-width:1px;}.mc.br{bottom:10px;right:10px;border-bottom-width:1px;border-right-width:1px;}
+.mshine{position:absolute;top:15%;left:18%;width:1.5px;height:44%;background:linear-gradient(to bottom,transparent,rgba(200,169,110,.55),transparent);transform:rotate(-15deg);animation:sh 5s ease-in-out infinite;}
+.mshine2{position:absolute;top:28%;left:44%;width:1px;height:28%;background:linear-gradient(to bottom,transparent,rgba(200,169,110,.28),transparent);transform:rotate(-10deg);animation:sh 5s ease-in-out infinite 1.5s;}
+@keyframes sh{0%,100%{opacity:.22;}50%{opacity:.75;}}
+.marbadge{position:absolute;top:16px;right:-13px;background:rgba(200,169,110,.15);border:1px solid var(--gold);color:var(--gold);font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:4px 11px;font-weight:500;}
+@media(max-width:768px){.hero{padding:90px 24px 60px;}.hmirror{display:none;}.hstats{gap:26px;}}
+
+/* MARQUEE */
+.mqw{border-top:1px solid var(--gb);border-bottom:1px solid var(--gb);padding:14px 0;overflow:hidden;background:rgba(200,169,110,.02);}
+.mqt{display:flex;animation:mq 22s linear infinite;white-space:nowrap;}
+.mqi{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,240,234,.24);padding:0 34px;flex-shrink:0;}
+.mqi::after{content:' ◆ ';color:var(--gold);}
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* PRODUCT CARD */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:1024px){.pgrid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){.pgrid{grid-template-columns:1fr 1fr;gap:10px;}}
+.pcard{border:1px solid var(--gb);background:var(--deep);transition:border-color .35s,transform .35s,box-shadow .35s;cursor:pointer;position:relative;overflow:hidden;}
+.pcard:hover{border-color:rgba(200,169,110,.5);transform:translateY(-5px);box-shadow:0 18px 48px rgba(0,0,0,.4);}
+.pimg{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:54px;position:relative;overflow:hidden;}
+.pimg img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s;}
+.pcard:hover .pimg img{transform:scale(1.04);}
+.pbadge{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--black);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;}
+.pbadge.sl{background:var(--red);left:auto;right:10px;}
+.pinf{padding:12px;}
+.pname{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;margin-bottom:3px;}
+.pcoll{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,234,.28);margin-bottom:7px;}
+.ppr{display:flex;align-items:center;gap:7px;}
+.pprice{font-size:14px;color:var(--gold);}
+.pold{font-size:11px;color:rgba(245,240,234,.2);text-decoration:line-through;}
+.pbtns{display:flex;gap:6px;margin-top:9px;}
+.badd{flex:1;background:var(--gold);color:var(--black);border:none;padding:8px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;}
+.badd:hover{background:var(--gl);}
+.bar{background:transparent;border:1px solid rgba(200,169,110,.3);color:var(--gold);padding:8px 10px;font-size:10px;transition:all .3s;white-space:nowrap;}
+.bar:hover{border-color:var(--gold);}
+
+/* COLLECTIONS */
+.cgrid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 230px;gap:12px;}
+.ccard{position:relative;overflow:hidden;background:var(--deep);border:1px solid var(--gb);cursor:pointer;transition:border-color .4s;}
+.ccard:hover{border-color:rgba(200,169,110,.45);}
+.ccard.lg{grid-row:span 2;}
+.cbg{position:absolute;inset:0;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
+.ccard:hover .cbg{transform:scale(1.04);}
+.bg-orbit{background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(200,169,110,.12),transparent 70%),linear-gradient(135deg,#0a0a0a,#141210);}
+.bg-haveli{background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(139,115,85,.15),transparent 70%),linear-gradient(135deg,#0d0b08,#1a140a);}
+.bg-void{background:linear-gradient(135deg,#080808,#111);}
+.bg-prism{background:linear-gradient(135deg,rgba(44,62,80,.3),rgba(200,169,110,.08)),#0a0c0f;}
+.bg-nova{background:radial-gradient(ellipse at 50% 80%,rgba(200,169,110,.15),transparent 60%),#0a0a0a;}
+.csh{position:absolute;border:1px solid rgba(200,169,110,.3);background:linear-gradient(135deg,rgba(200,169,110,.08),rgba(255,255,255,.02));}
+.cinf{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(8,8,8,.95),transparent);}
+.cname{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;margin-bottom:3px;}
+.cdesc{font-size:10px;color:rgba(245,240,234,.3);letter-spacing:.1em;}
+.cprice{position:absolute;top:14px;right:14px;font-size:10px;color:var(--gold);}
+.carr{position:absolute;bottom:20px;right:20px;width:30px;height:30px;border:1px solid rgba(200,169,110,.28);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);opacity:0;transform:translateX(-10px);transition:all .35s;}
+.ccard:hover .carr{opacity:1;transform:translateX(0);}
+@media(max-width:768px){.cgrid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.ccard.lg{grid-row:span 1;height:210px;}.ccard{height:165px;}}
+
+/* AR */
+.arinr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+@media(max-width:768px){.arinr{grid-template-columns:1fr;gap:38px;}}
+.arphone{width:186px;height:356px;border:1.5px solid rgba(200,169,110,.38);border-radius:30px;margin:0 auto;background:#0a0a0a;position:relative;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.7);}
+.arscr{position:absolute;inset:10px;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#1a1510,#0f0d0a);}
+.arroom{width:100%;height:100%;position:relative;background:linear-gradient(to bottom,#2a2520,#1a1510 60%,#0f0d0a);}
+.arfl{position:absolute;bottom:35%;left:0;right:0;height:1px;background:rgba(200,169,110,.17);}
+.arsc{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 10px,rgba(200,169,110,.024) 10px,rgba(200,169,110,.024) 11px);}
+.armirr{position:absolute;left:50%;bottom:35%;transform:translateX(-50%);width:52px;height:86px;border:1.5px solid var(--gold);background:linear-gradient(135deg,rgba(200,169,110,.15),rgba(255,255,255,.04));box-shadow:0 0 20px rgba(200,169,110,.3);animation:pulse 3s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 20px rgba(200,169,110,.3);}50%{box-shadow:0 0 40px rgba(200,169,110,.55);}}
+.artag{position:absolute;top:11px;left:50%;transform:translateX(-50%);font-size:7px;letter-spacing:.2em;color:var(--gold);background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.28);padding:3px 7px;white-space:nowrap;}
+.chips{position:absolute;right:-17px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;}
+.chip{width:22px;height:22px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all .25s;}
+.chip.on,.chip:hover{border-color:var(--gold);transform:scale(1.2);}
+.arfeats{display:flex;flex-direction:column;gap:22px;}
+.arfeat{display:flex;gap:15px;align-items:flex-start;}
+.arn{font-family:'Cormorant Garamond',serif;font-size:26px;color:rgba(200,169,110,.15);flex-shrink:0;width:32px;line-height:1;}
+.arfeat h4{font-size:14px;font-weight:400;margin-bottom:4px;}
+.arfeat p{font-size:12px;color:rgba(245,240,234,.35);line-height:1.7;}
+
+/* MANUFACTURING */
+.mfg-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+@media(max-width:768px){.mfg-grid{grid-template-columns:1fr 1fr;}}
+.mfg-card{border:1px solid var(--gb);padding:24px 20px;text-align:center;transition:border-color .3s,transform .3s;background:var(--glass);}
+.mfg-card:hover{border-color:rgba(200,169,110,.35);transform:translateY(-3px);}
+.mfg-icon{font-size:28px;margin-bottom:12px;}
+.mfg-city{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;margin-bottom:4px;}
+.mfg-state{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,234,.3);}
+
+/* EVENTS */
+.egrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+@media(max-width:768px){.egrid{grid-template-columns:1fr;}}
+.ecard{border:1px solid var(--gb);padding:24px;background:var(--glass);transition:border-color .3s,transform .3s;}
+.ecard:hover{border-color:rgba(200,169,110,.33);transform:translateY(-3px);}
+.edt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.etitle{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;margin-bottom:6px;}
+.edesc{font-size:12px;color:rgba(245,240,234,.35);line-height:1.7;}
+
+/* WHY */
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gb);border:1px solid var(--gb);}
+@media(max-width:768px){.wgrid{grid-template-columns:1fr 1fr;}}
+.wcard{background:var(--deep);padding:36px 26px;transition:background .3s;}
+.wcard:hover{background:rgba(200,169,110,.04);}
+.wico{font-size:24px;margin-bottom:17px;display:block;}
+.wtit{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;margin-bottom:8px;}
+.wtxt{font-size:12px;color:rgba(245,240,234,.35);line-height:1.8;}
+
+/* PROCESS */
+.psteps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;text-align:center;}
+.psteps::before{content:'';position:absolute;top:26px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+@media(max-width:768px){.psteps{grid-template-columns:1fr 1fr;}.psteps::before{display:none;}}
+.pstep{padding:0 20px;}
+.pnum{width:52px;height:52px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);background:var(--black);position:relative;z-index:1;transition:all .3s;}
+.pstep:hover .pnum{background:var(--gold);color:var(--black);}
+.ptit{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;margin-bottom:8px;}
+.ptxt{font-size:11px;color:rgba(245,240,234,.32);line-height:1.8;}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:768px){.tgrid{grid-template-columns:1fr;}}
+.tcard{border:1px solid var(--gb);padding:28px;background:var(--glass);transition:border-color .3s,transform .3s;position:relative;}
+.tcard:hover{border-color:rgba(200,169,110,.28);transform:translateY(-3px);}
+.tcard::before{content:'❝';position:absolute;top:14px;left:20px;font-size:30px;color:rgba(200,169,110,.13);font-family:'Cormorant Garamond',serif;line-height:1;}
+.tstar{color:var(--gold);font-size:12px;letter-spacing:3px;margin-bottom:12px;margin-top:10px;}
+.ttxt{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;line-height:1.75;color:rgba(245,240,234,.7);margin-bottom:16px;}
+.tauth{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:rgba(245,240,234,.26);}
+.tauth em{color:var(--gold);font-style:normal;}
+.tver{font-size:9px;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-top:5px;}
+
+/* REVIEW FORM */
+.review-modal{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:800;display:none;align-items:center;justify-content:center;padding:20px;}
+.review-modal.open{display:flex;}
+.review-box{background:var(--deep);border:1px solid var(--gb);width:100%;max-width:480px;padding:36px;}
+.review-box h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:6px;}
+.review-box p{font-size:12px;color:rgba(245,240,234,.35);margin-bottom:24px;}
+.star-select{display:flex;gap:8px;margin-bottom:16px;}
+.star-btn{background:none;border:none;font-size:28px;cursor:pointer;color:rgba(245,240,234,.2);transition:color .2s;}
+.star-btn.sel{color:var(--gold);}
+
+/* B2B */
+.b2bsec{background:var(--deep);position:relative;overflow:hidden;}
+.b2bsec::before{content:'';position:absolute;top:-150px;right:-150px;width:450px;height:450px;background:radial-gradient(circle,rgba(200,169,110,.05),transparent 70%);border-radius:50%;}
+.b2binr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+@media(max-width:768px){.b2binr{grid-template-columns:1fr;gap:42px;}}
+.b2bfeats{display:flex;flex-direction:column;gap:22px;margin-top:28px;}
+.b2bfeat{display:flex;gap:16px;align-items:flex-start;}
+.b2bico{width:40px;height:40px;border:1px solid rgba(200,169,110,.22);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.b2bfeat h4{font-size:14px;font-weight:400;margin-bottom:4px;}
+.b2bfeat p{font-size:12px;color:rgba(245,240,234,.35);line-height:1.7;}
+.b2btags{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;}
+.b2btag{border:1px solid var(--gb);padding:5px 13px;font-size:11px;color:rgba(245,240,234,.32);letter-spacing:.1em;}
+.b2bform{background:rgba(200,169,110,.03);border:1px solid rgba(200,169,110,.1);padding:34px;}
+.b2bftt{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;margin-bottom:5px;}
+.b2bfsub{font-size:12px;color:rgba(245,240,234,.33);margin-bottom:24px;line-height:1.7;}
+
+/* CONTACT */
+.ctsec{background:var(--black);}
+.ctinr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+@media(max-width:768px){.ctinr{grid-template-columns:1fr;gap:42px;}}
+.ctinfo h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;margin-bottom:12px;line-height:1.2;}
+.ctinfo p{font-size:13px;color:rgba(245,240,234,.4);line-height:1.9;margin-bottom:22px;}
+.ctmeth{display:flex;gap:13px;align-items:flex-start;margin-bottom:16px;}
+.ctmico{width:36px;height:36px;border:1px solid rgba(200,169,110,.2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.ctlab{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,234,.28);margin-bottom:3px;}
+.ctval{font-size:13px;color:rgba(245,240,234,.65);}
+.ctval a{color:var(--gold);}
+.ctformw{background:var(--deep);border:1px solid var(--gb);padding:34px;}
+
+/* BLOG */
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;}
+@media(max-width:768px){.bgrid{grid-template-columns:1fr;}}
+.bcard{border:1px solid var(--gb);cursor:pointer;transition:border-color .3s,transform .3s;overflow:hidden;}
+.bcard:hover{border-color:rgba(200,169,110,.33);transform:translateY(-3px);}
+.bimg{width:100%;height:175px;background:linear-gradient(135deg,#111,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:38px;overflow:hidden;}
+.bimg img{width:100%;height:100%;object-fit:cover;}
+.bbody{padding:20px;}
+.bdt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.btit{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;margin-bottom:6px;line-height:1.3;}
+.bex{font-size:12px;color:rgba(245,240,234,.35);line-height:1.7;}
+
+/* COUNTER */
+.countwrap{background:var(--deep);padding:68px;text-align:center;position:relative;overflow:hidden;}
+.countwrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 50%,rgba(200,169,110,.05),transparent 70%);}
+.countn{font-family:'Cormorant Garamond',serif;font-size:88px;font-weight:300;color:var(--gold);line-height:1;position:relative;}
+.countl{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,240,234,.28);margin-top:14px;position:relative;}
+
+/* IG */
+.igsec{background:var(--deep);padding:60px;text-align:center;border-top:1px solid var(--gb);}
+.igtit{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:8px;}
+.igsub{font-size:12px;color:rgba(245,240,234,.32);margin-bottom:28px;}
+.iggrid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-bottom:26px;}
+@media(max-width:768px){.iggrid{grid-template-columns:repeat(3,1fr);}}
+.igtile{aspect-ratio:1;background:linear-gradient(135deg,#111,#1a1a1a);border:1px solid var(--gb);display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;transition:all .3s;}
+.igtile:hover{border-color:rgba(200,169,110,.38);}
+.ighandle{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold);margin-bottom:6px;}
+
+/* NEWSLETTER */
+.nlsec{background:var(--black);padding:80px 60px;text-align:center;position:relative;overflow:hidden;}
+.nlsec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(200,169,110,.04),transparent 70%);}
+.nltit{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;margin-bottom:9px;position:relative;}
+.nlsub{font-size:12px;color:rgba(245,240,234,.34);margin-bottom:28px;position:relative;}
+.nlform{display:flex;gap:0;max-width:440px;margin:0 auto;position:relative;}
+.nli{flex:1;background:var(--deep);border:1px solid var(--gb);border-right:none;color:var(--white);padding:13px 17px;font-size:13px;outline:none;transition:border-color .3s;}
+.nli:focus{border-color:var(--gold);}
+.nlbtn{background:var(--gold);color:var(--black);border:none;padding:13px 22px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;white-space:nowrap;}
+.nlbtn:hover{background:var(--gl);}
+.nlok{font-size:12px;color:var(--green);margin-top:10px;display:none;position:relative;}
+
+/* CTA */
+.cta{background:var(--black);text-align:center;padding:138px 60px;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(200,169,110,.05),transparent 70%);}
+.ctatit{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,66px);font-weight:300;line-height:1.1;margin-bottom:17px;position:relative;}
+.ctasub{font-size:13px;color:rgba(245,240,234,.35);margin-bottom:42px;position:relative;}
+.ctabtns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;position:relative;}
+
+/* FOOTER */
+footer{background:var(--deep);border-top:1px solid var(--gb);padding:62px 60px 30px;}
+@media(max-width:768px){footer{padding:44px 24px 24px;}}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:46px;margin-bottom:46px;}
+@media(max-width:768px){.ftop{grid-template-columns:1fr 1fr;gap:26px;}}
+.fbrand{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+.fbtxt{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;}
+.fbtxt em{color:var(--gold);font-style:normal;}
+.ftag{font-size:12px;color:rgba(245,240,234,.24);line-height:1.8;max-width:236px;margin-bottom:18px;}
+.fsoc{display:flex;gap:8px;}
+.fsoca{width:30px;height:30px;border:1px solid var(--gb);display:flex;align-items:center;justify-content:center;color:rgba(245,240,234,.28);font-size:11px;transition:all .3s;text-decoration:none;}
+.fsoca:hover{border-color:var(--gold);color:var(--gold);}
+.fcol h4{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:15px;}
+.flinks{list-style:none;}
+.flinks li{margin-bottom:8px;}
+.flinks a{font-size:12px;color:rgba(245,240,234,.28);transition:color .3s;cursor:pointer;}
+.flinks a:hover{color:var(--white);}
+.fbot{border-top:1px solid var(--gb);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.fcopy{font-size:11px;color:rgba(245,240,234,.15);}
+.fpay{display:flex;gap:7px;}
+.fptag{font-size:10px;color:rgba(245,240,234,.18);border:1px solid var(--gb);padding:3px 7px;}
+
+/* REVEAL */
+.reveal,.rl,.rr{opacity:0;transition:opacity .75s ease,transform .75s ease;}
+.reveal{transform:translateY(22px);}
+.rl{transform:translateX(-28px);}
+.rr{transform:translateX(28px);}
+.reveal.vis,.rl.vis,.rr.vis{opacity:1;transform:none;}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+</style>
+</head>
+<body>
+
+<div id="pt"><div class="ptp"></div><div class="ptp"></div><div class="ptp"></div><div class="ptp"></div><div class="ptp"></div></div>
+<div id="loader"><div class="l-icon"><div class="l-diamond"></div><div class="l-mirror"></div><div class="l-dot a"></div><div class="l-dot b"></div><div class="l-dot c"></div><div class="l-dot d"></div></div><div class="l-brand">KANCH<em>WALE</em></div><div class="l-sub">All Glass Needs · Made in India</div><div class="l-bar"></div></div>
+<div class="cursor" id="cur"></div><div class="cursor-ring" id="ring"></div>
+<a id="wa-f" href="https://wa.me/919879282863?text=Hi%20Kanchwale!" target="_blank" title="WhatsApp">💬</a>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"></div>
+<div id="notice"><span id="ntxt"></span><button id="nx" onclick="document.getElementById('notice').classList.remove('on')">✕</button></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nlogo" onclick="goTo('index.html')">
+    <div class="nico"><div class="ld"></div><div class="lm"></div><div class="ldot a"></div><div class="ldot b"></div><div class="ldot c"></div><div class="ldot d"></div></div>
+    <div class="ntxt">KANCH<em>WALE</em></div>
+  </div>
+  <ul class="nlinks" id="nl">
+    <li><a onclick="goTo('shop.html')">Shop</a></li>
+    <li><a onclick="sto('cgrid')">Collections</a></li>
+    <li><a onclick="sto('arsec')">AR App</a></li>
+    <li><a onclick="sto('b2bsec')">B2B</a></li>
+    <li><a onclick="goTo('shop.html#blog')">Blog</a></li>
+    <li><a onclick="sto('ctsec')">Contact</a></li>
+  </ul>
+  <div class="nright">
+    <button class="nico-btn" onclick="goTo('shop.html#cart')">🛒<span class="cbadge" id="cbadge">0</span></button>
+    <button class="ncta" id="nauth" onclick="goTo('shop.html#login')">Login</button>
+    <button class="hbg" onclick="document.getElementById('nl').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hgrain"></div><div class="hglow"></div><div class="hglow2"></div>
+  <div class="hcontent">
+    <div class="htag">All Glass Needs · One Place · Pan India</div>
+    <h1 class="hh1">Crafted in Glass.<br>Defined by <em>Design.</em></h1>
+    <div class="hmade">"Made in India, For India, By Indians"</div>
+    <p class="hp">From mirrors to glass partitions, decorative glass to shower enclosures — we are not just a mirror company. Every glass need, manufactured in our own facilities across India.</p>
+    <div class="hbtns">
+      <a class="bg" href="shop.html"><span>Shop Now</span></a>
+      <button class="bo" onclick="sto('arsec')">📱 App Coming Soon</button>
+    </div>
+    <div class="hstats">
+      <div><div class="sn" id="hcount">0</div><div class="sl">Happy Customers</div></div>
+      <div><div class="sn" id="hprod">0</div><div class="sl">Products</div></div>
+      <div><div class="sn">5</div><div class="sl">Cities</div></div>
+    </div>
+  </div>
+  <div class="hmirror">
+    <div class="mframe">
+      <div class="mc tl"></div><div class="mc tr"></div><div class="mc bl"></div><div class="mc br"></div>
+      <div class="mshine"></div><div class="mshine2"></div>
+      <div class="marbadge">App Coming Soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mqw"><div class="mqt">
+  <span class="mqi">Luxury Mirrors</span><span class="mqi">Glass Partitions</span><span class="mqi">Made in India</span><span class="mqi">Custom Frames</span><span class="mqi">Pan India Delivery</span><span class="mqi">Futuristic Designs</span><span class="mqi">Shower Enclosures</span><span class="mqi">LED Smart Mirrors</span><span class="mqi">B2B Supply</span><span class="mqi">Corporate Gifting</span><span class="mqi">Decorative Glass</span>
+  <span class="mqi">Luxury Mirrors</span><span class="mqi">Glass Partitions</span><span class="mqi">Made in India</span><span class="mqi">Custom Frames</span><span class="mqi">Pan India Delivery</span><span class="mqi">Futuristic Designs</span><span class="mqi">Shower Enclosures</span><span class="mqi">LED Smart Mirrors</span><span class="mqi">B2B Supply</span><span class="mqi">Corporate Gifting</span><span class="mqi">Decorative Glass</span>
+</div></div>
+
+<!-- NEW ARRIVALS -->
+<section class="sec" id="newarr" style="background:var(--deep);">
+  <div class="shdr reveal"><div><div class="stag">Just In</div><h2 class="stitle">New <em>Arrivals</em></h2></div><a class="bgh" href="shop.html">View All →</a></div>
+  <div class="pgrid" id="ngrid"></div>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="sec" id="cgrid" style="background:var(--black);">
+  <div class="shdr reveal"><div><div class="stag">Our Work</div><h2 class="stitle">All Glass Needs — <em>One Place</em></h2></div></div>
+  <div class="cgrid reveal">
+    <div class="ccard lg" onclick="goTo('shop.html?cat=Mirrors')"><div class="cbg bg-orbit"><div class="csh" style="width:108px;height:162px;top:50%;left:55%;transform:translate(-50%,-50%) rotate(-8deg);"></div></div><div class="cprice">₹5,000+</div><div class="cinf"><div class="cname">Mirrors</div><div class="cdesc">Decorative · LED · Frameless · Custom</div></div><div class="carr">→</div></div>
+    <div class="ccard" onclick="goTo('shop.html?cat=Partitions')"><div class="cbg bg-haveli"><div class="csh" style="width:56px;height:92px;top:40%;left:50%;transform:translate(-50%,-50%);border-radius:28px 28px 0 0;"></div></div><div class="cprice">₹8,000+</div><div class="cinf"><div class="cname">Partitions</div><div class="cdesc">Glass · Aluminium · SS Frame</div></div><div class="carr">→</div></div>
+    <div class="ccard" onclick="goTo('shop.html?cat=Shower')"><div class="cbg bg-void"><div class="csh" style="width:68px;height:68px;top:40%;left:50%;transform:translate(-50%,-50%);border-radius:50%;"></div></div><div class="cprice">₹12,000+</div><div class="cinf"><div class="cname">Shower Enclosures</div><div class="cdesc">Frameless · Semi-Frameless</div></div><div class="carr">→</div></div>
+    <div class="ccard" onclick="goTo('shop.html?cat=Decorative')"><div class="cbg bg-prism"><div class="csh" style="width:56px;height:80px;top:40%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,rgba(44,62,80,.4),rgba(200,169,110,.1));"></div></div><div class="cprice">₹3,000+</div><div class="cinf"><div class="cname">Decorative Glass</div><div class="cdesc">Tinted · Frosted · Coloured</div></div><div class="carr">→</div></div>
+    <div class="ccard" onclick="goTo('shop.html?cat=Smart')"><div class="cbg bg-nova"><div class="csh" style="width:64px;height:100px;top:35%;left:50%;transform:translate(-50%,-50%);box-shadow:0 0 22px rgba(200,169,110,.4);"></div></div><div class="cprice">₹9,000+</div><div class="cinf"><div class="cname">Smart LED Glass</div><div class="cdesc">Touch · Anti-fog · USB · Dimmable</div></div><div class="carr">→</div></div>
+  </div>
+</section>
+
+<!-- AR / APP SECTION -->
+<section class="sec" id="arsec" style="background:var(--deep);">
+  <div class="arinr">
+    <div class="rl">
+      <div style="position:relative;width:fit-content;margin:0 auto;">
+        <div class="arphone">
+          <div class="arscr"><div class="arroom"><div class="arsc"></div><div class="arfl"></div><div class="armirr" id="ardem"></div><div class="artag">◆ AR Preview</div></div></div>
+        </div>
+        <div class="chips">
+          <div class="chip on" style="background:#c8a96e;" onclick="setChip(this,'#c8a96e')"></div>
+          <div class="chip" style="background:#1a1a1a;border:1px solid #444;" onclick="setChip(this,'#1a1a1a')"></div>
+          <div class="chip" style="background:#8b6914;" onclick="setChip(this,'#8b6914')"></div>
+          <div class="chip" style="background:#7d9c7d;" onclick="setChip(this,'#7d9c7d')"></div>
+          <div class="chip" style="background:#c0c0c0;" onclick="setChip(this,'#c0c0c0')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="rr">
+      <div class="stag">Coming Soon</div>
+      <h2 class="stitle">Our AR App —<br><em>Android & iOS</em></h2>
+      <p style="font-size:13px;color:rgba(245,240,234,.4);line-height:1.9;margin-bottom:32px;">Point your phone at any wall. Watch your mirror or glass panel appear in real scale. Switch colours live. Order with one tap. Available soon on Play Store & App Store.</p>
+      <div class="arfeats">
+        <div class="arfeat"><span class="arn">01</span><div><h4>Real-Time Wall Placement</h4><p>See any product on your actual wall in exact scale.</p></div></div>
+        <div class="arfeat"><span class="arn">02</span><div><h4>Live Colour & Finish Switch</h4><p>Tap the dots to switch colours — see changes instantly.</p></div></div>
+        <div class="arfeat"><span class="arn">03</span><div><h4>One-Tap Order</h4><p>Love it? Order directly from the AR view.</p></div></div>
+      </div>
+      <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;">
+        <div style="background:var(--glass);border:1px solid var(--gb);padding:10px 20px;font-size:11px;letter-spacing:.1em;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🤖</span> Android — Coming Soon</div>
+        <div style="background:var(--glass);border:1px solid var(--gb);padding:10px 20px;font-size:11px;letter-spacing:.1em;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🍎</span> iOS — Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANUFACTURING UNITS -->
+<section class="sec" id="mfgsec" style="background:var(--black);">
+  <div class="reveal" style="text-align:center;margin-bottom:48px;">
+    <div class="stag" style="justify-content:center;">Our Presence</div>
+    <h2 class="stitle">Manufacturing Units <em>Across India</em></h2>
+    <p style="font-size:13px;color:rgba(245,240,234,.38);margin-top:8px;">Strategically located for faster delivery to every corner of India</p>
+  </div>
+  <div class="mfg-grid reveal">
+    <div class="mfg-card d1"><div class="mfg-icon">🏭</div><div class="mfg-city">Mumbai</div><div class="mfg-state">Maharashtra · HQ</div></div>
+    <div class="mfg-card d2"><div class="mfg-icon">🏭</div><div class="mfg-city">Indore</div><div class="mfg-state">Madhya Pradesh</div></div>
+    <div class="mfg-card d3"><div class="mfg-icon">🏭</div><div class="mfg-city">Visakhapatnam</div><div class="mfg-state">Andhra Pradesh</div></div>
+    <div class="mfg-card d4"><div class="mfg-icon">🏭</div><div class="mfg-city">Chennai</div><div class="mfg-state">Tamil Nadu</div></div>
+    <div class="mfg-card d4"><div class="mfg-icon">🏭</div><div class="mfg-city">Bangalore</div><div class="mfg-state">Karnataka</div></div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="sec" id="eventsec" style="background:var(--deep);">
+  <div class="shdr reveal"><div><div class="stag">What's Coming</div><h2 class="stitle">Upcoming <em>Events</em></h2></div></div>
+  <div class="egrid reveal" id="egrid"></div>
+</section>
+
+<!-- WHY -->
+<section class="sec" style="background:var(--black);">
+  <div class="reveal" style="margin-bottom:44px;"><div class="stag">Why Us</div><h2 class="stitle">Built Different.<br><em>Manufactured</em> Better.</h2></div>
+  <div class="wgrid">
+    <div class="wcard reveal d1"><span class="wico">🏭</span><div class="wtit">Own Manufacturing</div><p class="wtxt">5 facilities across India. No middlemen. Factory-to-home pricing with premium quality.</p></div>
+    <div class="wcard reveal d2"><span class="wico">📱</span><div class="wtit">AR App Coming Soon</div><p class="wtxt">See any glass product in your space before ordering. Android & iOS. India's first.</p></div>
+    <div class="wcard reveal d3"><span class="wico">✏️</span><div class="wtit">Full Customisation</div><p class="wtxt">Size, shape, frame colour, glass type — everything made to your specification.</p></div>
+    <div class="wcard reveal d4"><span class="wico">📦</span><div class="wtit">Zero Damage Delivery</div><p class="wtxt">Honeycomb + wooden crate packaging. Every piece arrives perfect — guaranteed.</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" style="background:var(--deep);text-align:center;">
+  <div class="reveal" style="margin-bottom:54px;"><div class="stag" style="justify-content:center;">Process</div><h2 class="stitle">From <em>Idea</em> to Your Space in 4 Steps</h2></div>
+  <div class="psteps">
+    <div class="pstep reveal d1"><div class="pnum">1</div><div class="ptit">Browse & Preview</div><p class="ptxt">Explore collections. Use AR app to place in your space.</p></div>
+    <div class="pstep reveal d2"><div class="pnum">2</div><div class="ptit">Customise</div><p class="ptxt">Pick size, colour, finish. Get real-time price quote.</p></div>
+    <div class="pstep reveal d3"><div class="pnum">3</div><div class="ptit">We Manufacture</div><p class="ptxt">Crafted in our facilities to exact specifications.</p></div>
+    <div class="pstep reveal d4"><div class="pnum">4</div><div class="ptit">Delivered Perfectly</div><p class="ptxt">Pan-India delivery in wooden crate. Zero damage.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" style="background:var(--black);">
+  <div class="reveal" style="text-align:center;margin-bottom:44px;">
+    <div class="stag" style="justify-content:center;">Reviews</div>
+    <h2 class="stitle">What Our Customers <em>Say</em></h2>
+    <p style="font-size:12px;color:rgba(245,240,234,.33);margin-top:7px;">Real reviews from verified buyers across India</p>
+  </div>
+  <div class="tgrid" id="reviews-grid">
+    <div class="tcard reveal d1"><div class="tstar">★★★★★</div><p class="ttxt">"The AR feature completely changed how I shop. Placed the mirror virtually and ordered immediately. Arrived better than expected."</p><div class="tauth">Priya M. — <em>Mumbai</em></div><div class="tver">✓ Verified Purchase</div></div>
+    <div class="tcard reveal d2"><div class="tstar">★★★★★</div><p class="ttxt">"The glass partition for our office is absolutely stunning. Craftsmanship unlike anything in this price range. Highly recommended."</p><div class="tauth">Rahul K. — <em>Delhi</em></div><div class="tver">✓ Verified Purchase</div></div>
+    <div class="tcard reveal d3"><div class="tstar">★★★★★</div><p class="ttxt">"Custom LED mirror for my bathroom. WhatsApp process was seamless. The wooden crate packaging was extraordinary."</p><div class="tauth">Ananya S. — <em>Bangalore</em></div><div class="tver">✓ Verified Purchase</div></div>
+  </div>
+  <div style="text-align:center;margin-top:34px;" class="reveal">
+    <button class="bo" onclick="openReviewForm()">Share Your Experience</button>
+  </div>
+</section>
+
+<!-- REVIEW FORM MODAL -->
+<div class="review-modal" id="review-modal">
+  <div class="review-box">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+      <h3>Write a Review</h3>
+      <button onclick="closeReviewForm()" style="background:none;border:none;color:var(--white);font-size:22px;">✕</button>
+    </div>
+    <p>Share your experience — our team will review and feature it on the site.</p>
+    <div class="fg"><label class="fl">Your Rating *</label>
+      <div class="star-select" id="star-select">
+        <button class="star-btn" onclick="setStars(1)" data-star="1">★</button>
+        <button class="star-btn" onclick="setStars(2)" data-star="2">★</button>
+        <button class="star-btn" onclick="setStars(3)" data-star="3">★</button>
+        <button class="star-btn" onclick="setStars(4)" data-star="4">★</button>
+        <button class="star-btn" onclick="setStars(5)" data-star="5">★</button>
+      </div>
+    </div>
+    <div class="f2">
+      <div class="fg"><label class="fl">Full Name *</label><input class="fi" id="rv-name" placeholder="Your name"></div>
+      <div class="fg"><label class="fl">City *</label><input class="fi" id="rv-city" placeholder="Mumbai"></div>
+    </div>
+    <div class="fg"><label class="fl">Email *</label><input class="fi" id="rv-email" type="email" placeholder="your@email.com"></div>
+    <div class="fg"><label class="fl">Your Review *</label><textarea class="ft" id="rv-text" placeholder="Tell us about your experience..."></textarea></div>
+    <div class="fg"><label class="fl">Product Purchased</label><input class="fi" id="rv-product" placeholder="e.g. Orbit Statement Mirror"></div>
+    <button class="bg" onclick="submitReview()" style="width:100%;margin-top:4px;"><span>Submit Review</span></button>
+    <div class="fok" id="rv-ok">✓ Review submitted! Our team will review and feature it shortly.</div>
+    <div class="ferr" id="rv-err">Please fill all required fields and select a rating.</div>
+  </div>
+</div>
+
+<!-- B2B -->
+<section class="sec b2bsec" id="b2bsec">
+  <div class="b2binr">
+    <div class="rl">
+      <div class="stag">For Businesses</div>
+      <h2 class="stitle">Glass Supply for<br><em>Trade &amp; Projects</em></h2>
+      <p style="font-size:13px;color:rgba(245,240,234,.4);line-height:1.9;margin-bottom:26px;">We supply interior designers, architects, builders, hotels, and corporate gifting companies. Direct from our factory — trade pricing, priority dispatch, dedicated account management.</p>
+      <div class="b2bfeats">
+        <div class="b2bfeat"><div class="b2bico">🏗️</div><div><h4>Builders &amp; Developers</h4><p>Glass partitions, shower enclosures, balustrades for residential and commercial projects.</p></div></div>
+        <div class="b2bfeat"><div class="b2bico">🎨</div><div><h4>Interior Designers</h4><p>Trade account with designer discounts, priority sampling, and mock-ups for client presentations.</p></div></div>
+        <div class="b2bfeat"><div class="b2bico">🏨</div><div><h4>Hotels &amp; Hospitality</h4><p>Bulk mirror and glass supply. Custom branding available on request.</p></div></div>
+        <div class="b2bfeat"><div class="b2bico">🎁</div><div><h4>Corporate Gifting</h4><p>Branded glass gifts for Diwali, events. MOQ 50 units. Custom packaging.</p></div></div>
+      </div>
+      <div class="b2btags">
+        <div class="b2btag">Interior Designers</div><div class="b2btag">Architects</div>
+        <div class="b2btag">Builders</div><div class="b2btag">Hotels</div>
+        <div class="b2btag">Corporates</div><div class="b2btag">Retailers</div>
+      </div>
+    </div>
+    <div class="rr">
+      <div class="b2bform">
+        <div class="b2bftt">Request a B2B Quote</div>
+        <div class="b2bfsub">Fill in your requirements. Our trade team responds within 4 business hours via email.</div>
+        <div class="f2">
+          <div class="fg"><label class="fl">Full Name *</label><input class="fi" id="b2bn" placeholder="Your name"></div>
+          <div class="fg"><label class="fl">Company *</label><input class="fi" id="b2bc" placeholder="Company name"></div>
+        </div>
+        <div class="f2">
+          <div class="fg"><label class="fl">Phone *</label><input class="fi" id="b2bp" type="tel" placeholder="+91 XXXXX XXXXX"></div>
+          <div class="fg"><label class="fl">Email *</label><input class="fi" id="b2be" type="email" placeholder="you@company.com"></div>
+        </div>
+        <div class="fg"><label class="fl">Business Type</label><select class="fs" id="b2bt"><option value="">Select type</option><option>Interior Designer / Architect</option><option>Builder / Developer</option><option>Hotel / Hospitality</option><option>Corporate / Events</option><option>Retailer / Distributor</option><option>Other</option></select></div>
+        <div class="fg"><label class="fl">Estimated Quantity</label><select class="fs" id="b2bq"><option value="">Select range</option><option>1–10 units</option><option>10–50 units</option><option>50–200 units</option><option>200+ units</option></select></div>
+        <div class="fg"><label class="fl">Your Requirements *</label><textarea class="ft" id="b2br" placeholder="Describe product type, size, finish, timeline, delivery location..."></textarea></div>
+        <button class="bg" onclick="subB2B()" style="width:100%;margin-top:6px;"><span>Send Enquiry to Admin</span></button>
+        <div class="fok" id="b2bok">✓ Enquiry submitted! Our trade team will contact you via email within 4 hours.</div>
+        <div class="ferr" id="b2berr">Please fill all required fields.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="sec" id="blogsec" style="background:var(--deep);">
+  <div class="shdr reveal"><div><div class="stag">Stories</div><h2 class="stitle">From Our <em>Journal</em></h2></div><a class="bgh" href="shop.html#blog">All Articles →</a></div>
+  <div class="bgrid reveal" id="bgrid"></div>
+</section>
+
+<!-- IG STRIP -->
+<div class="igsec reveal">
+  <div class="igtit">Follow Our Journey</div>
+  <div class="igsub">Behind the scenes · New collections · Customer installs · Factory tours</div>
+  <div class="iggrid"><div class="igtile">🪞</div><div class="igtile">✨</div><div class="igtile">🏭</div><div class="igtile">📦</div><div class="igtile">🔮</div><div class="igtile">💡</div></div>
+  <div class="ighandle">@kanchwale.official</div>
+  <p style="font-size:11px;color:rgba(245,240,234,.26);margin-top:6px;margin-bottom:18px;">Add your product photos here</p>
+  <a class="bo" href="https://instagram.com/kanchwale.official" target="_blank">Follow on Instagram</a>
+</div>
+
+<!-- COUNTER -->
+<div class="countwrap reveal"><div class="countn" id="vcnt">0</div><div class="countl">Visitors &amp; Counting</div></div>
+
+<!-- CONTACT -->
+<section class="sec ctsec" id="ctsec">
+  <div class="ctinr">
+    <div class="rl">
+      <div class="stag">Get In Touch</div>
+      <h2 class="stitle">Let's Build<br>Your <em>Vision</em></h2>
+      <div class="ctinfo">
+        <p>Tell us what you need — we'll suggest the perfect glass solution, customise it to your specification, and deliver to your door.</p>
+        <div class="ctmeth"><div class="ctmico">💬</div><div><div class="ctlab">WhatsApp</div><div class="ctval"><a href="https://wa.me/919879282863" target="_blank">+91 98792 82863</a></div></div></div>
+        <div class="ctmeth"><div class="ctmico">📧</div><div><div class="ctlab">Email</div><div class="ctval"><a href="mailto:kanchwale.in@gmail.com">kanchwale.in@gmail.com</a></div></div></div>
+        <div class="ctmeth"><div class="ctmico">📍</div><div><div class="ctlab">Head Office</div><div class="ctval">Mumbai, Maharashtra, India</div></div></div>
+        <div class="ctmeth"><div class="ctmico">⏰</div><div><div class="ctlab">Response Time</div><div class="ctval">WhatsApp: 2 hrs · Email: 4 hrs</div></div></div>
+        <div class="ctmeth"><div class="ctmico">📱</div><div><div class="ctlab">Instagram</div><div class="ctval"><a href="https://instagram.com/kanchwale.official" target="_blank">@kanchwale.official</a></div></div></div>
+      </div>
+    </div>
+    <div class="rr">
+      <div class="ctformw">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:300;margin-bottom:20px;">Send an Enquiry</div>
+        <div class="f2">
+          <div class="fg"><label class="fl">Name *</label><input class="fi" id="eqn" placeholder="Your name"></div>
+          <div class="fg"><label class="fl">Phone *</label><input class="fi" id="eqp" type="tel" placeholder="+91 XXXXX"></div>
+        </div>
+        <div class="fg"><label class="fl">Email</label><input class="fi" id="eqe" type="email" placeholder="your@email.com"></div>
+        <div class="fg"><label class="fl">I'm interested in</label><select class="fs" id="eqi"><option value="">Select type</option><option>Decorative Mirrors</option><option>LED Smart Mirrors</option><option>Glass Partitions</option><option>Shower Enclosures</option><option>Custom Size Glass</option><option>Corporate Gifting</option><option>Full Home Fit-out</option><option>Other</option></select></div>
+        <div class="fg"><label class="fl">Message</label><textarea class="ft" id="eqm" placeholder="Tell us about your space, budget, and what you're looking for..."></textarea></div>
+        <button class="bg" onclick="subEq()" style="width:100%;margin-top:4px;"><span>Send Message</span></button>
+        <div class="fok" id="eqok">✓ Message received! We'll contact you within 2 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="nlsec reveal">
+  <div class="nltit">Stay in the <em style="font-style:italic;color:var(--gold);">Loop</em></div>
+  <div class="nlsub">New collections, exclusive offers, AR app launch — straight to your inbox.</div>
+  <div class="nlform">
+    <input class="nli" id="nle" type="email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')subNL()">
+    <button class="nlbtn" onclick="subNL()">Subscribe</button>
+  </div>
+  <div class="nlok" id="nlok">✓ You're in! Welcome to the Kanchwale family.</div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <h2 class="ctatit reveal">Ready to Transform<br>Your <em>Space?</em></h2>
+  <p class="ctasub reveal">All glass needs. One place. Made in India.</p>
+  <div class="ctabtns reveal">
+    <a class="bwa" href="https://wa.me/919879282863?text=Hi%20Kanchwale!%20I%27d%20like%20to%20enquire." target="_blank">💬 Chat on WhatsApp</a>
+    <a class="bo" href="shop.html">Shop Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftop">
+    <div>
+      <div class="fbrand">
+        <div class="nico" style="width:26px;height:26px;"><div class="ld"></div><div class="lm"></div><div class="ldot a"></div><div class="ldot b"></div><div class="ldot c"></div><div class="ldot d"></div></div>
+        <div class="fbtxt">KANCH<em>WALE</em></div>
+      </div>
+      <p class="ftag">All glass needs in one place. Made in India, For India, By Indians. 5 manufacturing units across India.</p>
+      <div class="fsoc">
+        <a class="fsoca" href="https://instagram.com/kanchwale.official" target="_blank">IG</a>
+        <a class="fsoca" href="https://wa.me/919879282863" target="_blank">WA</a>
+        <a class="fsoca" href="mailto:kanchwale.in@gmail.com">✉</a>
+      </div>
+    </div>
+    <div class="fcol"><h4>Products</h4><ul class="flinks"><li><a href="shop.html?cat=Mirrors">Mirrors</a></li><li><a href="shop.html?cat=Partitions">Glass Partitions</a></li><li><a href="shop.html?cat=Shower">Shower Enclosures</a></li><li><a href="shop.html?cat=Decorative">Decorative Glass</a></li><li><a href="shop.html?cat=Smart">Smart LED Glass</a></li></ul></div>
+    <div class="fcol"><h4>Company</h4><ul class="flinks"><li><a href="shop.html#about">About Us</a></li><li><a href="shop.html#blog">Blog</a></li><li><a onclick="sto('b2bsec')">B2B / Trade</a></li><li><a href="shop.html#faq">FAQ</a></li><li><a href="shop.html#terms">Terms</a></li></ul></div>
+    <div class="fcol"><h4>Support</h4><ul class="flinks"><li><a href="shop.html#shipping">Shipping</a></li><li><a href="shop.html#returns">Returns</a></li><li><a href="shop.html#customisation">Customisation Guide</a></li><li><a href="https://wa.me/919879282863" target="_blank">WhatsApp</a></li><li><a href="mailto:kanchwale.in@gmail.com">Email Us</a></li></ul></div>
+  </div>
+  <div class="fbot">
+    <div class="fcopy">© 2025 Kanchwale · kanchwale.com · Made in India 🇮🇳</div>
+    <div class="fpay"><div class="fptag">UPI</div><div class="fptag">Cards</div><div class="fptag">COD</div><div class="fptag">Net Banking</div></div>
+  </div>
+</footer>
+
+<script>
+function db(){return JSON.parse(localStorage.getItem('kwDB')||'{}');}
+function sdb(d){localStorage.setItem('kwDB',JSON.stringify(d));}
+function defProds(){return[{id:1,name:'Orbit Statement Mirror',collection:'Mirrors',price:18000,discount:15000,emoji:'🪞',isNew:true,imgUrl:''},{id:2,name:'Haveli Arch Mirror',collection:'Mirrors',price:12000,discount:null,emoji:'🪟',isNew:true,imgUrl:''},{id:3,name:'Void Circle Mirror',collection:'Mirrors',price:8500,discount:7500,emoji:'⭕',isNew:false,imgUrl:''},{id:4,name:'Nova LED Smart Mirror',collection:'Smart',price:22000,discount:null,emoji:'💡',isNew:true,imgUrl:''}];}
+
+window.onload=()=>{
+  setTimeout(()=>document.getElementById('pt').classList.add('out'),100);
+  setTimeout(()=>document.getElementById('loader').classList.add('done'),2100);
+  trackVis();loadNotice();renderNew();renderEvents();renderBlog();updateStats();
+  updateCartBadge();updateNav();setupReveal();setupCursor();setupNav();
+  loadApprovedReviews();
+  window.addEventListener('scroll',()=>document.getElementById('btt').classList.toggle('on',scrollY>600));
+};
+
+function goTo(url){
+  const pt=document.getElementById('pt');
+  pt.querySelectorAll('.ptp').forEach(p=>p.style.transform='');
+  pt.classList.remove('out');
+  setTimeout(()=>location.href=url,550);
+}
+function sto(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+
+function setupCursor(){
+  const c=document.getElementById('cur'),r=document.getElementById('ring');
+  if(!c||innerWidth<=768)return;
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.left=mx-3.5+'px';c.style.top=my-3.5+'px';});
+  (function anim(){rx+=(mx-rx-16)*.12;ry+=(my-ry-16)*.12;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(anim);})();
+  document.querySelectorAll('a,button,.ccard,.pcard,.tcard,.ecard,.bcard').forEach(el=>{
+    el.addEventListener('mouseenter',()=>c.classList.add('h'));
+    el.addEventListener('mouseleave',()=>c.classList.remove('h'));
+  });
+}
+function setupNav(){window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>60));}
+function setupReveal(){
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.1});
+  document.querySelectorAll('.reveal,.rl,.rr').forEach(el=>obs.observe(el));
+}
+
+function trackVis(){
+  const d=db(),today=new Date().toDateString();
+  if(!d.visitors)d.visitors={total:0,today:0,lastDate:'',sessions:[]};
+  d.visitors.total++;
+  if(d.visitors.lastDate!==today){d.visitors.today=1;d.visitors.lastDate=today;}else d.visitors.today++;
+  if(!d.visitors.sessions)d.visitors.sessions=[];
+  d.visitors.sessions.unshift({date:new Date().toLocaleString(),page:'Home',ua:navigator.userAgent});
+  if(d.visitors.sessions.length>100)d.visitors.sessions.pop();
+  sdb(d);
+}
+
+function updateStats(){
+  const d=db();
+  const tot=(d.visitors?.total||0)+247;
+  const vcnt=document.getElementById('vcnt');
+  const hc=document.getElementById('hcount');
+  const hp=document.getElementById('hprod');
+  if(vcnt){let n=0;const t=setInterval(()=>{n=Math.min(n+Math.ceil(tot/60),tot);vcnt.textContent=n.toLocaleString();if(n>=tot)clearInterval(t);},30);}
+  if(hc)hc.textContent=tot.toLocaleString();
+  if(hp)hp.textContent=(d.products?.length||6);
+}
+
+function loadNotice(){
+  const d=db();
+  if(d.notice&&d.notice.trim()){document.getElementById('ntxt').textContent=d.notice;document.getElementById('notice').classList.add('on');}
+}
+
+function renderNew(){
+  const d=db();
+  const prods=d.products?.length?d.products:defProds();
+  const items=prods.filter(p=>p.isNew).slice(0,4);
+  document.getElementById('ngrid').innerHTML=items.map(p=>{
+    const pr=p.discount?`<span class="pprice">₹${p.discount.toLocaleString()}</span><span class="pold">₹${p.price.toLocaleString()}</span>`:`<span class="pprice">₹${p.price.toLocaleString()}</span>`;
+    const imgContent=p.imgUrl?`<img src="${p.imgUrl}" alt="${p.name}" onerror="this.style.display='none'">`:(p.emoji||'🪞');
+    return `<div class="pcard" onclick="goTo('shop.html?product=${p.id}')">
+      <div class="pbadge">New</div>${p.discount?'<div class="pbadge sl">Sale</div>':''}
+      <div class="pimg">${imgContent}</div>
+      <div class="pinf">
+        <div class="pname">${p.name}</div>
+        <div class="pcoll">${p.collection}</div>
+        <div class="ppr">${pr}</div>
+        <div class="pbtns">
+          <button class="bar" onclick="event.stopPropagation();goTo('shop.html?product=${p.id}&ar=1')">📱 Try AR</button>
+          <button class="badd" onclick="event.stopPropagation();addCart(${p.id})">Add to Cart</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function getCart(){return JSON.parse(localStorage.getItem('kwCart')||'[]');}
+function saveCart(c){localStorage.setItem('kwCart',JSON.stringify(c));}
+function updateCartBadge(){document.getElementById('cbadge').textContent=getCart().reduce((s,i)=>s+i.qty,0);}
+function addCart(id){
+  const d=db();const prods=d.products?.length?d.products:defProds();const p=prods.find(x=>x.id===id);if(!p)return;
+  const c=getCart();const ex=c.find(i=>i.id===id);
+  if(ex)ex.qty++;else c.push({id:p.id,name:p.name,price:p.discount||p.price,emoji:p.emoji,qty:1,collection:p.collection,imgUrl:p.imgUrl||''});
+  saveCart(c);updateCartBadge();toast('Added — '+p.name);
+}
+
+function updateNav(){
+  const u=localStorage.getItem('kwUser');const btn=document.getElementById('nauth');
+  if(u&&btn){const user=JSON.parse(u);btn.textContent=user.name.split(' ')[0];btn.onclick=()=>goTo('shop.html#account');}
+}
+
+function renderBlog(){
+  const d=db();
+  const blogs=d.blog?.length?d.blog:[
+    {id:1,title:'How to Choose the Right Mirror Size',emoji:'📐',excerpt:'The perfect mirror is all about proportion.',date:'May 1, 2025'},
+    {id:2,title:'Glass Partitions — The Complete Guide',emoji:'🏗️',excerpt:'Everything you need to know before ordering.',date:'Apr 22, 2025'},
+    {id:3,title:'LED vs Plain Mirrors — Which is Right?',emoji:'💡',excerpt:'Both have their place. Here\'s the breakdown.',date:'Apr 15, 2025'}
+  ];
+  document.getElementById('bgrid').innerHTML=blogs.slice(0,3).map(b=>`
+    <div class="bcard" onclick="goTo('shop.html?blog=${b.id}')">
+      <div class="bimg">${b.coverImg?`<img src="${b.coverImg}" alt="${b.title}">`:(b.emoji||'📝')}</div>
+      <div class="bbody"><div class="bdt">${b.date||''}</div><div class="btit">${b.title}</div><div class="bex">${b.excerpt||''}</div></div>
+    </div>`).join('');
+}
+
+function renderEvents(){
+  const d=db();
+  const events=d.events?.length?d.events:[
+    {id:1,title:'AR App Beta Launch',date:'2025-08-15',desc:'Be first to try AR glass placement on your wall. Android & iOS.'},
+    {id:2,title:'Diwali Collection Launch',date:'2025-10-01',desc:'Our most festive collection yet. Online exclusive launch.'},
+    {id:3,title:'Mumbai Showroom Opening',date:'2025-09-01',desc:'Visit our first physical showroom. Touch and customise in person.'}
+  ];
+  const sec=document.getElementById('eventsec');
+  if(!events.length){if(sec)sec.style.display='none';return;}
+  document.getElementById('egrid').innerHTML=events.map(e=>`
+    <div class="ecard">
+      <div class="edt">📅 ${e.date?new Date(e.date).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'}):''}</div>
+      <div class="etitle">${e.title}</div>
+      <div class="edesc">${e.desc}</div>
+    </div>`).join('');
+}
+
+/* REVIEWS */
+let selectedStars=0;
+function openReviewForm(){document.getElementById('review-modal').classList.add('open');}
+function closeReviewForm(){document.getElementById('review-modal').classList.remove('open');}
+function setStars(n){
+  selectedStars=n;
+  document.querySelectorAll('.star-btn').forEach((btn,i)=>btn.classList.toggle('sel',i<n));
+}
+function submitReview(){
+  const name=document.getElementById('rv-name').value.trim();
+  const city=document.getElementById('rv-city').value.trim();
+  const email=document.getElementById('rv-email').value.trim();
+  const text=document.getElementById('rv-text').value.trim();
+  const err=document.getElementById('rv-err');
+  const ok=document.getElementById('rv-ok');
+  if(!name||!city||!email||!text||!selectedStars){err.style.display='block';return;}
+  err.style.display='none';
+  const d=db();
+  if(!d.pendingReviews)d.pendingReviews=[];
+  d.pendingReviews.push({
+    id:Date.now(),name,city,email,text,stars:selectedStars,
+    product:document.getElementById('rv-product').value,
+    date:new Date().toLocaleDateString('en-IN'),
+    approved:false
+  });
+  sdb(d);
+  ok.style.display='block';
+  setTimeout(()=>{closeReviewForm();ok.style.display='none';},2000);
+}
+
+function loadApprovedReviews(){
+  const d=db();
+  const approved=(d.pendingReviews||[]).filter(r=>r.approved);
+  if(!approved.length)return;
+  const grid=document.getElementById('reviews-grid');
+  const existing=grid.innerHTML;
+  grid.innerHTML=approved.map(r=>`
+    <div class="tcard">
+      <div class="tstar">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
+      <p class="ttxt">"${r.text}"</p>
+      <div class="tauth">${r.name} — <em>${r.city}</em></div>
+      <div class="tver">✓ Verified Purchase</div>
+    </div>`).join('')+existing;
+}
+
+/* B2B */
+function subB2B(){
+  const n=document.getElementById('b2bn').value.trim(),p=document.getElementById('b2bp').value.trim(),c=document.getElementById('b2bc').value.trim(),e=document.getElementById('b2be').value.trim(),r=document.getElementById('b2br').value.trim();
+  const err=document.getElementById('b2berr');
+  if(!n||!p||!c||!e||!r){err.style.display='block';return;}
+  err.style.display='none';
+  const d=db();
+  if(!d.b2bEnquiries)d.b2bEnquiries=[];
+  d.b2bEnquiries.push({id:Date.now(),name:n,company:c,phone:p,email:e,type:document.getElementById('b2bt').value,qty:document.getElementById('b2bq').value,requirements:r,date:new Date().toLocaleDateString('en-IN'),status:'New'});
+  sdb(d);
+  document.getElementById('b2bok').style.display='block';
+  ['b2bn','b2bc','b2bp','b2be','b2br'].forEach(id=>document.getElementById(id).value='');
+}
+
+function subEq(){
+  const n=document.getElementById('eqn').value.trim(),p=document.getElementById('eqp').value.trim();
+  if(!n||!p){toast('Please fill your name and phone',true);return;}
+  const d=db();
+  if(!d.enquiries)d.enquiries=[];
+  d.enquiries.push({id:Date.now(),name:n,phone:p,email:document.getElementById('eqe').value,interest:document.getElementById('eqi').value,message:document.getElementById('eqm').value,date:new Date().toLocaleDateString('en-IN')});
+  sdb(d);
+  document.getElementById('eqok').style.display='block';
+}
+
+function subNL(){
+  const e=document.getElementById('nle').value.trim();
+  if(!e||!e.includes('@')){toast('Enter a valid email',true);return;}
+  const d=db();if(!d.newsletter)d.newsletter=[];d.newsletter.push({email:e,date:new Date().toISOString()});sdb(d);
+  document.getElementById('nlok').style.display='block';document.getElementById('nle').value='';
+}
+
+function setChip(el,color){
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));el.classList.add('on');
+  const m=document.getElementById('ardem');m.style.background=`linear-gradient(135deg,${color}44,${color}11)`;m.style.borderColor=color;
+}
+
+function toast(msg,err=false){
+  const t=document.getElementById('toast');t.textContent=msg;t.className='toast'+(err?' err':'')+' on';
+  setTimeout(()=>t.classList.remove('on'),3000);
+}
+
+let kb='';
+document.addEventListener('keydown',e=>{kb+=e.key;if(kb.length>8)kb=kb.slice(-8);if(kb.includes('admin'))goTo('admin.html');});
+</script>
+</body>
+</html>
